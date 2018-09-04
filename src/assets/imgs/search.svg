@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.91 64.91">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #60665a;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <title>search</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="zoom">
+        <path class="cls-1" d="M64.27,61.2,46.48,43.41a26.36,26.36,0,1,0-3.07,3.07L61.2,64.27a2.17,2.17,0,0,0,3.07-3.07ZM26.37,48.66A22.3,22.3,0,1,1,48.66,26.37,22.29,22.29,0,0,1,26.37,48.66Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

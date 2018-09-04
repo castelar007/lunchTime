@@ -1,0 +1,7 @@
+{
+  "name": "lunchTime",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,49 @@
+<ion-content class="mainContent"parallax>
+ <div class="header" >
+   <div class="h h1">
+    <div style="    width: 90%;
+    height: 100%; display: flex; align-items: center;" >
+     <ion-icon style="padding-right:15px;" name="arrow-down"></ion-icon>
+     <span>Tegucigalpa, F.M.</span>
+    </div>
+    <div style="    width: 35px;
+    height: 35px; display: flex; align-items: center;  justify-content: center;
+    border-radius: 50%;
+    background-color: gray; 
+    color: white;">
+      <ion-icon  name="search"></ion-icon>
+    </div>
+   </div>
+   <div class="h h2">
+      <ion-scroll scrollX="true">
+          <div class="category" *ngFor="let categoria of categorias">
+            {{categoria.name}}
+          </div>
+        </ion-scroll>
+   </div>
+   <div class="h h3">
+      <ion-slides style="width:100vw">
+          <ion-slide class="slideLayout">
+            <h1>Slide 1</h1>
+          </ion-slide>
+          <ion-slide class="slideLayout">
+            <h1>Slide 2</h1>
+          </ion-slide>
+          <ion-slide class="slideLayout">
+            <h1>Slide 3</h1>
+          </ion-slide>
+        </ion-slides>     
+   </div>
+   <div class="h h4">
+     <div class="lh4" >
+       <span>loncheando</span><span style=" font-size: 1.4rem; padding-left: 10px;">food.</span>
+      </div>
+      <div class="rh4" >
+        <span>9:00 a.m. - 10:00 p.m.</span>
+      </div>
+    </div>
+ </div>
+ <div class="body" >
+
+ </div>
+</ion-content>
