@@ -1,0 +1,119 @@
+<ion-content class="mainContent">
+  <div class="header" >
+    <div class="h h1">
+      <span>Ristorante Name</span>
+      <div style="    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;"> 
+        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+      </div>
+    </div>
+    <div class="h h2">
+      <div style="    height: 100%;
+      width: 100%;
+      background-color: antiquewhite;
+      border-radius: 25px 25px 0px 0px;">
+
+      </div>
+    </div>
+    <div class="h h3">
+      <div class="lh3">
+        <img src="assets/imgs/test.png" alt="">
+      </div>
+      <div class="rh3">
+        <span >Dirección del ristorante</span>
+        <span style="color:#007D69;">xx:xx a.m. - xx:xx p.m. </span>
+      </div>
+    </div>
+    <div class="h h4">
+        <ion-scroll scrollX="true">
+            <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)='categoryClick(categoria)'>
+              {{categoria.name}}
+            </div>
+          </ion-scroll>
+     </div>
+  </div>
+  <div class="body" >
+      <div class="headerBody">
+          <div style="    width: 90%;
+          height: 100%; display: flex; align-items: center;" >
+           
+           <span style="font-size:1.8rem; font-weight: bold;">Menu</span>
+          </div>
+          <div style="    width: 25px;
+          height: 25px; display: flex; align-items: center;  justify-content: center;
+          border-radius: 50%;
+          background-color: gray; 
+          color: white; 
+          align-self: center;">
+            <ion-icon  name="search"></ion-icon>
+          </div>
+         </div>
+         <ion-scroll [scrollY]="this.childScroll">
+            <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>
+              <div class="innerContainer">
+             
+              <div style="height: 100%;
+              width: calc(65% - 56px)">
+                <div style="display: flex;
+                flex-grow: 1;
+                justify-content: space-between;
+                align-items: flex-start;
+                height: 15px;
+                margin: 10px 0px 5px 0px;">
+                  <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>
+                 
+                </div>
+                <div style="margin: 5px 5px 10px 0px;
+                height: 36px;
+                font-size: 1rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color:#60665A;">{{item.description}}</div>
+              </div>
+              <div  *ngIf="true" style="height: 100%;
+              width: 56px;
+              display: flex;
+              justify-content: center;
+              align-items: center;">
+                  <img style="width:100%; height: 56px; border-radius: 5px; " src="{{item.imageUrl}}" alt="">
+              </div>
+              <div style="height: 100%;
+              width: 35%;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              padding: 10px 15px 10px 0px;
+              flex-direction: column;"
+              > 
+              <div style="    width: 100%;
+              height: 35%;
+              justify-content: flex-end;
+              position: relative;
+              display: flex;
+              align-items: flex-end;">
+                <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/heartBlackB.svg" alt="">
+                <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/basket.svg" alt="">
+              </div>
+              <div style="width: 100%;
+              height: 65%;
+              display: flex;
+              justify-content: flex-end;
+              align-items: flex-end;
+              font-size: 1.6rem;">
+                <span style="color:#007D69; font-size: 0.5rem;">lps.</span>
+                <span>88,888</span>
+                <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>
+              </div>
+            </div>
+            </div>
+              
+            </div>
+          </ion-scroll>
+  </div>
+</ion-content>

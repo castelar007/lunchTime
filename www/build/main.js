@@ -41,10 +41,10 @@ webpackEmptyAsyncContext.id = 149;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favorites_favorites__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_search__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__account_account__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__basket_basket__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favorites_favorites__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_search__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__account_account__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__basket_basket__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -70,7 +70,7 @@ var TabsPage = /** @class */ (function () {
     }
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'tabs-page',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabIcon="heart"></ion-tab>\n  <ion-tab [root]="tab3Root" tabIcon="basket"></ion-tab>\n  <ion-tab [root]="tab4Root" tabIcon="search"></ion-tab>\n  <ion-tab [root]="tab5Root" tabIcon="account"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/tabs/tabs.html"*/
+            selector: 'tabs-page',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabIcon="heart"></ion-tab>\n  <ion-tab [root]="tab3Root" tabIcon="basket"></ion-tab>\n  <ion-tab [root]="tab4Root" tabIcon="search"></ion-tab>\n  <ion-tab [root]="tab5Root" tabIcon="account"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/tabs/tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -87,7 +87,8 @@ var TabsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__restaurant_restaurant__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,17 +100,69 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl) {
+    function HomePage(zone, navCtrl) {
+        this.zone = zone;
         this.navCtrl = navCtrl;
-        this.categorias = [{ name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' },
-            { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }, { name: 'cate' }];
+        this.categorias = [{ name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }];
+        this.items = [{ name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+        ];
+        this.childScroll = 'false';
+        this.restaurantPage = __WEBPACK_IMPORTED_MODULE_2__restaurant_restaurant__["a" /* RestaurantPage */];
     }
+    HomePage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.content.ionScrollEnd.subscribe(function (data) {
+            var dimensions = _this.content.getContentDimensions();
+            var scrollTop = _this.content.scrollTop;
+            var contentHeight = dimensions.contentHeight;
+            var scrollHeight = dimensions.scrollHeight;
+            console.log('1: ' + scrollTop + ' 2: ' + contentHeight + ' 3: ' + scrollHeight);
+            _this.zone.run(function () {
+                if ((scrollTop + contentHeight) >= scrollHeight) {
+                    _this.childScroll = 'true';
+                }
+                else {
+                    _this.childScroll = 'false';
+                }
+            });
+            console.log(_this.childScroll);
+            // if ( (scrollTop + contentHeight + 20) > scrollHeight) {
+            //   this.shouldScrollDown = true;
+            //   this.showScrollButton = false;
+            // } else {
+            //   this.shouldScrollDown = false;
+            //   this.showScrollButton = true;
+            // }
+        });
+    };
+    HomePage.prototype.categoryClick = function (categoria) {
+        if (categoria.active == true)
+            categoria.active = false;
+        else if (categoria.active == false)
+            categoria.active = true;
+    };
+    HomePage.prototype.goDeep = function (item) {
+        this.navCtrl.push(this.restaurantPage, {});
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */])
+    ], HomePage.prototype, "content", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/home/home.html"*/'<ion-content class="mainContent"parallax>\n <div class="header" >\n   <div class="h h1">\n    <div style="    width: 90%;\n    height: 100%; display: flex; align-items: center;" >\n     <ion-icon style="padding-right:15px;" name="arrow-down"></ion-icon>\n     <span>Tegucigalpa, F.M.</span>\n    </div>\n    <div style="    width: 35px;\n    height: 35px; display: flex; align-items: center;  justify-content: center;\n    border-radius: 50%;\n    background-color: gray; \n    color: white;">\n      <ion-icon  name="search"></ion-icon>\n    </div>\n   </div>\n   <div class="h h2">\n      <ion-scroll scrollX="true">\n          <div class="category" *ngFor="let categoria of categorias">\n            {{categoria.name}}\n          </div>\n        </ion-scroll>\n   </div>\n   <div class="h h3">\n      <ion-slides style="width:100vw">\n          <ion-slide class="slideLayout">\n            <h1>Slide 1</h1>\n          </ion-slide>\n          <ion-slide class="slideLayout">\n            <h1>Slide 2</h1>\n          </ion-slide>\n          <ion-slide class="slideLayout">\n            <h1>Slide 3</h1>\n          </ion-slide>\n        </ion-slides>     \n   </div>\n   <div class="h h4">\n     <div class="lh4" >\n       <span>loncheando</span><span style=" font-size: 1.4rem; padding-left: 10px;">food.</span>\n      </div>\n      <div class="rh4" >\n        <span>9:00 a.m. - 10:00 p.m.</span>\n      </div>\n    </div>\n </div>\n <div class="body" >\n\n </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/home/home.html"*/'<ion-content class="mainContent"parallax>\n <div class="header" >\n   <div class="h h1">\n    <div style="    width: 90%;\n    height: 100%; display: flex; align-items: center;" >\n     <ion-icon style="padding-right:15px; color: #BF2708;" name="arrow-down"></ion-icon>\n     <span>Tegucigalpa, F.M.</span>\n    </div>\n    <div style="    width: 25px;\n    height: 25px; display: flex; align-items: center;  justify-content: center;\n    border-radius: 50%;\n    background-color: gray; \n    color: white;">\n      <ion-icon  name="search"></ion-icon>\n    </div>\n   </div>\n   <div class="h h2">\n      <ion-scroll scrollX="true">\n          <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)=\'categoryClick(categoria)\'>\n            {{categoria.name}}\n          </div>\n        </ion-scroll>\n   </div>\n   <div class="h h3">\n      <ion-slides style="width:100vw">\n          <ion-slide class="slideLayout">\n            <h1>Slide 1</h1>\n          </ion-slide>\n          <ion-slide class="slideLayout">\n            <h1>Slide 2</h1>\n          </ion-slide>\n          <ion-slide class="slideLayout">\n            <h1>Slide 3</h1>\n          </ion-slide>\n        </ion-slides>     \n   </div>\n   <div class="h h4">\n     <div class="lh4" >\n       <img src="assets/imgs/loncheandoLogo.svg" alt=""> <span style="color: #BF2708; font-size: 1.4rem; padding-left: 10px;">food.</span>\n      </div>\n      <div class="rh4" >\n        <span>9:00 a.m. - 10:00 p.m.</span>\n      </div>\n    </div>\n </div>\n <div class="body" >\n  <div class=\'headerBody\'>\n    Random Name\n  </div>\n  <ion-scroll [scrollY]="this.childScroll">\n    <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>\n      <div class="innerContainer">\n      <div style="height: 100%;\n      width: 56px;\n      display: flex;\n      justify-content: center;\n      align-items: center;">\n          <img style="width:100%; height: 56px; border-radius: 5px; " src="{{item.imageUrl}}" alt="">\n      </div>\n      <div style="height: 100%;\n      width: calc(90% - 56px)">\n        <div style="display: flex;\n        justify-content: space-between;\n        align-items: flex-start;\n        height: 15px;\n        margin: 10px 10px 5px 10px;">\n          <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>\n          <div style="    display: flex;\n          justify-content: center;\n          align-items: flex-end;\n          height: 100%;"> \n            <ion-icon style="font-size:1rem;  color:#EA8A04;" name="star"></ion-icon>\n            <ion-icon style="font-size:1rem;  color:#EA8A04;" name="star"></ion-icon>\n            <ion-icon style="font-size:1rem;  color:#EA8A04;" name="star"></ion-icon>\n            <ion-icon style="font-size:1rem;  color:#CBCCCA;" name="star"></ion-icon>\n            <ion-icon style="font-size:1rem;  color:#CBCCCA;" name="star"></ion-icon>\n          </div>\n        </div>\n        <div style="margin: 5px 10px 10px 10px;\n        height: 36px;\n        font-size: 1rem;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        color:#60665A;">{{item.description}}</div>\n      </div>\n      <div style="height: 100%;\n      width: 10%;\n      display: flex;\n      justify-content: center;\n      padding-top: 5px;"> \n      <ion-icon  style="color:#CBCCCA;" name=\'heart\'></ion-icon>  \n    </div>\n    </div>\n      \n    </div>\n  </ion-scroll>\n </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -122,9 +175,98 @@ var HomePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var RestaurantPage = /** @class */ (function () {
+    function RestaurantPage(zone, navCtrl, navParams) {
+        this.zone = zone;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.items = [{ name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+            { name: 'Ristorante Name', description: 'es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.', stars: 5, favorite: true, imageUrl: 'assets/imgs/test.png' },
+        ];
+        this.childScroll = 'false';
+        this.categorias = [{ name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }, { name: 'cate', active: false }];
+    }
+    RestaurantPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RestaurantPage');
+    };
+    RestaurantPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.content.ionScrollEnd.subscribe(function (data) {
+            var dimensions = _this.content.getContentDimensions();
+            var scrollTop = _this.content.scrollTop;
+            var contentHeight = dimensions.contentHeight;
+            var scrollHeight = dimensions.scrollHeight;
+            console.log('1: ' + scrollTop + ' 2: ' + contentHeight + ' 3: ' + scrollHeight);
+            _this.zone.run(function () {
+                if ((scrollTop + contentHeight) >= scrollHeight) {
+                    _this.childScroll = 'true';
+                }
+                else {
+                    _this.childScroll = 'false';
+                }
+            });
+            console.log(_this.childScroll);
+            // if ( (scrollTop + contentHeight + 20) > scrollHeight) {
+            //   this.shouldScrollDown = true;
+            //   this.showScrollButton = false;
+            // } else {
+            //   this.shouldScrollDown = false;
+            //   this.showScrollButton = true;
+            // }
+        });
+    };
+    RestaurantPage.prototype.categoryClick = function (categoria) {
+        if (categoria.active == true)
+            categoria.active = false;
+        else if (categoria.active == false)
+            categoria.active = true;
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */]) === "function" && _a || Object)
+    ], RestaurantPage.prototype, "content", void 0);
+    RestaurantPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-restaurant',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/restaurant/restaurant.html"*/'<ion-content class="mainContent">\n  <div class="header" >\n    <div class="h h1">\n      <span>Ristorante Name</span>\n      <div style="    display: flex;\n      justify-content: center;\n      align-items: center;\n      height: 100%;"> \n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n      </div>\n    </div>\n    <div class="h h2">\n      <div style="    height: 100%;\n      width: 100%;\n      background-color: antiquewhite;\n      border-radius: 25px 25px 0px 0px;">\n\n      </div>\n    </div>\n    <div class="h h3">\n      <div class="lh3">\n        <img src="assets/imgs/test.png" alt="">\n      </div>\n      <div class="rh3">\n        <span >Dirección del ristorante</span>\n        <span style="color:#007D69;">xx:xx a.m. - xx:xx p.m. </span>\n      </div>\n    </div>\n    <div class="h h4">\n        <ion-scroll scrollX="true">\n            <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)=\'categoryClick(categoria)\'>\n              {{categoria.name}}\n            </div>\n          </ion-scroll>\n     </div>\n  </div>\n  <div class="body" >\n      <div class="headerBody">\n          <div style="    width: 90%;\n          height: 100%; display: flex; align-items: center;" >\n           \n           <span style="font-size:1.8rem; font-weight: bold;">Menu</span>\n          </div>\n          <div style="    width: 25px;\n          height: 25px; display: flex; align-items: center;  justify-content: center;\n          border-radius: 50%;\n          background-color: gray; \n          color: white; \n          align-self: center;">\n            <ion-icon  name="search"></ion-icon>\n          </div>\n         </div>\n         <ion-scroll [scrollY]="this.childScroll">\n            <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>\n              <div class="innerContainer">\n             \n              <div style="height: 100%;\n              width: calc(65% - 56px)">\n                <div style="display: flex;\n                flex-grow: 1;\n                justify-content: space-between;\n                align-items: flex-start;\n                height: 15px;\n                margin: 10px 0px 5px 0px;">\n                  <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>\n                 \n                </div>\n                <div style="margin: 5px 5px 10px 0px;\n                height: 36px;\n                font-size: 1rem;\n                overflow: hidden;\n                text-overflow: ellipsis;\n                color:#60665A;">{{item.description}}</div>\n              </div>\n              <div  *ngIf="true" style="height: 100%;\n              width: 56px;\n              display: flex;\n              justify-content: center;\n              align-items: center;">\n                  <img style="width:100%; height: 56px; border-radius: 5px; " src="{{item.imageUrl}}" alt="">\n              </div>\n              <div style="height: 100%;\n              width: 35%;\n              position: relative;\n              display: flex;\n              justify-content: center;\n              padding: 10px 15px 10px 0px;\n              flex-direction: column;"\n              > \n              <div style="    width: 100%;\n              height: 35%;\n              justify-content: flex-end;\n              position: relative;\n              display: flex;\n              align-items: flex-end;">\n                <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/heartBlackB.svg" alt="">\n                <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/basket.svg" alt="">\n              </div>\n              <div style="width: 100%;\n              height: 65%;\n              display: flex;\n              justify-content: flex-end;\n              align-items: flex-end;\n              font-size: 1.6rem;">\n                <span style="color:#007D69; font-size: 0.5rem;">lps.</span>\n                <span>88,888</span>\n                <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>\n              </div>\n            </div>\n            </div>\n              \n            </div>\n          </ion-scroll>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/restaurant/restaurant.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _d || Object])
+    ], RestaurantPage);
+    return RestaurantPage;
+    var _a, _b, _c, _d;
+}());
+
+//# sourceMappingURL=restaurant.js.map
+
+/***/ }),
+
+/***/ 196:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoritesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -145,9 +287,9 @@ var FavoritesPage = /** @class */ (function () {
     };
     FavoritesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favorites',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/favorites/favorites.html"*/'<!--\n  Generated template for the FavoritesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>favorites</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/favorites/favorites.html"*/,
+            selector: 'page-favorites',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/favorites/favorites.html"*/'<!--\n  Generated template for the FavoritesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>favorites</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/favorites/favorites.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], FavoritesPage);
     return FavoritesPage;
 }());
@@ -156,13 +298,13 @@ var FavoritesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 196:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -183,9 +325,9 @@ var SearchPage = /** @class */ (function () {
     };
     SearchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-search',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/search/search.html"*/,
+            selector: 'page-search',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/search/search.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], SearchPage);
     return SearchPage;
 }());
@@ -194,13 +336,13 @@ var SearchPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -221,9 +363,9 @@ var AccountPage = /** @class */ (function () {
     };
     AccountPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-account',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/account/account.html"*/'<!--\n  Generated template for the AccountPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n   \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/account/account.html"*/,
+            selector: 'page-account',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/account/account.html"*/'<!--\n  Generated template for the AccountPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n   \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/account/account.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], AccountPage);
     return AccountPage;
 }());
@@ -232,13 +374,13 @@ var AccountPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasketPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -259,9 +401,9 @@ var BasketPage = /** @class */ (function () {
     };
     BasketPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-basket',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/basket/basket.html"*/'<!--\n  Generated template for the BasketPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>basket</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n '/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/basket/basket.html"*/,
+            selector: 'page-basket',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/'<!--\n  Generated template for the BasketPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>basket</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n '/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], BasketPage);
     return BasketPage;
 }());
@@ -270,13 +412,13 @@ var BasketPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(223);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -284,31 +426,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(189);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_search_search__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_basket_basket__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_restaurant_restaurant__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_search_search__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_basket_basket__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_parallax_parallax__ = __webpack_require__(276);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -336,16 +482,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_account_account__["a" /* AccountPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__["a" /* FavoritesPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_search_search__["a" /* SearchPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_basket_basket__["a" /* BasketPage */]
+                __WEBPACK_IMPORTED_MODULE_13__pages_search_search__["a" /* SearchPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_basket_basket__["a" /* BasketPage */],
+                __WEBPACK_IMPORTED_MODULE_15__directives_parallax_parallax__["a" /* ParallaxHeaderDirective */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_restaurant_restaurant__["a" /* RestaurantPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_about_about__["a" /* AboutPage */],
@@ -354,13 +502,14 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_account_account__["a" /* AccountPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__["a" /* FavoritesPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_search_search__["a" /* SearchPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_basket_basket__["a" /* BasketPage */]
+                __WEBPACK_IMPORTED_MODULE_13__pages_search_search__["a" /* SearchPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_basket_basket__["a" /* BasketPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_restaurant_restaurant__["a" /* RestaurantPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -371,13 +520,13 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 265:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(189);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(193);
@@ -406,9 +555,9 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -417,13 +566,13 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 273:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -441,9 +590,9 @@ var AboutPage = /** @class */ (function () {
     }
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/about/about.html"*/
+            selector: 'page-about',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/about/about.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], AboutPage);
     return AboutPage;
 }());
@@ -452,13 +601,13 @@ var AboutPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 274:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -476,16 +625,89 @@ var ContactPage = /** @class */ (function () {
     }
     ContactPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contact',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/lunchTime/src/pages/contact/contact.html"*/
+            selector: 'page-contact',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/contact/contact.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], ContactPage);
     return ContactPage;
 }());
 
 //# sourceMappingURL=contact.js.map
 
+/***/ }),
+
+/***/ 276:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParallaxHeaderDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ParallaxHeaderDirective = /** @class */ (function () {
+    function ParallaxHeaderDirective(element, renderer) {
+        this.element = element;
+        this.renderer = renderer;
+    }
+    ParallaxHeaderDirective.prototype.ngOnInit = function () {
+        console.log('parallax here');
+        var content = this.element.nativeElement.getElementsByClassName('scroll-content')[0];
+        this.header = content.getElementsByClassName('header')[0];
+        var mainContent = content.getElementsByClassName('body')[0];
+        this.headerHeight = this.header.clientHeight;
+        // this.renderer.setElementStyle(this.header, 'webkitTransformOrigin', 'center bottom');
+        // this.renderer.setElementStyle(this.header, 'background-size', 'cover');
+        // this.renderer.setElementStyle(mainContent, 'position', 'absolute');
+    };
+    ParallaxHeaderDirective.prototype.onWindowResize = function (ev) {
+        this.headerHeight = this.header.clientHeight;
+    };
+    ParallaxHeaderDirective.prototype.onContentScroll = function (ev) {
+        var _this = this;
+        ev.domWrite(function () {
+            _this.updateParallaxHeader(ev);
+        });
+    };
+    ParallaxHeaderDirective.prototype.updateParallaxHeader = function (ev) {
+        console.log(ev.scrollTop);
+        console.log(this.headerHeight);
+        if (ev.scrollTop == this.headerHeight) {
+            console.log('test');
+        }
+        if (ev.scrollTop >= 0) {
+            this.translateAmt = ev.scrollTop / 6;
+            this.scaleAmt = 1;
+        }
+        else {
+            this.translateAmt = 0;
+            this.scaleAmt = -ev.scrollTop / this.headerHeight + 1;
+        }
+        // this.renderer.setElementStyle(this.header, 'webkitTransform', 'translate3d(0,'+this.translateAmt+'px,0) scale('+this.scaleAmt+','+this.scaleAmt+')');
+    };
+    ParallaxHeaderDirective = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */])({
+            selector: '[parallax]',
+            host: {
+                '(ionScroll)': 'onContentScroll($event)',
+                '(window:resize)': 'onWindowResize($event)'
+            }
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */]])
+    ], ParallaxHeaderDirective);
+    return ParallaxHeaderDirective;
+}());
+
+//# sourceMappingURL=parallax.js.map
+
 /***/ })
 
-},[199]);
+},[200]);
 //# sourceMappingURL=main.js.map

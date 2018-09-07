@@ -22,14 +22,14 @@ export class ParallaxHeaderDirective {
     console.log('parallax here');
     
     let content = this.element.nativeElement.getElementsByClassName('scroll-content')[0];
-    this.header = content.getElementsByClassName('parallaxHeader')[0];
+    this.header = content.getElementsByClassName('header')[0];
     let mainContent = content.getElementsByClassName('body')[0];
 
     this.headerHeight = this.header.clientHeight;
 
-    this.renderer.setElementStyle(this.header, 'webkitTransformOrigin', 'center bottom');
-    this.renderer.setElementStyle(this.header, 'background-size', 'cover');
-    this.renderer.setElementStyle(mainContent, 'position', 'absolute');
+    // this.renderer.setElementStyle(this.header, 'webkitTransformOrigin', 'center bottom');
+    // this.renderer.setElementStyle(this.header, 'background-size', 'cover');
+    // this.renderer.setElementStyle(mainContent, 'position', 'absolute');
 
 }
 
@@ -46,7 +46,13 @@ onContentScroll(ev){
 }
 
 updateParallaxHeader(ev){
+ console.log(ev.scrollTop);
+ console.log(this.headerHeight);
  
+  if(ev.scrollTop == this.headerHeight){
+    console.log('test');
+    
+  }
   if(ev.scrollTop >= 0){
       this.translateAmt = ev.scrollTop / 6;
       this.scaleAmt = 1;
@@ -55,7 +61,7 @@ updateParallaxHeader(ev){
       this.scaleAmt = -ev.scrollTop / this.headerHeight + 1;
   }
 
-  this.renderer.setElementStyle(this.header, 'webkitTransform', 'translate3d(0,'+this.translateAmt+'px,0) scale('+this.scaleAmt+','+this.scaleAmt+')');
+  // this.renderer.setElementStyle(this.header, 'webkitTransform', 'translate3d(0,'+this.translateAmt+'px,0) scale('+this.scaleAmt+','+this.scaleAmt+')');
 
 }
 

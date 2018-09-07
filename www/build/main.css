@@ -25726,8 +25726,10 @@ page-home .mainContent .header .h.h1 {
   -ms-flex-align: center;
   align-items: center;
   padding: 0px 15px 0px 15px;
-  height: 46px;
+  font-size: 1.5rem;
+  height: 36px;
   background-color: white;
+  font-weight: 500;
   top: 0;
   z-index: 1111;
 }
@@ -25735,8 +25737,8 @@ page-home .mainContent .header .h.h1 {
 page-home .mainContent .header .h.h2 {
   padding: 0px 15px 0px 15px;
   position: fixed;
-  top: 46px;
-  height: 30px;
+  top: 36px;
+  height: 40px;
   background-color: white;
   z-index: 1111;
   display: -webkit-box;
@@ -25767,7 +25769,24 @@ page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper {
 }
 
 page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category {
-  margin-left: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 60%;
+  font-weight: 500;
+  margin-right: 5px;
+  padding: 2px 8px 2px 8px;
+}
+
+page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category.active {
+  background-color: #007D69;
+  border-radius: 25px;
+  color: white;
 }
 
 page-home .mainContent .header .h.h3 {
@@ -25783,7 +25802,7 @@ page-home .mainContent .header .h.h3 .slideLayout {
   border-radius: 25px 25px 0px 0px;
   background-color: wheat;
   width: calc(100% - 30px) !important;
-  margin: 15px;
+  margin: 0px 15px 0px 15px;
 }
 
 page-home .mainContent .header .h.h4 {
@@ -25811,8 +25830,9 @@ page-home .mainContent .header .h.h4 .lh4 {
   -ms-flex-align: center;
   align-items: center;
   height: 100%;
-  width: 50%;
+  width: 40%;
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 page-home .mainContent .header .h.h4 .rh4 {
@@ -25830,12 +25850,289 @@ page-home .mainContent .header .h.h4 .rh4 {
   -ms-flex-align: center;
   align-items: center;
   height: 100%;
-  width: 50%;
+  width: 60%;
   font-size: 1rem;
+  color: #007D69;
 }
 
 page-home .mainContent .body {
   height: calc(100% - 76px);
+  width: 100%;
+}
+
+page-home .mainContent .body ion-scroll {
+  height: 90%;
+  width: 100%;
+}
+
+page-home .mainContent .body .headerBody {
+  height: 10%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding-left: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+page-home .mainContent .body .itemBody {
+  background-color: white;
+  height: 76px;
+  margin-bottom: 5px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-home .mainContent .body .itemBody .innerContainer {
+  padding-left: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+page-restaurant .mainContent {
+  background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
+}
+
+page-restaurant .mainContent .header {
+  margin-top: 36px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: white;
+  height: calc(40% - 36px);
+  width: 100%;
+}
+
+page-restaurant .mainContent .header .h {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+page-restaurant .mainContent .header .h.h1 {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
+  font-size: 1.5rem;
+  height: 36px;
+  background-color: white;
+  font-weight: 500;
+  top: 0;
+  z-index: 1111;
+}
+
+page-restaurant .mainContent .header .h.h4 {
+  padding: 0px 15px 0px 15px;
+  height: 40px;
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+page-restaurant .mainContent .header .h.h4 ion-scroll {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper .category {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 60%;
+  font-weight: 500;
+  margin-right: 5px;
+  padding: 2px 8px 2px 8px;
+}
+
+page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper .category.active {
+  background-color: #007D69;
+  border-radius: 25px;
+  color: white;
+}
+
+page-restaurant .mainContent .header .h.h2 {
+  position: relative;
+  height: calc(100% - 55px);
+  background-color: white;
+  padding: 0px 15px 0px 15px;
+}
+
+page-restaurant .mainContent .header .h.h3 {
+  position: relative;
+  height: 15px;
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 15px 0px 15px;
+  font-size: 0.8rem;
+}
+
+page-restaurant .mainContent .header .h.h3 .lh3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  width: 25%;
+  position: relative;
+}
+
+page-restaurant .mainContent .header .h.h3 .lh3 img {
+  max-width: 100%;
+  border: 0;
+  z-index: 111;
+  bottom: 0;
+  right: 0;
+  width: 65px;
+  border-radius: 50%;
+  height: 65px;
+  padding: 5px;
+}
+
+page-restaurant .mainContent .header .h.h3 .lh3::after {
+  content: '';
+  position: absolute;
+  border: 0;
+  z-index: 11;
+  bottom: 0;
+  right: 50%;
+  margin-right: -32.5px;
+  width: 65px;
+  border-radius: 50%;
+  height: 65px;
+  background-color: white;
+}
+
+page-restaurant .mainContent .header .h.h3 .rh3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-restaurant .mainContent .body {
+  height: calc(100% - 76px);
+  width: 100%;
+}
+
+page-restaurant .mainContent .body ion-scroll {
+  height: 90%;
+  width: 100%;
+}
+
+page-restaurant .mainContent .body .headerBody {
+  height: 10%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding-left: 30px;
+  padding-right: 15px;
+}
+
+page-restaurant .mainContent .body .itemBody {
+  background-color: white;
+  height: 76px;
+  margin-bottom: 5px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-restaurant .mainContent .body .itemBody .innerContainer {
+  padding-left: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
   width: 100%;
 }
 

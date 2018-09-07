@@ -12,8 +12,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AccountPage } from '../pages/account/account';
 import { FavoritesPage } from '../pages/favorites/favorites';
+import { RestaurantPage } from '../pages/restaurant/restaurant'
 import { SearchPage } from '../pages/search/search';
 import { BasketPage } from '../pages/basket/basket';
+import { ParallaxHeaderDirective } from '../directives/parallax/parallax';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { BasketPage } from '../pages/basket/basket';
     AccountPage,
     FavoritesPage,
     SearchPage,
-    BasketPage
+    BasketPage,
+    ParallaxHeaderDirective,
+    RestaurantPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { BasketPage } from '../pages/basket/basket';
     AccountPage,
     FavoritesPage,
     SearchPage,
-    BasketPage
+    BasketPage,
+    RestaurantPage
   ],
   providers: [
     StatusBar,

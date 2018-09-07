@@ -27,18 +27,18 @@ page-home {
                         justify-content: space-between;
                         align-items: center;
                         padding: 0px 15px 0px 15px;
-                    
-                        height: 46px;
+                        font-size: 1.5rem;
+                        height: 36px;
                         background-color: white;
-                        
+                        font-weight: 500;
                         top: 0;
                         z-index: 1111;
                     }
                     &.h2{
                         padding: 0px 15px 0px 15px;
                         position: fixed;
-                        top: 46px;
-                        height: 30px;
+                        top: 36px;
+                        height: 40px;
                         background-color: white;
                         z-index: 1111;
                        
@@ -53,8 +53,18 @@ page-home {
                                 align-items: center;
                                 height: 100%;
                             .category{
-                                margin-left: 5px;
-                               
+                                display: flex;
+                                justify-content: center;
+                                // align-items: center;
+                                height: 60%;
+                                font-weight: 500;
+                                margin-right: 5px;
+                                padding: 2px 8px 2px 8px;
+                               &.active{
+                                    background-color: #007D69;
+                                    border-radius: 25px;
+                                    color: white;                            
+                               }
                             }
                         }
                         }
@@ -63,12 +73,12 @@ page-home {
                         position: relative;
                         height: 87%;
                         background-color: white;
-                        justify-content: space-around; 
+                        justify-content: space-around;
                         .slideLayout{
                             border-radius: 25px 25px 0px 0px;
                             background-color: wheat;
                             width: calc(100% - 30px)!important;
-                            margin: 15px;
+                            margin: 0px 15px 0px 15px;
                         }
                     }
                     &.h4{
@@ -83,8 +93,9 @@ page-home {
                             justify-content: flex-start;
                             align-items: center;
                             height: 100%; 
-                            width:50%;
+                            width:40%;
                             font-size: 1.8rem;
+                            font-weight: bold;
                         }
                         .rh4{
                             padding-right: 15px;
@@ -92,8 +103,9 @@ page-home {
                             justify-content: flex-end;
                             align-items: center;
                             height: 100%; 
-                            width:50%;
+                            width:60%;
                             font-size: 1rem;
+                            color: #007D69;
                         }
                     }
                  
@@ -102,6 +114,34 @@ page-home {
             .body{
                 height: calc(100% - 76px);
                 width: 100%;
+                ion-scroll{
+                    height: 90%;
+                    width: 100%;
+                }
+                .headerBody{
+                    height: 10%;
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                    padding-left: 30px;
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    padding-bottom: 10px;
+                }
+                .itemBody{
+                    
+                    background-color: white;
+                    height: 76px;
+                    margin-bottom: 5px;
+                    width: 100%;
+                    display: flex;
+                    .innerContainer{
+                        padding-left: 30px;
+                        display: flex;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
             }
     }
 }
