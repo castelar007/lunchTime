@@ -1,0 +1,61 @@
+
+<ion-content class="mainContent">
+    <div class="header" >
+      <div class="h h1">
+        <div>
+          <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>
+          <span>Dish Name</span>
+        </div>
+        <div style="    display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;"> 
+          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+        </div>
+      </div>
+      <div class="h h2">
+        <div style="    height: 100%;
+        width: 100%;
+        background-color: antiquewhite;
+        border-radius: 25px 25px 0px 0px;">
+  
+        </div>
+      </div>
+      <div class="h h3">
+        <div class="lh3">
+          <img src="assets/imgs/test.png" alt="">
+        </div>
+        <div class="rh3">
+         <img src="assets/imgs/time.svg" alt="">
+          <span style="color:#007D69;">888m </span>
+         <img src="assets/imgs/calorias.svg" alt="">
+          <span style="color:#007D69;">8888cal </span>
+        </div>
+      </div>
+    
+    </div>
+    <div class="body" >
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati maiores nulla natus quam, porro, voluptatum repudiandae perferendis sit magni possimus nam blanditiis? At quos excepturi aut et totam quis dignissimos.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam voluptatibus dicta in eligendi quisquam? Veritatis perspiciatis eos, quaerat delectus ad, quas, architecto quod eligendi est consequatur optio unde non consectetur.
+      </p>
+    </div>
+    <div class="footer">
+      <div class="f1" ></div>
+      <div class="f2">
+        <div class="lf2">
+        <img [src]="isFav? 'assets/imgs/fullGreenHeart.svg':'assets/imgs/heart.svg'" alt="" (click)='heartClick()'>
+        <img (click)='especialClick()' style="height:36px; width: 36px;" src="assets/imgs/basket.svg" alt="">
+      </div>
+      <div class="rf2">
+        <span style="color:#007D69; font-size: 0.5rem;  padding-top: 10px;">lps.</span>
+        <span>88,888</span>
+        <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>
+      </div>
+      </div>
+    </div>
+</ion-content>

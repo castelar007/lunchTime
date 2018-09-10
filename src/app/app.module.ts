@@ -16,7 +16,8 @@ import { RestaurantPage } from '../pages/restaurant/restaurant'
 import { SearchPage } from '../pages/search/search';
 import { BasketPage } from '../pages/basket/basket';
 import { ParallaxHeaderDirective } from '../directives/parallax/parallax';
-
+import { DishePage } from '../pages/dishe/dishe';
+import {SpecialDishPage} from '../pages/special-dish/special-dish';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +30,9 @@ import { ParallaxHeaderDirective } from '../directives/parallax/parallax';
     SearchPage,
     BasketPage,
     ParallaxHeaderDirective,
-    RestaurantPage
+    RestaurantPage,
+    DishePage,
+    SpecialDishPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,9 @@ import { ParallaxHeaderDirective } from '../directives/parallax/parallax';
     FavoritesPage,
     SearchPage,
     BasketPage,
-    RestaurantPage
+    RestaurantPage,
+    DishePage,
+    SpecialDishPage
   ],
   providers: [
     StatusBar,
