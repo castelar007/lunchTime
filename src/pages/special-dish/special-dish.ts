@@ -7,6 +7,12 @@ import {  NavController, NavParams } from 'ionic-angular';
 })
 export class SpecialDishPage {
   isFav = false;
+  options = [
+    {name:'Opción 1 '},
+    {name:'Opción 2 '},
+    {name:'Opción 3 '},
+   
+  ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -15,5 +21,10 @@ export class SpecialDishPage {
   }
   heartClick(){
     this.isFav = !this.isFav;
+  }
+  addToCart(){
+    console.log('addtocart clicked');
+    
+    this.navCtrl.popAll();
   }
 }

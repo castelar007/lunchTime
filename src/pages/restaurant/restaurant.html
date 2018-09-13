@@ -62,7 +62,7 @@
               <div class="innerContainer">
              
               <div style="height: 100%;
-              width: calc(65% - 56px)">
+              width: calc(67% - 56px)">
                 <div style="display: flex;
                 flex-grow: 1;
                 justify-content: space-between;
@@ -72,13 +72,7 @@
                   <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>
                  
                 </div>
-                <div style="margin: 5px 5px 10px 0px;
-                height: 34px;
-                font-size: 1rem;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                color:#60665A;
-                text-align: justify;" >{{item.description}}</div>
+                <div class="block-with-text" >{{item.description}}</div>
               </div>
               <div  *ngIf="true" style="height: 100%;
               width: 56px;
@@ -88,7 +82,7 @@
                   <img style="width:100%; height: 56px; border-radius: 5px; " src="{{item.imageUrl}}" alt="">
               </div>
               <div style="height: 100%;
-              width: 35%;
+              width: 33%;
               position: relative;
               display: flex;
               justify-content: center;
@@ -101,7 +95,7 @@
               position: relative;
               display: flex;
               align-items: flex-end;">
-                <img style="width:25%; margin-left: 10px; height: 100%;" [src]="item.favorite? 'assets/imgs/fullGreenHeart.svg':'assets/imgs/heartBlackB.svg'" alt="" (click)='heartClick($event,item)'>
+                <img style="width:25%; margin-left: 10px; height: 85%;" [src]="item.favorite? 'assets/imgs/fullGreenHeart.svg':'assets/imgs/heartBlackB.svg'" alt="" (click)='heartClick($event,item)'>
                 <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/basket.svg" alt="" (click)='especialClick($event,item)'>
               </div>
               <div style="width: 100%;

@@ -20,20 +20,25 @@
     
     </div>
     <div class="body" >
-      
+        <div class="mainTitle">
+          Personalizar
+        </div>
+        <div class="b1">
+          <div class="title">Ingredientes </div> 
+          <div class="b11" *ngFor='let option of options'>
+            <span>{{option.name}}</span>
+            <div class="b11r">
+              <img src="assets/imgs/check.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="b1">
+            <div class="title">Extras </div> 
+        </div>
     </div>
     <div class="footer">
-      <div class="f1" (click)='especialClick()'></div>
-      <div class="f2">
-        <div class="lf2">
-        <img [src]="isFav? 'assets/imgs/fullGreenHeart.svg':'assets/imgs/heart.svg'" alt="" (click)='heartClick()'>
-        <img style="height:36px; width: 36px;" src="assets/imgs/basket.svg" alt="">
-      </div>
-      <div class="rf2">
-        <span style="color:#007D69; font-size: 0.5rem;  padding-top: 10px;">lps.</span>
-        <span>88,888</span>
-        <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>
-      </div>
+      <div class="f1" (click)='addToCart()'>
+        Añadir
       </div>
     </div>
 </ion-content>
