@@ -22,6 +22,7 @@ export class HomePage {
   
   childScroll='false';
   restaurantPage = RestaurantPage;
+  searchIsActive = false;
   constructor(private zone: NgZone,public navCtrl: NavController) {
 
   }
@@ -64,5 +65,8 @@ export class HomePage {
     this.navCtrl.push(this.restaurantPage, {
       //parameters
     });
+  }
+  clickSearch(){
+    this.searchIsActive = !this.searchIsActive;
   }
 }

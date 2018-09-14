@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 354.66 81.33">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 74.07px;
+        fill: #212c32;
+        font-family: AvenirNextLTPro-Bold, Avenir Next LT Pro;
+        font-weight: 700;
+        letter-spacing: -0.1em;
+      }
+
+      .cls-2 {
+        letter-spacing: -0.11em;
+      }
+
+      .cls-3 {
+        letter-spacing: -0.1em;
+      }
+    </style>
+  </defs>
+  <title>loncheandoLogo</title>
+  <text class="cls-1" transform="translate(0 63.26)">lonch<tspan class="cls-2" x="160.44" y="0">e</tspan><tspan class="cls-3" x="196.74" y="0">ando</tspan></text>
+</svg>
