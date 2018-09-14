@@ -1,4 +1,14 @@
 page-restaurant {
+    .text-input-ios,
+    .text-input-md{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0px 15px 0px 15px;
+        margin: 0px;
+    }
     .mainContent{
         
         background: repeating-linear-gradient(
@@ -296,7 +306,7 @@ page-restaurant {
                     width: 100%;
                 }
                 .headerBody{
-                    height: 10%;
+                    height: 12%;
                     width: 100%;
                     display: flex;
                     align-items: flex-end;
@@ -305,6 +315,74 @@ page-restaurant {
                     // font-size: 1.8rem;
                     // font-weight: bold;
                     // padding-bottom: 10px;
+                    .h11{
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        // padding-right: 15px;
+                        height: 100%;
+                        align-content: center;
+                        justify-content: center;
+                        .searchBar{
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            background-color: gray;
+                            color: white;
+                            align-self: center;
+                            .searchIcon{
+                                opacity: 1;
+                                z-index:111;
+                                position: absolute; 
+                                transition: opacity 300ms 0ms, transform 300ms 0ms;
+                                transform: rotate(0deg);
+                            }
+                            .closeIcon{
+                                opacity: 0;
+                                z-index:111;
+                                position: absolute; 
+                                transition: opacity 300ms 0ms, transform 300ms 0ms;
+                                transform: rotate(0deg);
+                            }
+                            .noOpacity{
+                                transition: opacity 300ms 0ms;
+                                opacity: 0;
+                            }
+                            &::after{
+                                content: '';
+                            }
+                            &::before{
+                                content: '';
+                                width: 30px;
+                                right: 0px;
+                                height: 30px;
+                                background-color: gray;
+                                border-radius: 30px;
+                                position: absolute;
+                                transition: width 300ms 0ms ease-in-out;
+                            }
+                            &.active{
+                                .searchIcon{
+                                    transition: transform 300ms 0ms , opacity 200ms 100ms ;
+                                    transform: rotate(360deg);
+                                    opacity: 0;
+                                }
+                                .closeIcon{
+                                    transition: transform 300ms 0ms , opacity 100ms 0ms ;
+                                    transform: rotate(360deg);
+                                    opacity: 1;
+                                }
+                                &::before{
+                                    content: '';
+                                    width: 105%;                                
+                                    
+                                }
+                            }
+                        }
+                    }
                 }
                 .itemBody{
                     

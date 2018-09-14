@@ -43,10 +43,35 @@
   </div>
   <div class="body" >
       <div class="headerBody">
-          <div style="    width: 90%;
+          <div class="h11">
+              <div style="    
+              width: calc(100% - 30px);
+          display: flex;
+          align-items: center;">
+              <span style="font-size:1.8rem; font-weight: bold;">Menu</span>
+              </div>
+              <ion-input *ngIf='this.searchIsActive' style="
+                  height: 30px;
+                 
+                  width: 100%;
+                  border-radius: 30px;
+                  color: white;
+                  margin-right: 15px;
+                  position: absolute;
+                  top: 50%;
+                  margin-top: -15px;
+                  padding-right: 15px;
+                  z-index: 111;
+                  ">  </ion-input>
+              <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">
+                <ion-icon class="searchIcon"   name="search"></ion-icon>
+                <ion-icon  class="closeIcon" name="md-close"></ion-icon>
+              </div>
+             </div>
+          <!-- <div style="    width: 90%;
           height: 100%; display: flex; align-items: center;" >
            
-           <span style="font-size:1.8rem; font-weight: bold;">Menu</span>
+           
           </div>
           <div style="    width: 25px;
           height: 25px; display: flex; align-items: center;  justify-content: center;
@@ -55,7 +80,7 @@
           color: white; 
           align-self: center;">
             <ion-icon  name="search"></ion-icon>
-          </div>
+          </div> -->
          </div>
          <ion-scroll [scrollY]="this.childScroll">
             <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>

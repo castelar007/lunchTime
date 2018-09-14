@@ -23,6 +23,7 @@ export class RestaurantPage {
   specialDishPage = SpecialDishPage
   categorias=[{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false}];
   isFav = false;
+  searchIsActive = false;
   constructor(private modalCtrl:ModalController,private zone: NgZone,public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -89,5 +90,8 @@ export class RestaurantPage {
     //on dissmiss
   });
     loginPageModal.present();
+  }
+  clickSearch(){
+    this.searchIsActive = !this.searchIsActive;
   }
 }

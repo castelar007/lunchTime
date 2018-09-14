@@ -224,6 +224,7 @@ page-home {
                     display: flex;
                     .innerContainer{
                         padding-left: 30px;
+                        padding-right: 15px;
                         display: flex;
                         height: 100%;
                         width: 100%;
@@ -239,7 +240,7 @@ page-home {
                             /* place for '...' */
                             margin-right: -1em;
                             padding-right: 1em;
-                            margin: 5px 10px 10px 10px;
+                            margin: 5px 0px 10px 10px;
                             height: 36px;
                             font-size: 1rem;
                             overflow: hidden;
