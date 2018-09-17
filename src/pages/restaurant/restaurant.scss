@@ -1,4 +1,21 @@
 page-restaurant {
+    padding-top: constant(safe-area-inset-top);
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
     .text-input-ios,
     .text-input-md{
         display: flex;
@@ -9,6 +26,7 @@ page-restaurant {
         padding: 0px 15px 0px 15px;
         margin: 0px;
     }
+   
     .mainContent{
         
         background: repeating-linear-gradient(
@@ -24,7 +42,7 @@ page-restaurant {
                 align-items: flex-end;
                 flex-direction: column;
                 background-color: white;
-                height: calc(40% - 36px);
+                height: calc(50% - 36px);
                 width: 100%;
                 .h{
                     position: relative;
@@ -81,7 +99,7 @@ page-restaurant {
                     &.h2{
                         
                         position: relative;
-                        height: calc(100% - 55px);
+                        height: calc(100% - 70px);
                         background-color: white;
                         
                         padding: 0px 15px 0px 15px;
@@ -89,7 +107,7 @@ page-restaurant {
                     }
                     &.h3{
                         position: relative;
-                        height: 15px;
+                        height: 30px;
                         background-color: white;
                         display: flex;
                         padding: 0px 15px 0px 15px;
@@ -132,167 +150,37 @@ page-restaurant {
                             width: 75%;
                             justify-content: space-between;
                             align-items: center;
-                        }
-                    }
-                 
-                }
-            }
-            .body{
-                height: calc(100% - 76px);
-                width: 100%;
-                ion-scroll{
-                    height: 90%;
-                    width: 100%;
-                }
-                .headerBody{
-                    height: 10%;
-                    width: 100%;
-                    display: flex;
-                    align-items: flex-end;
-                    padding-left: 30px;
-                    padding-right: 15px;
-                    // font-size: 1.8rem;
-                    // font-weight: bold;
-                    // padding-bottom: 10px;
-                }
-                .itemBody{
-                    
-                    background-color: white;
-                    height: 76px;
-                    margin-bottom: 5px;
-                    width: 100%;
-                    display: flex;
-                    .innerContainer{
-                        padding-left: 30px;
-                        display: flex;
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
-            }
-    }.mainContent{
-        
-        background: repeating-linear-gradient(
-            90deg,
-            #F4F2F2,
-            #F4F2F2 25px,
-            #F7F7F7 25px,
-            #F7F7F7 50px
-            );
-            .header{
-                margin-top: 36px;
-                display: flex;
-                align-items: flex-end;
-                flex-direction: column;
-                background-color: white;
-                height: calc(40% - 36px);
-                width: 100%;
-                .h{
-                    position: relative;
-                    display: flex;
-                    width: 100%;
-                    &.h1{
-                        position: fixed;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 0px 15px 0px 15px;
-                        font-size: 1.5rem;
-                        height: 36px;
-                        background-color: white;
-                        font-weight: 500;
-                        top: 0;
-                        z-index: 1111;
-                    }
-                    &.h4{
-                        padding: 0px 15px 0px 15px;
-                        // position: fixed;
-                        // top: 36px;
-                        height: 40px;
-                        background-color: white;
-                        // z-index: 1111;
-                       
-                        display: flex;
-                        justify-content: space-around;
-                        ion-scroll{
-                            position: relative;
-                            height: 100%;
-                            width: 100%;
-                            .scroll-zoom-wrapper{
-                                display: flex;
-                                align-items: center;
+                            line-height: 15px;
+                            .lh33{
                                 height: 100%;
-                            .category{
+                                width: 55%;
+                                .lh333{
+
+                                }
+
+                            }
+                            .rh33{
+                                position: relative;
                                 display: flex;
-                                justify-content: center;
-                                // align-items: center;
-                                height: 60%;
-                                font-weight: 500;
-                                margin-right: 5px;
-                                padding: 2px 8px 2px 8px;
-                               &.active{
-                                    background-color: #007D69;
-                                    border-radius: 25px;
-                                    color: white;                            
-                               }
-                            }
-                        }
-                        }
-                    }
-                    &.h2{
-                        
-                        position: relative;
-                        height: calc(100% - 55px);
-                        background-color: white;
-                        
-                        padding: 0px 15px 0px 15px;
-                        
-                    }
-                    &.h3{
-                        position: relative;
-                        height: 15px;
-                        background-color: white;
-                        display: flex;
-                        padding: 0px 15px 0px 15px;
-                        font-size: 0.8rem;
-                        .lh3{
-                            display: flex;
-                            justify-content: center;
-                            position: relative;
-                            align-items: flex-end;
-                            width: 25%;
-                            position: relative;
-                            img{
-                                max-width: 100%;
-                                // position: absolute;
-                                border: 0;
-                                z-index: 111;
-                                bottom: 0;
-                                right: 0;
-                                width: 65px;
-                                border-radius: 50%;
-                                height: 65px;
-                                padding: 5px;
-                            }
-                            &::after{
-                                content: '';
-                                position: absolute;
-                                border: 0;
-                                z-index: 11;
-                                bottom: 0;
-                                right: 50%;
-                                margin-right: -32.5px;
-                                width: 65px;
-                                border-radius: 50%;
-                                height: 65px;
-                                background-color: white;
-                            }
-                        }
-                        .rh3{
-                            display: flex;
-                            width: 75%;
-                            justify-content: space-between;
-                            align-items: center;
+                                height: 100%;
+                                flex-direction: column;
+                                width: 45%;
+                                align-items: flex-end;
+                                .rh333{
+                                    height: 15px;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    span{
+                                        margin-left: 5px;
+                                        color: #007D69;
+                                    }
+                                    img{
+                                        width: 15px;
+                                        margin-left: 5px;
+                                    }
+                                }
+                             }
                         }
                     }
                  

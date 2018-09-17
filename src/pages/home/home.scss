@@ -1,4 +1,5 @@
 page-home {
+    
     .text-input-ios,
     .text-input-md{
         display: flex;
@@ -12,6 +13,107 @@ page-home {
     @keyframes rotate {
         0%{transform: rotate(180deg)}
         100%{ transform: none}
+    }
+    .menuCiudad{
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        z-index: 11111;
+        border-radius: 50%;
+        transition: 300ms all;
+       
+       
+        .menuIcon{
+            height:40px; width:40px; display: flex; justify-content: center; align-items: center; position: absolute;
+            .downIcon{
+                color: #BF2708; position: absolute; opacity: 1;
+                transform: rotate(0deg);
+                transition: opacity 300ms 0ms, transform 300ms 0ms;
+            }
+            
+        }
+        &.active{
+            background-color: white;
+            width: 100vw;
+            height: calc(60% - 50px);
+            border-radius: 0px 0px 25px 25px;
+           
+            .menuIcon{
+                
+                .downIcon{
+                    transform: rotate(180deg);
+                    transition: transform 300ms 0ms , opacity 200ms 100ms ;
+                }
+               
+            }
+        
+        }
+    }
+    .searchBar{
+        z-index: 11111;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        // background-color: gray;
+        color: white;
+        align-self: center;
+        right: 15px;
+        .searchIcon{
+            opacity: 1;
+            z-index:111111;
+            position: absolute; 
+            transition: opacity 300ms 0ms, transform 300ms 0ms;
+            transform: rotate(0deg);
+        }
+        .closeIcon{
+            opacity: 0;
+            z-index:111111;
+            position: absolute; 
+            transition: opacity 300ms 0ms, transform 300ms 0ms;
+            transform: rotate(0deg);
+        }
+        .noOpacity{
+            transition: opacity 300ms 0ms;
+            opacity: 0;
+        }
+        &::after{
+            content: '';
+        }
+        &::before{
+            z-index: 11111;
+            content: '';
+            width: 30px;
+            right: 50%;
+            margin-right: -15px;
+            height: 30px;
+            background-color: gray;
+            border-radius: 30px;
+            position: absolute;
+            transition: width 300ms 0ms ease-in-out;
+        }
+        &.active{
+            .searchIcon{
+                transition: transform 300ms 0ms , opacity 200ms 100ms ;
+                transform: rotate(360deg);
+                opacity: 0;
+            }
+            .closeIcon{
+                transition: transform 300ms 0ms , opacity 100ms 0ms ;
+                transform: rotate(360deg);
+                opacity: 1;
+            }
+            &::before{
+                z-index: 11111;
+                content: '';
+                width: calc(100vw - 30px);                                
+                
+            }
+        }
     }
     .mainContent{
         
@@ -57,69 +159,9 @@ page-home {
                             height: 100%;
                             align-content: center;
                             justify-content: center;
-                            .searchBar{
-                                width: 30px;
-                                height: 30px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                border-radius: 50%;
-                                background-color: gray;
-                                color: white;
-                                align-self: center;
-                                .searchIcon{
-                                    opacity: 1;
-                                    z-index:111;
-                                    position: absolute; 
-                                    transition: opacity 300ms 0ms, transform 300ms 0ms;
-                                    transform: rotate(0deg);
-                                }
-                                .closeIcon{
-                                    opacity: 0;
-                                    z-index:111;
-                                    position: absolute; 
-                                    transition: opacity 300ms 0ms, transform 300ms 0ms;
-                                    transform: rotate(0deg);
-                                }
-                                .noOpacity{
-                                    transition: opacity 300ms 0ms;
-                                    opacity: 0;
-                                }
-                                &::after{
-                                    content: '';
-                                }
-                                &::before{
-                                    content: '';
-                                    width: 30px;
-                                    right: 0px;
-                                    height: 30px;
-                                    background-color: gray;
-                                    border-radius: 30px;
-                                    position: absolute;
-                                    transition: width 300ms 0ms ease-in-out;
-                                }
-                                &.active{
-                                    .searchIcon{
-                                        transition: transform 300ms 0ms , opacity 200ms 100ms ;
-                                        transform: rotate(360deg);
-                                        opacity: 0;
-                                    }
-                                    .closeIcon{
-                                        transition: transform 300ms 0ms , opacity 100ms 0ms ;
-                                        transform: rotate(360deg);
-                                        opacity: 1;
-                                    }
-                                    &::before{
-                                        content: '';
-                                        width: 100%;                                
-                                        
-                                    }
-                                }
-                            }
+                           
                         }
-                        &.searchActive{
-                            // transform: translate(0%);
-                        }
+                        
                     }
                     &.h2{
                         padding: 0px 15px 0px 15px;

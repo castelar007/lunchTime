@@ -26387,6 +26387,162 @@ page-home .text-input-md {
   }
 }
 
+page-home .menuCiudad {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  z-index: 11111;
+  border-radius: 50%;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+}
+
+page-home .menuCiudad .menuIcon {
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+}
+
+page-home .menuCiudad .menuIcon .downIcon {
+  color: #BF2708;
+  position: absolute;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 300ms 0ms, transform 300ms 0ms;
+  transition: opacity 300ms 0ms, transform 300ms 0ms, -webkit-transform 300ms 0ms;
+}
+
+page-home .menuCiudad.active {
+  background-color: white;
+  width: 100vw;
+  height: calc(60% - 50px);
+  border-radius: 0px 0px 25px 25px;
+}
+
+page-home .menuCiudad.active .menuIcon .downIcon {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+  transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+  transition: transform 300ms 0ms , opacity 200ms 100ms;
+  transition: transform 300ms 0ms , opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+}
+
+page-home .searchBar {
+  z-index: 11111;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  right: 15px;
+}
+
+page-home .searchBar .searchIcon {
+  opacity: 1;
+  z-index: 111111;
+  position: absolute;
+  -webkit-transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 300ms 0ms, transform 300ms 0ms;
+  transition: opacity 300ms 0ms, transform 300ms 0ms, -webkit-transform 300ms 0ms;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+page-home .searchBar .closeIcon {
+  opacity: 0;
+  z-index: 111111;
+  position: absolute;
+  -webkit-transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 300ms 0ms, transform 300ms 0ms;
+  transition: opacity 300ms 0ms, transform 300ms 0ms, -webkit-transform 300ms 0ms;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+page-home .searchBar .noOpacity {
+  -webkit-transition: opacity 300ms 0ms;
+  transition: opacity 300ms 0ms;
+  opacity: 0;
+}
+
+page-home .searchBar::after {
+  content: '';
+}
+
+page-home .searchBar::before {
+  z-index: 11111;
+  content: '';
+  width: 30px;
+  right: 50%;
+  margin-right: -15px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 30px;
+  position: absolute;
+  -webkit-transition: width 300ms 0ms ease-in-out;
+  transition: width 300ms 0ms ease-in-out;
+}
+
+page-home .searchBar.active .searchIcon {
+  -webkit-transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+  transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+  transition: transform 300ms 0ms , opacity 200ms 100ms;
+  transition: transform 300ms 0ms , opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  opacity: 0;
+}
+
+page-home .searchBar.active .closeIcon {
+  -webkit-transition: opacity 100ms 0ms , -webkit-transform 300ms 0ms;
+  transition: opacity 100ms 0ms , -webkit-transform 300ms 0ms;
+  transition: transform 300ms 0ms , opacity 100ms 0ms;
+  transition: transform 300ms 0ms , opacity 100ms 0ms , -webkit-transform 300ms 0ms;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  opacity: 1;
+}
+
+page-home .searchBar.active::before {
+  z-index: 11111;
+  content: '';
+  width: calc(100vw - 30px);
+}
+
 page-home .mainContent {
   background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
 }
@@ -26463,100 +26619,6 @@ page-home .mainContent .header .h.h1 .h11 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar {
-  width: 30px;
-  height: 30px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: gray;
-  color: white;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar .searchIcon {
-  opacity: 1;
-  z-index: 111;
-  position: absolute;
-  -webkit-transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
-  transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
-  transition: opacity 300ms 0ms, transform 300ms 0ms;
-  transition: opacity 300ms 0ms, transform 300ms 0ms, -webkit-transform 300ms 0ms;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar .closeIcon {
-  opacity: 0;
-  z-index: 111;
-  position: absolute;
-  -webkit-transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
-  transition: opacity 300ms 0ms, -webkit-transform 300ms 0ms;
-  transition: opacity 300ms 0ms, transform 300ms 0ms;
-  transition: opacity 300ms 0ms, transform 300ms 0ms, -webkit-transform 300ms 0ms;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar .noOpacity {
-  -webkit-transition: opacity 300ms 0ms;
-  transition: opacity 300ms 0ms;
-  opacity: 0;
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar::after {
-  content: '';
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar::before {
-  content: '';
-  width: 30px;
-  right: 0px;
-  height: 30px;
-  background-color: gray;
-  border-radius: 30px;
-  position: absolute;
-  -webkit-transition: width 300ms 0ms ease-in-out;
-  transition: width 300ms 0ms ease-in-out;
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar.active .searchIcon {
-  -webkit-transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
-  transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
-  transition: transform 300ms 0ms , opacity 200ms 100ms;
-  transition: transform 300ms 0ms , opacity 200ms 100ms , -webkit-transform 300ms 0ms;
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-  opacity: 0;
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar.active .closeIcon {
-  -webkit-transition: opacity 100ms 0ms , -webkit-transform 300ms 0ms;
-  transition: opacity 100ms 0ms , -webkit-transform 300ms 0ms;
-  transition: transform 300ms 0ms , opacity 100ms 0ms;
-  transition: transform 300ms 0ms , opacity 100ms 0ms , -webkit-transform 300ms 0ms;
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-  opacity: 1;
-}
-
-page-home .mainContent .header .h.h1 .h11 .searchBar.active::before {
-  content: '';
-  width: 100%;
 }
 
 page-home .mainContent .header .h.h2 {
@@ -26777,6 +26839,18 @@ page-home .mainContent .body .itemBody .innerContainer .block-with-text:after {
   background: white;
 }
 
+page-restaurant {
+  padding-top: constant(safe-area-inset-top);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+}
+
 page-restaurant .text-input-ios,
 page-restaurant .text-input-md {
   display: -webkit-box;
@@ -26817,7 +26891,7 @@ page-restaurant .mainContent .header {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: white;
-  height: calc(40% - 36px);
+  height: calc(50% - 36px);
   width: 100%;
 }
 
@@ -26907,14 +26981,14 @@ page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper .cate
 
 page-restaurant .mainContent .header .h.h2 {
   position: relative;
-  height: calc(100% - 55px);
+  height: calc(100% - 70px);
   background-color: white;
   padding: 0px 15px 0px 15px;
 }
 
 page-restaurant .mainContent .header .h.h3 {
   position: relative;
-  height: 15px;
+  height: 30px;
   background-color: white;
   display: -webkit-box;
   display: -webkit-flex;
@@ -26982,239 +27056,57 @@ page-restaurant .mainContent .header .h.h3 .rh3 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  line-height: 15px;
 }
 
-page-restaurant .mainContent .body {
-  height: calc(100% - 76px);
-  width: 100%;
+page-restaurant .mainContent .header .h.h3 .rh3 .lh33 {
+  height: 100%;
+  width: 55%;
 }
 
-page-restaurant .mainContent .body ion-scroll {
-  height: 90%;
-  width: 100%;
-}
-
-page-restaurant .mainContent .body .headerBody {
-  height: 10%;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  padding-left: 30px;
-  padding-right: 15px;
-}
-
-page-restaurant .mainContent .body .itemBody {
-  background-color: white;
-  height: 76px;
-  margin-bottom: 5px;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-page-restaurant .mainContent .body .itemBody .innerContainer {
-  padding-left: 30px;
+page-restaurant .mainContent .header .h.h3 .rh3 .rh33 {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  width: 100%;
-}
-
-page-restaurant .mainContent {
-  background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
-}
-
-page-restaurant .mainContent .header {
-  margin-top: 36px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: white;
-  height: calc(40% - 36px);
-  width: 100%;
-}
-
-page-restaurant .mainContent .header .h {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-page-restaurant .mainContent .header .h.h1 {
-  position: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0px 15px 0px 15px;
-  font-size: 1.5rem;
-  height: 36px;
-  background-color: white;
-  font-weight: 500;
-  top: 0;
-  z-index: 1111;
-}
-
-page-restaurant .mainContent .header .h.h4 {
-  padding: 0px 15px 0px 15px;
-  height: 40px;
-  background-color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-}
-
-page-restaurant .mainContent .header .h.h4 ion-scroll {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-}
-
-page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper .category {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 60%;
-  font-weight: 500;
-  margin-right: 5px;
-  padding: 2px 8px 2px 8px;
-}
-
-page-restaurant .mainContent .header .h.h4 ion-scroll .scroll-zoom-wrapper .category.active {
-  background-color: #007D69;
-  border-radius: 25px;
-  color: white;
-}
-
-page-restaurant .mainContent .header .h.h2 {
-  position: relative;
-  height: calc(100% - 55px);
-  background-color: white;
-  padding: 0px 15px 0px 15px;
-}
-
-page-restaurant .mainContent .header .h.h3 {
-  position: relative;
-  height: 15px;
-  background-color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0px 15px 0px 15px;
-  font-size: 0.8rem;
-}
-
-page-restaurant .mainContent .header .h.h3 .lh3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
+  width: 45%;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  width: 25%;
-  position: relative;
 }
 
-page-restaurant .mainContent .header .h.h3 .lh3 img {
-  max-width: 100%;
-  border: 0;
-  z-index: 111;
-  bottom: 0;
-  right: 0;
-  width: 65px;
-  border-radius: 50%;
-  height: 65px;
-  padding: 5px;
-}
-
-page-restaurant .mainContent .header .h.h3 .lh3::after {
-  content: '';
-  position: absolute;
-  border: 0;
-  z-index: 11;
-  bottom: 0;
-  right: 50%;
-  margin-right: -32.5px;
-  width: 65px;
-  border-radius: 50%;
-  height: 65px;
-  background-color: white;
-}
-
-page-restaurant .mainContent .header .h.h3 .rh3 {
+page-restaurant .mainContent .header .h.h3 .rh3 .rh33 .rh333 {
+  height: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 75%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+page-restaurant .mainContent .header .h.h3 .rh3 .rh33 .rh333 span {
+  margin-left: 5px;
+  color: #007D69;
+}
+
+page-restaurant .mainContent .header .h.h3 .rh3 .rh33 .rh333 img {
+  width: 15px;
+  margin-left: 5px;
 }
 
 page-restaurant .mainContent .body {
@@ -27420,6 +27312,18 @@ page-restaurant .mainContent .body .itemBody .innerContainer .block-with-text:af
   margin-top: 0.2em;
   /* bg color = bg color under block */
   background: white;
+}
+
+page-special-dish {
+  padding-top: constant(safe-area-inset-top);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
 }
 
 page-special-dish .scroll-content {

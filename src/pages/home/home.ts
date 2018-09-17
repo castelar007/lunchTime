@@ -23,35 +23,36 @@ export class HomePage {
   childScroll='false';
   restaurantPage = RestaurantPage;
   searchIsActive = false;
+  menuCityActive = false;
   constructor(private zone: NgZone,public navCtrl: NavController) {
 
   }
   ionViewDidEnter() {
-    this.content.ionScrollEnd.subscribe((data)=>{ 
+      this.content.ionScrollEnd.subscribe((data)=>{ 
 
-      let dimensions = this.content.getContentDimensions();
+        let dimensions = this.content.getContentDimensions();
 
-      let scrollTop = this.content.scrollTop;
-      let contentHeight = dimensions.contentHeight;
-      let scrollHeight = dimensions.scrollHeight;
-      console.log('1: '+scrollTop+' 2: '+contentHeight+' 3: '+scrollHeight);
-      this.zone.run(() => {
-      if((scrollTop + contentHeight) >= scrollHeight){
-        this.childScroll = 'true';
+        let scrollTop = this.content.scrollTop;
+        let contentHeight = dimensions.contentHeight;
+        let scrollHeight = dimensions.scrollHeight;
+        console.log('1: '+scrollTop+' 2: '+contentHeight+' 3: '+scrollHeight);
+        this.zone.run(() => {
+        if((scrollTop + contentHeight) >= scrollHeight){
+          this.childScroll = 'true';
 
-      }else{
-        this.childScroll = 'false';
-      }
-    });
-      console.log(this.childScroll);
-      
-      // if ( (scrollTop + contentHeight + 20) > scrollHeight) {
-      //   this.shouldScrollDown = true;
-      //   this.showScrollButton = false;
-      // } else {
-      //   this.shouldScrollDown = false;
-      //   this.showScrollButton = true;
-      // }
+        }else{
+          this.childScroll = 'false';
+        }
+      });
+        console.log(this.childScroll);
+        
+        // if ( (scrollTop + contentHeight + 20) > scrollHeight) {
+        //   this.shouldScrollDown = true;
+        //   this.showScrollButton = false;
+        // } else {
+        //   this.shouldScrollDown = false;
+        //   this.showScrollButton = true;
+        // }
 
     });
   }
@@ -68,5 +69,10 @@ export class HomePage {
   }
   clickSearch(){
     this.searchIsActive = !this.searchIsActive;
+  }
+  ciudadClick(){
+    this.menuCityActive = !this.menuCityActive;
+    console.log('click');
+    
   }
 }

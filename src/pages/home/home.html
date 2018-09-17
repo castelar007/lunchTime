@@ -1,12 +1,23 @@
 <ion-content class="mainContent"parallax>
+    <div class="menuCiudad "  [class.active]="this.menuCityActive" >
+      <div class="menuIcon" (click)='this.ciudadClick()'>
+        <ion-icon class=" downIcon" name="arrow-down" ></ion-icon>
+        
+      </div>
+    </div>
+    <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">
+        <ion-icon class="searchIcon"   name="search"></ion-icon>
+        <ion-icon  class="closeIcon" name="md-close"></ion-icon>
+      </div>
  <div class="header" >
    <div class="h h1">
         <div class="h11">
         <div style="    
         width: calc(100% - 30px);
     display: flex;
-    align-items: center;">
-        <ion-icon style="padding-right:15px; color: #BF2708;" name="arrow-down"></ion-icon>
+    align-items: center; padding-left: 25px;">
+        
+        
         <span>Tegucigalpa, F.M.</span>
         </div>
         <ion-input *ngIf='this.searchIsActive' style="
@@ -22,10 +33,7 @@
             padding-right: 15px;
             z-index: 111;
             ">  </ion-input>
-        <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">
-          <ion-icon class="searchIcon"   name="search"></ion-icon>
-          <ion-icon  class="closeIcon" name="md-close"></ion-icon>
-        </div>
+        
        </div>
        
    </div>
