@@ -8,9 +8,12 @@ import {  NavController, NavParams } from 'ionic-angular';
 export class SpecialDishPage {
   isFav = false;
   options = [
-    {name:'Opción 1 '},
-    {name:'Opción 2 '},
-    {name:'Opción 3 '},
+    {name:'Opción 1 ', isChecked:true},
+    {name:'Opción 2 ', isChecked:false},
+    {name:'Opción 3 ', isChecked:false},
+    {name:'Opción 4 ', isChecked:true},
+    {name:'Opción 5 ', isChecked:false},
+    {name:'Opción 6 ', isChecked:false},
    
   ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {

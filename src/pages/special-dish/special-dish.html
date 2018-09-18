@@ -23,17 +23,37 @@
         <div class="mainTitle">
           Personalizar
         </div>
+       
         <div class="b1">
-          <div class="title">Ingredientes </div> 
-          <div class="b11" *ngFor='let option of options'>
-            <span>{{option.name}}</span>
-            <div class="b11r">
-              <img src="assets/imgs/check.svg" alt="">
-            </div>
-          </div>
-        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor='let option of options' >
+          <ion-item  no-lines style='min-width: 100px;'>
+            <ion-label>{{option.name}}</ion-label>
+            <ion-checkbox  item-right ></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+        
+        
+       
+      </div>
         <div class="b1">
             <div class="title">Extras </div> 
+            <ion-list no-lines radio-group [(ngModel)]="this.option">
+            
+              <ion-item *ngFor='let option of options'>
+                <ion-label>{{option.name}}</ion-label>
+                <ion-radio [value]="option.name"></ion-radio>
+              </ion-item>
+            
+              
+            </ion-list>
+          
+        </div>
+        <div class="b1">
+            
         </div>
     </div>
     <div class="footer">

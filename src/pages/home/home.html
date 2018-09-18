@@ -5,10 +5,25 @@
         
       </div>
     </div>
+
     <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">
         <ion-icon class="searchIcon"   name="search"></ion-icon>
         <ion-icon  class="closeIcon" name="md-close"></ion-icon>
+       
       </div>
+      <ion-input *ngIf='this.searchIsActive' style="
+      height: 30px;
+     
+      width: calc(100% - 70px);
+      border-radius: 30px;
+      color: white;
+      margin:0px 40px 0px 30px;
+      position: fixed;
+      top: 5px;
+    
+      
+      z-index: 11111;
+      ">  </ion-input>
  <div class="header" >
    <div class="h h1">
         <div class="h11">
@@ -20,19 +35,7 @@
         
         <span>Tegucigalpa, F.M.</span>
         </div>
-        <ion-input *ngIf='this.searchIsActive' style="
-            height: 30px;
-           
-            width: 100%;
-            border-radius: 30px;
-            color: white;
-            margin-right: 15px;
-            position: absolute;
-            top: 50%;
-            margin-top: -15px;
-            padding-right: 15px;
-            z-index: 111;
-            ">  </ion-input>
+        
         
        </div>
        

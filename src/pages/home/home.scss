@@ -7,7 +7,7 @@ page-home {
         align-items: center;
         height: 100%;
         width: 100%;
-        padding: 0px 15px 0px 15px;
+        // padding: 0px 15px 0px 15px;
         margin: 0px;
     }
     @keyframes rotate {
@@ -21,7 +21,7 @@ page-home {
         background-color: white;
         z-index: 11111;
         border-radius: 50%;
-        transition: 300ms all;
+        transition: 300ms ease-in-out;
        
        
         .menuIcon{
@@ -29,7 +29,7 @@ page-home {
             .downIcon{
                 color: #BF2708; position: absolute; opacity: 1;
                 transform: rotate(0deg);
-                transition: opacity 300ms 0ms, transform 300ms 0ms;
+                transition:  transform 300ms 0ms;
             }
             
         }
@@ -43,7 +43,7 @@ page-home {
                 
                 .downIcon{
                     transform: rotate(180deg);
-                    transition: transform 300ms 0ms , opacity 200ms 100ms ;
+                    transition: transform 300ms 0ms ;
                 }
                
             }
@@ -62,17 +62,17 @@ page-home {
         // background-color: gray;
         color: white;
         align-self: center;
-        right: 15px;
+        right: 10px;
         .searchIcon{
             opacity: 1;
-            z-index:111111;
+            z-index:99999;
             position: absolute; 
             transition: opacity 300ms 0ms, transform 300ms 0ms;
             transform: rotate(0deg);
         }
         .closeIcon{
             opacity: 0;
-            z-index:111111;
+            z-index:99999;
             position: absolute; 
             transition: opacity 300ms 0ms, transform 300ms 0ms;
             transform: rotate(0deg);
