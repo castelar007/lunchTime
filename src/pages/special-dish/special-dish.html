@@ -25,12 +25,14 @@
         </div>
        
         <div class="b1">
+            <div class="title">Extras 1</div> 
+
         <ion-grid>
           <ion-row>
-            <ion-col *ngFor='let option of options' >
+            <ion-col col-6 col-md-4 col-xl-3 *ngFor='let option of options' >
           <ion-item  no-lines style='min-width: 100px;'>
             <ion-label>{{option.name}}</ion-label>
-            <ion-checkbox  item-right ></ion-checkbox>
+            <ion-checkbox style="margin:0px;" item-right ></ion-checkbox>
           </ion-item>
         </ion-col>
         </ion-row>
@@ -40,20 +42,39 @@
        
       </div>
         <div class="b1">
-            <div class="title">Extras </div> 
-            <ion-list no-lines radio-group [(ngModel)]="this.option">
-            
-              <ion-item *ngFor='let option of options'>
-                <ion-label>{{option.name}}</ion-label>
-                <ion-radio [value]="option.name"></ion-radio>
-              </ion-item>
-            
-              
-            </ion-list>
-          
+            <div class="title">Extras 2</div> 
+
+            <ion-grid>
+                <ion-row radio-group [(ngModel)]="this.option">
+                    <ion-col style="flex-direction: row; display:flex;" col-6 col-md-4 col-xl-3 *ngFor='let option of options'>
+                        <ion-label>{{option.name}}</ion-label>
+                        <ion-radio [value]="option.name"></ion-radio>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
         </div>
         <div class="b1">
-            
+            <div class="title">Extras 3</div> 
+            <ion-grid>
+              <!-- <ion-row [(ngModel)]="this.option"> -->
+                <ion-row >
+                  <ion-col col-6 col-md-4 col-xl-3 *ngFor='let option of selecciones; let i = index;' >
+                    <ion-item  no-lines>
+                      <!-- <ion-label>{{option.name}} </ion-label> -->
+                      <ion-select style="width:100%; max-width: 100%;" interface='popover' placeholder='{{option.name}}' [(ngModel)]="this.option.opciones[j]">
+                          <ion-option *ngFor='let select of option.opciones; let j = index;'  [value]="select">{{select.name}}</ion-option>
+                          
+                        </ion-select>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+        <div class="b1">
+            <div class="title">Extras 4</div> 
+            <ion-item>
+                <ion-range min='0' max='100' [(ngModel)]="step" color="primary" pin="true"></ion-range>
+            </ion-item>
         </div>
     </div>
     <div class="footer">

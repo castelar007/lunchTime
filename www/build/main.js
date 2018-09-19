@@ -849,13 +849,28 @@ var SpecialDishPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.isFav = false;
+        this.step = 0;
         this.options = [
             { name: 'Opción 1 ', isChecked: true },
             { name: 'Opción 2 ', isChecked: false },
             { name: 'Opción 3 ', isChecked: false },
-            { name: 'Opción 4 ', isChecked: true },
-            { name: 'Opción 5 ', isChecked: false },
-            { name: 'Opción 6 ', isChecked: false },
+        ];
+        this.selecciones = [
+            { name: 'Array 1', opciones: [
+                    { name: 'Opción 1 ', isChecked: true },
+                    { name: 'Opción 2 ', isChecked: false },
+                    { name: 'Opción 3 ', isChecked: false },
+                ] },
+            { name: 'Array 2', opciones: [
+                    { name: 'Opción 1 ', isChecked: true },
+                    { name: 'Opción 2 ', isChecked: false },
+                    { name: 'Opción 3 ', isChecked: false },
+                ] },
+            { name: 'Array 3', opciones: [
+                    { name: 'Opción 1 ', isChecked: true },
+                    { name: 'Opción 2 ', isChecked: false },
+                    { name: 'Opción 3 ', isChecked: false },
+                ] },
         ];
     }
     SpecialDishPage.prototype.ionViewDidLoad = function () {
@@ -870,7 +885,7 @@ var SpecialDishPage = /** @class */ (function () {
     };
     SpecialDishPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-special-dish',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n      <div class="h h1">\n        <div>\n          <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n          <span>Dish Name</span>\n        </div>\n        <div style="    display: flex;\n        justify-content: center;\n        align-items: center;\n        height: 100%;"> \n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        </div>\n      </div>\n      \n    \n    </div>\n    <div class="body" >\n        <div class="mainTitle">\n          Personalizar\n        </div>\n       \n        <div class="b1">\n        <ion-grid>\n          <ion-row>\n            <ion-col *ngFor=\'let option of options\' >\n          <ion-item  no-lines style=\'min-width: 100px;\'>\n            <ion-label>{{option.name}}</ion-label>\n            <ion-checkbox  item-right ></ion-checkbox>\n          </ion-item>\n        </ion-col>\n        </ion-row>\n        </ion-grid>\n        \n        \n       \n      </div>\n        <div class="b1">\n            <div class="title">Extras </div> \n            <ion-list no-lines radio-group [(ngModel)]="this.option">\n            \n              <ion-item *ngFor=\'let option of options\'>\n                <ion-label>{{option.name}}</ion-label>\n                <ion-radio [value]="option.name"></ion-radio>\n              </ion-item>\n            \n              \n            </ion-list>\n          \n        </div>\n        <div class="b1">\n            \n        </div>\n    </div>\n    <div class="footer">\n      <div class="f1" (click)=\'addToCart()\'>\n        Añadir\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/,
+            selector: 'page-special-dish',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n      <div class="h h1">\n        <div>\n          <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n          <span>Dish Name</span>\n        </div>\n        <div style="    display: flex;\n        justify-content: center;\n        align-items: center;\n        height: 100%;"> \n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        </div>\n      </div>\n      \n    \n    </div>\n    <div class="body" >\n        <div class="mainTitle">\n          Personalizar\n        </div>\n       \n        <div class="b1">\n            <div class="title">Extras 1</div> \n\n        <ion-grid>\n          <ion-row>\n            <ion-col col-6 col-md-4 col-xl-3 *ngFor=\'let option of options\' >\n          <ion-item  no-lines style=\'min-width: 100px;\'>\n            <ion-label>{{option.name}}</ion-label>\n            <ion-checkbox style="margin:0px;" item-right ></ion-checkbox>\n          </ion-item>\n        </ion-col>\n        </ion-row>\n        </ion-grid>\n        \n        \n       \n      </div>\n        <div class="b1">\n            <div class="title">Extras 2</div> \n\n            <ion-grid>\n                <ion-row radio-group [(ngModel)]="this.option">\n                    <ion-col style="flex-direction: row; display:flex;" col-6 col-md-4 col-xl-3 *ngFor=\'let option of options\'>\n                        <ion-label>{{option.name}}</ion-label>\n                        <ion-radio [value]="option.name"></ion-radio>\n                      </ion-col >\n                  </ion-row>\n                </ion-grid>\n        </div>\n        <div class="b1">\n            <div class="title">Extras 3</div> \n            <ion-grid>\n              <!-- <ion-row [(ngModel)]="this.option"> -->\n                <ion-row >\n                  <ion-col col-6 col-md-4 col-xl-3 *ngFor=\'let option of selecciones; let i = index;\' >\n                    <ion-item  no-lines>\n                      <!-- <ion-label>{{option.name}} </ion-label> -->\n                      <ion-select style="width:100%; max-width: 100%;" interface=\'popover\' placeholder=\'{{option.name}}\' [(ngModel)]="this.option.opciones[j]">\n                          <ion-option *ngFor=\'let select of option.opciones; let j = index;\'  [value]="select">{{select.name}}</ion-option>\n                          \n                        </ion-select>\n                      </ion-item>\n                    </ion-col>\n                  </ion-row>\n                </ion-grid>\n              </div>\n        <div class="b1">\n            <div class="title">Extras 4</div> \n            <ion-item>\n                <ion-range min=\'0\' max=\'100\' [(ngModel)]="step" color="primary" pin="true"></ion-range>\n            </ion-item>\n        </div>\n    </div>\n    <div class="footer">\n      <div class="f1" (click)=\'addToCart()\'>\n        Añadir\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
     ], SpecialDishPage);

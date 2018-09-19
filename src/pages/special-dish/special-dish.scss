@@ -19,34 +19,80 @@ page-special-dish {
 	-ms-perspective: 1000;
 	-o-perspective: 1000;
     perspective: 1000;
+    .select-md,
+    .select-ios{
+        padding: 0px;
+        padding-right: 8px;
+        .select-placeholder {
+            color:#60665A;
+            font-weight: 400;
+        }
+    }
+    .select-text{
+        font-size: 1.2rem;
+        color:#007D69;
+    }
     .list-header-ios,
     .list-header-md{
         padding: 0px;
+    }
+    .list-ios,
+    .list-md{
+        margin: 0px;
+    }
+    .item-md.item-block .item-inner ,
+    .item-ios.item-block .item-inner {
+        padding-right: 0px;
+       
     }
     .item-ios,
     .item-md{
         padding: 0px;
         margin-bottom: 3px;
-        .radio-ios {
+            .radio-md,
+              .radio-ios {
             position: static;
             display: block;
             margin: 0px;
         }
+        
     }
+    
     .label-ios,
     .label-md{
         margin: 0px;
         font-size: 1.2rem;
+        color: #60665A;
+        font-weight: 400;
     }
     .item-block {
         min-height: 0px;
         height: 16px;
     }
-    .radio-md .radio-icon,
+    .radio-md .radio-icon{
+        left: 0;
+        top: 0;
+        margin: 0;
+        border-radius: 0%;
+        position: relative;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-width: 0px;
+        border-style: unset;
+        background-color: #F2F2F2;
+    }
+    .radio-md .radio-inner {
+        background-color: unset;
+        border-radius: 0%;
+        left: 6px;
+        top: 0px;
+    }
     .radio-ios .radio-icon{
         background-color: #F2F2F2;
         width: 15px;
         height: 15px;
+        
        
     }
     .checkbox-md .checkbox-icon ,
@@ -60,11 +106,21 @@ page-special-dish {
         background-color: #F2F2F2;
         border-radius: unset;
     }
-    .radio-md .radio-checked .radio-inner,
+    .radio-md .radio-checked .radio-inner{
+        position: absolute;
+        width: 5px;
+        height: 12px;
+        border-width: 2px;
+        border-top-width: 0;
+        border-left-width: 0;
+        border-style: solid;
+        border-color: #007D69;
+        transform: rotate(45deg);
+    }
     .radio-ios .radio-checked .radio-inner {
         left: 6px;
         top: 0px;
-     }
+             }
      .checkbox-md .checkbox-checked,
      .checkbox-ios .checkbox-checked {
         border-color:unset;

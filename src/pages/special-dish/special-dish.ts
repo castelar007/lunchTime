@@ -7,14 +7,31 @@ import {  NavController, NavParams } from 'ionic-angular';
 })
 export class SpecialDishPage {
   isFav = false;
+  step = 0;
   options = [
     {name:'Opción 1 ', isChecked:true},
     {name:'Opción 2 ', isChecked:false},
     {name:'Opción 3 ', isChecked:false},
-    {name:'Opción 4 ', isChecked:true},
-    {name:'Opción 5 ', isChecked:false},
-    {name:'Opción 6 ', isChecked:false},
-   
+      
+  ];
+
+  selecciones = [
+     {name:'Array 1',opciones:[
+      {name:'Opción 1 ', isChecked:true},
+      {name:'Opción 2 ', isChecked:false},
+      {name:'Opción 3 ', isChecked:false},
+     ]},
+     {name:'Array 2',opciones:[
+      {name:'Opción 1 ', isChecked:true},
+      {name:'Opción 2 ', isChecked:false},
+      {name:'Opción 3 ', isChecked:false},
+     ]},
+     {name:'Array 3',opciones:[
+      {name:'Opción 1 ', isChecked:true},
+      {name:'Opción 2 ', isChecked:false},
+      {name:'Opción 3 ', isChecked:false},
+     ]},
+
   ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
