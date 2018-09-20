@@ -20,6 +20,7 @@
     
     </div>
     <div class="body" >
+      <ion-scroll scrollY="true" style="height: 100%; width:100%;">
         <div class="mainTitle">
           Personalizar
         </div>
@@ -72,10 +73,14 @@
               </div>
         <div class="b1">
             <div class="title">Extras 4</div> 
-            <ion-item>
-                <ion-range min='0' max='100' [(ngModel)]="step" color="primary" pin="true"></ion-range>
+            <ion-item style="height:100%; width:100%;">
+                <ion-range step='20' snaps="true" min='0' max='100' [(ngModel)]="step" color="primary" pin="true">
+                    <ion-label range-left>0</ion-label>
+                    <ion-label range-right>100</ion-label>
+                </ion-range>
             </ion-item>
         </div>
+      </ion-scroll>
     </div>
     <div class="footer">
       <div class="f1" (click)='addToCart()'>

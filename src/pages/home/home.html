@@ -47,6 +47,9 @@
           </div>
         </ion-scroll>
    </div>
+   </div>
+   <ion-scroll #scroll scrollY='true' style="height:calc(100% - 76px); width:100%; " (ionScroll)="onScroll($event)">
+   <div class="headerScroll" >
    <div class="h h3">
       <ion-slides style="width:100vw">
           <ion-slide class="slideLayout">
@@ -73,7 +76,7 @@
   <div class='headerBody'>
     Random Name
   </div>
-  <ion-scroll [scrollY]="this.childScroll">
+  <ion-scroll id='innerScroll' >
     <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>
       <div class="innerContainer">
       <div style="height: 100%;
@@ -116,4 +119,5 @@
     </div>
   </ion-scroll>
  </div>
+</ion-scroll>
 </ion-content>

@@ -1,4 +1,7 @@
 page-restaurant {
+    .scroll-content{
+        overflow-y: hidden;
+    }
     padding-top: constant(safe-area-inset-top);
 
 	-webkit-backface-visibility: hidden;
@@ -37,19 +40,20 @@ page-restaurant {
             #F7F7F7 50px
             );
             .header{
-                margin-top: 36px;
+                // margin-top: 36px;
                 display: flex;
                 align-items: flex-end;
                 flex-direction: column;
                 background-color: white;
-                height: calc(50% - 36px);
+                // height: calc(50% - 36px);
+                height: 36px;;
                 width: 100%;
                 .h{
                     position: relative;
                     display: flex;
                     width: 100%;
                     &.h1{
-                        position: fixed;
+                        position: absolute;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -61,6 +65,24 @@ page-restaurant {
                         top: 0;
                         z-index: 1111;
                     }
+                }
+            }
+            .scroll-zoom-wrapper{
+               
+                height: calc(100vh - 76px);
+            }
+                    .headerScrollRestaurante{
+                        // margin-top: 76px;
+                        display: flex;
+                        align-items: flex-end;
+                        flex-direction: column;
+                        background-color: white;
+                        height: calc(60% - 76px);
+                        width: 100%;
+                        .h{
+                            position: relative;
+                            display: flex;
+                            width: 100%;
                     &.h4{
                         padding: 0px 15px 0px 15px;
                         // position: fixed;
@@ -96,6 +118,7 @@ page-restaurant {
                         }
                         }
                     }
+            
                     &.h2{
                         
                         position: relative;

@@ -1,5 +1,7 @@
 page-home {
-    
+    .scroll-content{
+        overflow-y: hidden;
+    }
     .text-input-ios,
     .text-input-md{
         display: flex;
@@ -125,12 +127,12 @@ page-home {
             #F7F7F7 50px
             );
             .header{
-                margin-top: 76px;
+                // margin-top: 76px;
                 display: flex;
                 align-items: flex-end;
                 flex-direction: column;
                 background-color: white;
-                height: calc(60% - 80px);
+                height: 76px;
                 width: 100%;
                 .h{
                     position: relative;
@@ -140,7 +142,7 @@ page-home {
                         // transform: translate(50%);
                         transition: transform 300ms 0ms ease-in-out;
                         width: 100%;
-                        position: fixed;
+                        position: absolute;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -165,7 +167,7 @@ page-home {
                     }
                     &.h2{
                         padding: 0px 15px 0px 15px;
-                        position: fixed;
+                        position: absolute;
                         top: 36px;
                         height: 40px;
                         background-color: white;
@@ -198,6 +200,23 @@ page-home {
                         }
                         }
                     }
+                }
+            }
+            
+            .scroll-zoom-wrapper{
+                height: calc(100vh - 76px);
+            }
+                    .headerScroll{
+                        display: flex;
+                        align-items: flex-end;
+                        flex-direction: column;
+                        background-color: white;
+                        height: calc(60% - 76px);
+                        width: 100%;
+                        .h{
+                            position: relative;
+                            display: flex;
+                            width: 100%;
                     &.h3{
                         position: relative;
                         height: 87%;
@@ -246,6 +265,7 @@ page-home {
                 ion-scroll{
                     height: 90%;
                     width: 100%;
+                    
                 }
                 .headerBody{
                     height: 10%;

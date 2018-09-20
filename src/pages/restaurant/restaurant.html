@@ -17,6 +17,9 @@
         <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
       </div>
     </div>
+  </div>
+  <ion-scroll #scroll scrollY='true' style="height:calc(100% - 36px); width:100%; " (ionScroll)="onScroll($event)">
+    <div class="headerScrollRestaurante" >
     <div class="h h2">
       <div style="    height: 100%;
       width: 100%;
@@ -93,7 +96,7 @@
             <ion-icon  name="search"></ion-icon>
           </div> -->
          </div>
-         <ion-scroll [scrollY]="this.childScroll">
+         <ion-scroll id='innerScrollRestaurant'>
             <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>
               <div class="innerContainer">
              
@@ -150,4 +153,5 @@
             </div>
           </ion-scroll>
   </div>
+  </ion-scroll>
 </ion-content>
