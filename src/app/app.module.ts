@@ -18,6 +18,7 @@ import { BasketPage } from '../pages/basket/basket';
 import { ParallaxHeaderDirective } from '../directives/parallax/parallax';
 import { DishePage } from '../pages/dishe/dishe';
 import {SpecialDishPage} from '../pages/special-dish/special-dish';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 @NgModule({
   declarations: [
     MyApp,
@@ -54,6 +55,7 @@ import {SpecialDishPage} from '../pages/special-dish/special-dish';
     SpecialDishPage
   ],
   providers: [
+    NativePageTransitions,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

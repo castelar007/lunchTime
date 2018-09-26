@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams,ModalController } from 'ionic-angular';
 import {SpecialDishPage} from '../special-dish/special-dish';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 @Component({
   selector: 'page-dishe',
   templateUrl: 'dishe.html',
@@ -8,9 +9,11 @@ import {SpecialDishPage} from '../special-dish/special-dish';
 export class DishePage {
   isFav = false;
   specialDishPage = SpecialDishPage
-  constructor(private modalCtrl:ModalController,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private nativePageTransitions: NativePageTransitions,private modalCtrl:ModalController,public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  ionViewWillLeave() {
+    this.nativePageTransitions.cancelPendingTransition();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DishePage');
   }

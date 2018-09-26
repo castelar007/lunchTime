@@ -1,10 +1,158 @@
 <ion-content class="mainContent">
     <div class="header" >
-     
+      <div style="height: 100%;
+      width: calc(80% - 15px);
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;">
+        <div style="color:#60665A;">
+          <span>RTN</span>
+        </div>
+        <div style=" font-size:1.7rem;">
+          <span>Nombre de Factura</span>
+        </div>
+      </div>
+      <div style="    width: calc(20% - 15px);
+      height: 100%;
+      display: flex;
+      margin-right: 15px;
+      justify-content: flex-end;
+      align-items: center;
+  ">
+        <img style="    height: 50px;
+        width: 50px;" src="assets/imgs/locationIcon.svg" alt="">
+      </div>
     
     </div>
     <div class="body" >
+       <div style="height: 10%;
+       width: 100%;
+       color: #212C32;
+       font-size: 1.8rem;
+       font-weight: bold;
+       display: flex;
+       align-items: flex-end;
+       justify-content: flex-start;
+       padding: 0px 0px 5px 15px;">Tu Canasta</div>
+       <div style="height: 80%; width: 100%;">
+        <ion-list style="height:100%; width: 100%;">
+         <ion-scroll  scrollY="true" style="    height: 100%;
+         width: 100%;">
+          <ion-item-sliding *ngFor="let item of items">
+          <ion-item>
+              <div style="width:100%; height:76px; background-color:white; margin-bottom: 3px; display: flex;" >
+                  <!-- <div style="    height: 100%;
+                  width: 5%;
+                  display: flex;
+                  justify-content: center;
+                  padding-top: 5px;">
+                    <ion-icon style="font-size:1.5rem; font-weight:bold;" name="close"></ion-icon>
+                  </div> -->
+                  <div style="width: 22%;
+                  height: 100%;
+                  justify-content: center;
+                  align-items: center;
+                  display: flex;">
+                    <img style="width:56px; height:56px; border-radius: 5px;" [src]="item.imgUrl" alt="">
+                    <img src="" alt="">
+                  </div>
+                  <div style="    width: 50%;
+                  height: calc(100% - 20px);
+                  display: flex;
+                  flex-direction: column;
+                  text-align: justify;
+                  margin: 9px 0px;
+                  overflow: hidden;
+                  ">
+                     <div style="font-size:1.5rem; color:#212C32">Nombre Plato</div>
+                     <div class="block-with-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo odit minima doloremque aliquam optio suscipit harum maxime fuga non eaque saepe ullam et fugit, iure aspernatur recusandae similique inventore nobis?</div>
+                  </div>
+                  <div style="width: 28%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;">
+                    <div style="  display: flex;  width: 100%; height: 50%;">
+                      <div style="height: 100%;
+                      display: flex;
+                      width: 30%;
+                      justify-content: flex-end;
+                      align-items: center;
+                      font-size: 1.5rem;">
+                        <ion-icon name='add' (click)="addCant(item)"></ion-icon>
+                      </div>
+                      <div style="width: 40%;
+                      height: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      font-size: 1.5rem;">{{item.cant}}</div>
+                      <div style="width: 30%;
+                      height: 100%;
+                      display: flex;
+                      justify-content: flex-start;
+                      font-size: 1.5rem;
+                      align-items: center;">
+                        <ion-icon name='remove' (click)="removeCant(item)"></ion-icon>
+                      </div>
+                  
+                  
+                  </div>
+                    <div style="     width: 100%;
+                    height: 50%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: baseline;
+                    padding: 0px 10px 10px 0px;
+                    font-size: 2rem;
+                    color:#212C32;">
+                      <span style="font-size:0.8rem; color: #00794E">lps.</span>
+                      <span>8888</span>
+                      <span style="font-size:0.8rem; align-self: self-start;">88</span>
+                    </div>
+                  </div>
+               </div>
+            </ion-item>
+            <ion-item-options side="left">
+              <button ion-button (click)="favorite(item)">Favorite</button>
+              <button ion-button color="danger" (click)="share(item)">Share</button>
+            </ion-item-options>
+        
+            <ion-item-options side="right">
+              <button ion-button (click)="unread(item)">Unread</button>
+            </ion-item-options>
+         
+        </ion-item-sliding>
+         </ion-scroll> 
+        </ion-list>
+      </div>
+       <div style="    height: 10%;
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+       padding: 0px 15px;
+       align-items: flex-end;">
        
+          <div style="color: #212C32;
+          text-align: end;
+          font-weight: bold;
+          font-size: 1.2rem;
+          ">
+            <span>TOTAL:</span>
+          </div>
+          <div style="    color: #212C32;
+          font-size: 3rem;
+          font-weight: bold;
+          text-align: end;">
+            <span style="font-size: 1rem;
+            color: #00794E;
+            font-weight: bold;
+        ">Lps.</span>
+            <span>8,888.88</span>
+          </div>
+       
+      </div>
     </div>
     <div class="footer">
       <div class="f1">

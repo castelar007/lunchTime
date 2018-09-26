@@ -3,6 +3,7 @@ import {  NavController, NavParams,ModalController } from 'ionic-angular';
 import { Content } from 'ionic-angular';
 import { DishePage } from '../dishe/dishe';
 import {SpecialDishPage} from '../special-dish/special-dish';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html',
@@ -25,7 +26,7 @@ export class RestaurantPage {
   categorias=[{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false},{name:'cate',active:false}];
   isFav = false;
   searchIsActive = false;
-  constructor(private modalCtrl:ModalController,private zone: NgZone,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private nativePageTransitions: NativePageTransitions,private modalCtrl:ModalController,private zone: NgZone,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -79,6 +80,9 @@ export class RestaurantPage {
 
   // });
 }
+ionViewWillLeave() {
+  this.nativePageTransitions.cancelPendingTransition();
+}
   categoryClick(categoria){
     if(categoria.active == true)
       categoria.active = false;
@@ -91,6 +95,9 @@ export class RestaurantPage {
     // });
     let loginPageModal = this.modalCtrl.create(this.dish);
     loginPageModal.onDidDismiss(() => {
+       
+      console.log('dissmiss');
+      
     //on dissmiss
   });
     loginPageModal.present();

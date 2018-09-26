@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		18F5442EBE7C45909B1C43B7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6BB8CCF3FE46058C898149 /* libz.tbd */; };
@@ -37,6 +36,8 @@
 		EA37502443F242E6AE0E7F07 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E19493288AD438783BC616F /* GCDWebServerErrorResponse.m */; };
 		F580F66CD44849D5A82F79A9 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04450EEFD2B14967B0C354C2 /* CDVDevice.m */; };
 		F8CC8C48465645218C25F6AF /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F024050DE3534D76AD5D2AA7 /* GCDWebServerDataResponse.m */; };
+		2BBD6D04199941BA8BC430B1 /* NativePageTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE6C59212104205A5434642 /* NativePageTransitions.m */; };
+		F32D8F7C9B9A4E30A1C8E181 /* AppDelegate+nativepagetransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6177848DC5034FD29D23CA6B /* AppDelegate+nativepagetransitions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = lunchTime/config.xml; sourceTree = "<group>"; };
 		F93414AA480E4343BDD4FB4E /* CDVWKWebViewUIDelegate.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKWebViewUIDelegate.m; path = "cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.m"; sourceTree = "<group>"; };
 		FB051116D7D54AF6A217A2AE /* CDVStatusBar.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; };
+		CAE6C59212104205A5434642 /* NativePageTransitions.m */ = {isa = PBXFileReference; name = "NativePageTransitions.m"; path = "com.telerik.plugins.nativepagetransitions/NativePageTransitions.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6177848DC5034FD29D23CA6B /* AppDelegate+nativepagetransitions.m */ = {isa = PBXFileReference; name = "AppDelegate+nativepagetransitions.m"; path = "com.telerik.plugins.nativepagetransitions/AppDelegate+nativepagetransitions.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6A8A6AF221B8449B94457748 /* NativePageTransitions.h */ = {isa = PBXFileReference; name = "NativePageTransitions.h"; path = "com.telerik.plugins.nativepagetransitions/NativePageTransitions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		AE91FA0E5B8D4381A0C5CE21 /* AppDelegate+nativepagetransitions.h */ = {isa = PBXFileReference; name = "AppDelegate+nativepagetransitions.h"; path = "com.telerik.plugins.nativepagetransitions/AppDelegate+nativepagetransitions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +287,10 @@
 				772659871B26429DAD22128C /* GCDWebServerStreamedResponse.h */,
 				CC410490F64E4C92B1B6EF40 /* CDVIonicKeyboard.m */,
 				92C74E58E1B243FB8AC95259 /* CDVIonicKeyboard.h */,
+				CAE6C59212104205A5434642 /* NativePageTransitions.m */,
+				6177848DC5034FD29D23CA6B /* AppDelegate+nativepagetransitions.m */,
+				6A8A6AF221B8449B94457748 /* NativePageTransitions.h */,
+				AE91FA0E5B8D4381A0C5CE21 /* AppDelegate+nativepagetransitions.h */,
 			);
 			name = Plugins;
 			path = lunchTime/Plugins;
@@ -430,6 +439,8 @@
 				CD219EDE37EA4CDA8F092FA9 /* GCDWebServerFileResponse.m in Sources */,
 				E8694B2C24B14964BC2B267E /* GCDWebServerStreamedResponse.m in Sources */,
 				3CD501F3A3AA4F50A7250009 /* CDVIonicKeyboard.m in Sources */,
+				2BBD6D04199941BA8BC430B1 /* NativePageTransitions.m in Sources */,
+				F32D8F7C9B9A4E30A1C8E181 /* AppDelegate+nativepagetransitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

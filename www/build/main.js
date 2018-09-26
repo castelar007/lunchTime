@@ -1,6 +1,76 @@
 webpackJsonp([0],{
 
-/***/ 109:
+/***/ 100:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpecialDishPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SpecialDishPage = /** @class */ (function () {
+    function SpecialDishPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.isFav = false;
+        this.step = 0;
+        this.options = [
+            { name: 'Opción 1 ', isChecked: true },
+            { name: 'Opción 2 ', isChecked: false },
+            { name: 'Opción 3 ', isChecked: false },
+        ];
+        this.selecciones = [
+            { name: 'Array 1', opciones: [
+                    { name: 'Opción 1 ', isChecked: true },
+                    { name: 'Opción 2 ', isChecked: false },
+                    { name: 'Opción 3 ', isChecked: false },
+                ] },
+            { name: 'Array 2', opciones: [
+                    { name: 'Opción 1 ', isChecked: true },
+                    { name: 'Opción 2 ', isChecked: false },
+                    { name: 'Opción 3 ', isChecked: false },
+                ] },
+            { name: 'Array 3', opciones: [
+                    { name: 'Opción 1 ', isChecked: true },
+                    { name: 'Opción 2 ', isChecked: false },
+                    { name: 'Opción 3 ', isChecked: false },
+                ] },
+        ];
+    }
+    SpecialDishPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SpecialDishPage');
+    };
+    SpecialDishPage.prototype.heartClick = function () {
+        this.isFav = !this.isFav;
+    };
+    SpecialDishPage.prototype.addToCart = function () {
+        console.log('addtocart clicked');
+        this.navCtrl.popAll();
+    };
+    SpecialDishPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-special-dish',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n      <div class="h h1">\n        <div>\n          <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n          <span>Dish Name</span>\n        </div>\n        <div style="    display: flex;\n        justify-content: center;\n        align-items: center;\n        height: 100%;"> \n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        </div>\n      </div>\n      \n    \n    </div>\n    <div class="body" >\n      <ion-scroll scrollY="true" style="height: 100%; width:100%;">\n        <div class="mainTitle">\n          Personalizar\n        </div>\n       \n        <div class="b1">\n            <div class="title">Extras 1</div> \n\n        <ion-grid>\n          <ion-row>\n            <ion-col col-6 col-md-4 col-xl-3 *ngFor=\'let option of options\' >\n          <ion-item  no-lines style=\'min-width: 100px;\'>\n            <ion-label>{{option.name}}</ion-label>\n            <ion-checkbox style="margin:0px;" item-right ></ion-checkbox>\n          </ion-item>\n        </ion-col>\n        </ion-row>\n        </ion-grid>\n        \n        \n       \n      </div>\n        <div class="b1">\n            <div class="title">Extras 2</div> \n\n            <ion-grid>\n                <ion-row radio-group [(ngModel)]="this.option">\n                    <ion-col style="flex-direction: row; display:flex;" col-6 col-md-4 col-xl-3 *ngFor=\'let option of options\'>\n                        <ion-label>{{option.name}}</ion-label>\n                        <ion-radio [value]="option.name"></ion-radio>\n                      </ion-col >\n                  </ion-row>\n                </ion-grid>\n        </div>\n        <div class="b1">\n            <div class="title">Extras 3</div> \n            <ion-grid>\n              <!-- <ion-row [(ngModel)]="this.option"> -->\n                <ion-row >\n                  <ion-col col-6 col-md-4 col-xl-3 *ngFor=\'let option of selecciones; let i = index;\' >\n                    <ion-item  no-lines>\n                      <!-- <ion-label>{{option.name}} </ion-label> -->\n                      <ion-select style="width:100%; max-width: 100%;" interface=\'popover\' placeholder=\'{{option.name}}\' [(ngModel)]="this.option.opciones[j]">\n                          <ion-option *ngFor=\'let select of option.opciones; let j = index;\'  [value]="select">{{select.name}}</ion-option>\n                          \n                        </ion-select>\n                      </ion-item>\n                    </ion-col>\n                  </ion-row>\n                </ion-grid>\n              </div>\n        <div class="b1">\n            <div class="title">Extras 4</div> \n            <ion-item style="height:100%; width:100%;">\n                <ion-range step=\'20\' snaps="true" min=\'0\' max=\'100\' [(ngModel)]="step" color="primary" pin="true">\n                    <ion-label range-left>0</ion-label>\n                    <ion-label range-right>100</ion-label>\n                </ion-range>\n            </ion-item>\n        </div>\n      </ion-scroll>\n    </div>\n    <div class="footer">\n      <div class="f1" (click)=\'addToCart()\'>\n        Añadir\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], SpecialDishPage);
+    return SpecialDishPage;
+}());
+
+//# sourceMappingURL=special-dish.js.map
+
+/***/ }),
+
+/***/ 111:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +83,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 109;
+webpackEmptyAsyncContext.id = 111;
 
 /***/ }),
 
-/***/ 150:
+/***/ 152:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,22 +100,22 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 150;
+webpackEmptyAsyncContext.id = 152;
 
 /***/ }),
 
-/***/ 194:
+/***/ 195:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__favorites_favorites__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__search_search__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__account_account__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__basket_basket__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__favorites_favorites__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__search_search__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__account_account__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__basket_basket__ = __webpack_require__(202);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,14 +161,14 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 195:
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__restaurant_restaurant__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__restaurant_restaurant__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -208,15 +278,16 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 196:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dishe_dishe__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__special_dish_special_dish__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dishe_dishe__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__special_dish_special_dish__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_page_transitions__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -230,8 +301,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var RestaurantPage = /** @class */ (function () {
-    function RestaurantPage(modalCtrl, zone, navCtrl, navParams) {
+    function RestaurantPage(nativePageTransitions, modalCtrl, zone, navCtrl, navParams) {
+        this.nativePageTransitions = nativePageTransitions;
         this.modalCtrl = modalCtrl;
         this.zone = zone;
         this.navCtrl = navCtrl;
@@ -297,6 +370,9 @@ var RestaurantPage = /** @class */ (function () {
         //     // }
         // });
     };
+    RestaurantPage.prototype.ionViewWillLeave = function () {
+        this.nativePageTransitions.cancelPendingTransition();
+    };
     RestaurantPage.prototype.categoryClick = function (categoria) {
         if (categoria.active == true)
             categoria.active = false;
@@ -304,11 +380,14 @@ var RestaurantPage = /** @class */ (function () {
             categoria.active = true;
     };
     RestaurantPage.prototype.goDeep = function (item) {
+        var _this = this;
         // this.navCtrl.push(this.dish, {
         //   //parameters
         // });
         var loginPageModal = this.modalCtrl.create(this.dish);
         loginPageModal.onDidDismiss(function () {
+            _this.nativePageTransitions.cancelPendingTransition();
+            console.log('dissmiss');
             //on dissmiss
         });
         loginPageModal.present();
@@ -337,9 +416,9 @@ var RestaurantPage = /** @class */ (function () {
     ], RestaurantPage.prototype, "ionScroll", void 0);
     RestaurantPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-restaurant',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/restaurant/restaurant.html"*/'<ion-content class="mainContent">\n  \n  <div class="header" >\n    <div class="h h1">\n      <div>\n        <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n        <span>Ristorante Name</span>\n      </div>\n      <div style="    display: flex;\n      justify-content: center;\n      align-items: center;\n      height: 100%;"> \n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n      </div>\n    </div>\n  </div>\n  <ion-scroll #scroll scrollY=\'true\' style="height:calc(100% - 36px); width:100%; " (ionScroll)="onScroll($event)">\n    <div class="headerScrollRestaurante" >\n    <div class="h h2">\n      <div style="    height: 100%;\n      width: 100%;\n      background-color: antiquewhite;\n      border-radius: 25px 25px 0px 0px;">\n\n      </div>\n    </div>\n    <div class="h h3">\n      <div class="lh3">\n        <img src="assets/imgs/test.png" alt="">\n      </div>\n      <div class="rh3">\n        <div class="lh33">\n          <div style="color:#60665A" class="lh333">Esta es la dirección del restaurante en x ciudad</div>\n        </div>\n        <div class="rh33">\n          <div style="color:#212C32; height: 15px;">88:88 a.m. - 88:88 p.m. </div>\n          <div class="rh333">\n            <img src="assets/imgs/time.svg" alt="">\n            <span>88m</span>\n            <img src="assets/imgs/motoGreen.svg" alt="">\n            <span>L.88</span>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class="h h4">\n        <ion-scroll scrollX="true">\n            <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)=\'categoryClick(categoria)\'>\n              {{categoria.name}}\n            </div>\n          </ion-scroll>\n     </div>\n  </div>\n  <div class="body" >\n      <div class="headerBody">\n          <div class="h11">\n              <div style="    \n              width: calc(100% - 30px);\n          display: flex;\n          align-items: center;">\n              <span style="font-size:1.8rem; font-weight: bold;">Menu</span>\n              </div>\n              <ion-input *ngIf=\'this.searchIsActive\' style="\n                  height: 30px;\n                 \n                  width: 100%;\n                  border-radius: 30px;\n                  color: white;\n                  margin-right: 15px;\n                  position: absolute;\n                  top: 50%;\n                  margin-top: -15px;\n                  padding-right: 15px;\n                  z-index: 111;\n                  ">  </ion-input>\n              <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">\n                <ion-icon class="searchIcon"   name="search"></ion-icon>\n                <ion-icon  class="closeIcon" name="md-close"></ion-icon>\n              </div>\n             </div>\n          <!-- <div style="    width: 90%;\n          height: 100%; display: flex; align-items: center;" >\n           \n           \n          </div>\n          <div style="    width: 25px;\n          height: 25px; display: flex; align-items: center;  justify-content: center;\n          border-radius: 50%;\n          background-color: gray; \n          color: white; \n          align-self: center;">\n            <ion-icon  name="search"></ion-icon>\n          </div> -->\n         </div>\n         <ion-scroll id=\'innerScrollRestaurant\'>\n            <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>\n              <div class="innerContainer">\n             \n              <div style="height: 100%;\n              width: calc(67% - 56px)">\n                <div style="display: flex;\n                flex-grow: 1;\n                justify-content: space-between;\n                align-items: flex-start;\n                height: 15px;\n                margin: 10px 0px 5px 0px;">\n                  <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>\n                 \n                </div>\n                <div class="block-with-text" >{{item.description}}</div>\n              </div>\n              <div  *ngIf="true" style="height: 100%;\n              width: 56px;\n              display: flex;\n              justify-content: center;\n              align-items: center;">\n                  <img style="width:100%; height: 56px; border-radius: 5px; " src="{{item.imageUrl}}" alt="">\n              </div>\n              <div style="height: 100%;\n              width: 33%;\n              position: relative;\n              display: flex;\n              justify-content: center;\n              padding: 10px 15px 10px 0px;\n              flex-direction: column;"\n              > \n              <div style="    width: 100%;\n              height: 35%;\n              justify-content: flex-end;\n              position: relative;\n              display: flex;\n              align-items: flex-end;">\n                <img style="width:25%; margin-left: 10px; height: 85%;" [src]="item.favorite? \'assets/imgs/fullGreenHeart.svg\':\'assets/imgs/heartBlackB.svg\'" alt="" (click)=\'heartClick($event,item)\'>\n                <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/basket.svg" alt="" (click)=\'especialClick($event,item)\'>\n              </div>\n              <div style="width: 100%;\n              height: 65%;\n              display: flex;\n              justify-content: flex-end;\n              align-items: flex-end;\n              font-size: 1.6rem;">\n                <span style="color:#007D69; font-size: 0.5rem;">lps.</span>\n                <span>88,888</span>\n                <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>\n              </div>\n            </div>\n            </div>\n              \n            </div>\n          </ion-scroll>\n  </div>\n  </ion-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/restaurant/restaurant.html"*/,
+            selector: 'page-restaurant',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/restaurant/restaurant.html"*/'<ion-content class="mainContent">\n  \n  <div class="header" >\n    <div class="h h1">\n      <div>\n        <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n        <span>Ristorante Name</span>\n      </div>\n      <div style="    display: flex;\n      justify-content: center;\n      align-items: center;\n      height: 100%;"> \n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n      </div>\n    </div>\n  </div>\n  <ion-scroll #scroll scrollY=\'true\' style="height:calc(100% - 36px); width:100%; " (ionScroll)="onScroll($event)">\n    <div class="headerScrollRestaurante" >\n    <div class="h h2">\n      <div style="    height: 100%;\n      width: 100%;\n      /* background-color: antiquewhite; */\n      background-image:  linear-gradient(to top, rgba( 0,0,0,0.5) 0%,rgba(250,235,215,1)20%);\n      border-radius: 25px 25px 0px 0px;">\n\n      </div>\n      <div class="h22">\n          <div style="color:white; height: 15px;">88:88 a.m. - 88:88 p.m. </div>\n          <div class="rh333">\n            <img src="assets/imgs/time.svg" alt="">\n            <span>88m</span>\n            <img src="assets/imgs/motoGreen.svg" alt="">\n            <span>L.88</span>\n          </div>\n        </div>\n    </div>\n    <div class="h h3">\n      <div class="lh3">\n        <img src="assets/imgs/test.png" alt="">\n      </div>\n      <div class="rh3">\n      \n      \n        <div class="lh33">\n            <div style="color:#60665A" class="lh333">Esta es la dirección del restaurante en x ciudad</div>\n          </div>\n      </div>\n    </div>\n    <div class="h h4">\n        <ion-scroll scrollX="true">\n            <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)=\'categoryClick(categoria)\'>\n              {{categoria.name}}\n            </div>\n          </ion-scroll>\n     </div>\n  </div>\n  <div class="body" >\n      <div class="headerBody">\n          <div class="h11">\n              <div style="    \n              width: calc(100% - 30px);\n          display: flex;\n          align-items: center;">\n              <span style="font-size:1.8rem; font-weight: bold;">Menu</span>\n              </div>\n              <ion-input *ngIf=\'this.searchIsActive\' style="\n                  height: 30px;\n                 \n                  width: 100%;\n                  border-radius: 30px;\n                  color: white;\n                  margin-right: 15px;\n                  position: absolute;\n                  top: 50%;\n                  margin-top: -15px;\n                  padding-right: 15px;\n                  z-index: 111;\n                  ">  </ion-input>\n              <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">\n                <ion-icon class="searchIcon"   name="search"></ion-icon>\n                <ion-icon  class="closeIcon" name="md-close"></ion-icon>\n              </div>\n             </div>\n          <!-- <div style="    width: 90%;\n          height: 100%; display: flex; align-items: center;" >\n           \n           \n          </div>\n          <div style="    width: 25px;\n          height: 25px; display: flex; align-items: center;  justify-content: center;\n          border-radius: 50%;\n          background-color: gray; \n          color: white; \n          align-self: center;">\n            <ion-icon  name="search"></ion-icon>\n          </div> -->\n         </div>\n         <ion-scroll id=\'innerScrollRestaurant\'>\n            <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>\n              <div class="innerContainer">\n             \n              <div style="height: 100%;\n              width: calc(67% - 56px)">\n                <div style="display: flex;\n                flex-grow: 1;\n                justify-content: space-between;\n                align-items: flex-start;\n                height: 15px;\n                margin: 10px 0px 5px 0px;">\n                  <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>\n                 \n                </div>\n                <div class="block-with-text" >{{item.description}}</div>\n              </div>\n              <div  *ngIf="true" style="height: 100%;\n              width: 56px;\n              display: flex;\n              justify-content: center;\n              align-items: center;">\n                  <img style="width:100%; height: 56px; border-radius: 5px; " src="{{item.imageUrl}}" alt="">\n              </div>\n              <div style="height: 100%;\n              width: 33%;\n              position: relative;\n              display: flex;\n              justify-content: center;\n              padding: 10px 15px 10px 0px;\n              flex-direction: column;"\n              > \n              <div style="    width: 100%;\n              height: 35%;\n              justify-content: flex-end;\n              position: relative;\n              display: flex;\n              align-items: flex-end;">\n                <img style="width:25%; margin-left: 10px; height: 85%;" [src]="item.favorite? \'assets/imgs/fullGreenHeart.svg\':\'assets/imgs/heartBlackB.svg\'" alt="" (click)=\'heartClick($event,item)\'>\n                <img style="width:25%; margin-left: 10px; height: 100%;" src="assets/imgs/basket.svg" alt="" (click)=\'especialClick($event,item)\'>\n              </div>\n              <div style="width: 100%;\n              height: 65%;\n              display: flex;\n              justify-content: flex-end;\n              align-items: flex-end;\n              font-size: 1.6rem;">\n                <span style="color:#007D69; font-size: 0.5rem;">lps.</span>\n                <span>88,888</span>\n                <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>\n              </div>\n            </div>\n            </div>\n              \n            </div>\n          </ion-scroll>\n  </div>\n  </ion-scroll>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/restaurant/restaurant.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__ionic_native_native_page_transitions__["a" /* NativePageTransitions */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], RestaurantPage);
     return RestaurantPage;
 }());
@@ -348,14 +427,15 @@ var RestaurantPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DishePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__special_dish_special_dish__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__special_dish_special_dish__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_page_transitions__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -368,14 +448,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DishePage = /** @class */ (function () {
-    function DishePage(modalCtrl, navCtrl, navParams) {
+    function DishePage(nativePageTransitions, modalCtrl, navCtrl, navParams) {
+        this.nativePageTransitions = nativePageTransitions;
         this.modalCtrl = modalCtrl;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.isFav = false;
         this.specialDishPage = __WEBPACK_IMPORTED_MODULE_2__special_dish_special_dish__["a" /* SpecialDishPage */];
     }
+    DishePage.prototype.ionViewWillLeave = function () {
+        this.nativePageTransitions.cancelPendingTransition();
+    };
     DishePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DishePage');
     };
@@ -393,7 +478,7 @@ var DishePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-dishe',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/dishe/dishe.html"*/'\n<ion-content class="mainContent">\n    <div class="header" >\n      <div class="h h1">\n        <div>\n          <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n          <span>Dish Name</span>\n        </div>\n        <div style="    display: flex;\n        justify-content: center;\n        align-items: center;\n        height: 100%;"> \n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        </div>\n      </div>\n      <div class="h h2">\n        <div style="    height: 100%;\n        width: 100%;\n        background-color: antiquewhite;\n        border-radius: 25px 25px 0px 0px;">\n  \n        </div>\n      </div>\n      <div class="h h3">\n        <div class="lh3">\n          <img src="assets/imgs/test.png" alt="">\n        </div>\n        <div class="rh3">\n         <img src="assets/imgs/time.svg" alt="">\n          <span style="color:#007D69;">888m </span>\n         <img src="assets/imgs/calorias.svg" alt="">\n          <span style="color:#007D69;">8888cal </span>\n        </div>\n      </div>\n    \n    </div>\n    <div class="body" >\n      <p>\n        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati maiores nulla natus quam, porro, voluptatum repudiandae perferendis sit magni possimus nam blanditiis? At quos excepturi aut et totam quis dignissimos.\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam voluptatibus dicta in eligendi quisquam? Veritatis perspiciatis eos, quaerat delectus ad, quas, architecto quod eligendi est consequatur optio unde non consectetur.\n      </p>\n    </div>\n    <div class="footer">\n      <div class="f1" ></div>\n      <div class="f2">\n        <div class="lf2">\n        <img [src]="isFav? \'assets/imgs/fullGreenHeart.svg\':\'assets/imgs/heart.svg\'" alt="" (click)=\'heartClick()\'>\n        <img (click)=\'especialClick()\' style="height:36px; width: 36px;" src="assets/imgs/basket.svg" alt="">\n      </div>\n      <div class="rf2">\n        <span style="color:#007D69; font-size: 0.5rem;  padding-top: 10px;">lps.</span>\n        <span>88,888</span>\n        <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>\n      </div>\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/dishe/dishe.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_native_page_transitions__["a" /* NativePageTransitions */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], DishePage);
     return DishePage;
 }());
@@ -402,7 +487,7 @@ var DishePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -440,7 +525,7 @@ var FavoritesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -478,7 +563,7 @@ var SearchPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -516,7 +601,7 @@ var AccountPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -538,29 +623,38 @@ var BasketPage = /** @class */ (function () {
     function BasketPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.items = [{ imgUrl: 'assets/imgs/test.png', cant: 0 }, { imgUrl: 'assets/imgs/test.png', cant: 0 }, { imgUrl: 'assets/imgs/test.png', cant: 0 }, { imgUrl: 'assets/imgs/test.png', cant: 0 }, { imgUrl: 'assets/imgs/test.png', cant: 0 }];
     }
     BasketPage.prototype.ionViewDidLoad = function () {
     };
+    BasketPage.prototype.addCant = function (item) {
+        item.cant = item.cant + 1;
+    };
+    BasketPage.prototype.removeCant = function (item) {
+        if (item.cant != 0)
+            item.cant = item.cant - 1;
+    };
     BasketPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-basket',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n     \n    \n    </div>\n    <div class="body" >\n       \n    </div>\n    <div class="footer">\n      <div class="f1">\n        Realizar Pedido\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/,
+            selector: 'page-basket',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n      <div style="height: 100%;\n      width: calc(80% - 15px);\n      margin-left: 15px;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: flex-start;">\n        <div style="color:#60665A;">\n          <span>RTN</span>\n        </div>\n        <div style=" font-size:1.7rem;">\n          <span>Nombre de Factura</span>\n        </div>\n      </div>\n      <div style="    width: calc(20% - 15px);\n      height: 100%;\n      display: flex;\n      margin-right: 15px;\n      justify-content: flex-end;\n      align-items: center;\n  ">\n        <img style="    height: 50px;\n        width: 50px;" src="assets/imgs/locationIcon.svg" alt="">\n      </div>\n    \n    </div>\n    <div class="body" >\n       <div style="height: 10%;\n       width: 100%;\n       color: #212C32;\n       font-size: 1.8rem;\n       font-weight: bold;\n       display: flex;\n       align-items: flex-end;\n       justify-content: flex-start;\n       padding: 0px 0px 5px 15px;">Tu Canasta</div>\n       <div style="height: 80%; width: 100%;">\n        <ion-list style="height:100%; width: 100%;">\n         <ion-scroll  scrollY="true" style="    height: 100%;\n         width: 100%;">\n          <ion-item-sliding *ngFor="let item of items">\n          <ion-item>\n              <div style="width:100%; height:76px; background-color:white; margin-bottom: 3px; display: flex;" >\n                  <!-- <div style="    height: 100%;\n                  width: 5%;\n                  display: flex;\n                  justify-content: center;\n                  padding-top: 5px;">\n                    <ion-icon style="font-size:1.5rem; font-weight:bold;" name="close"></ion-icon>\n                  </div> -->\n                  <div style="width: 22%;\n                  height: 100%;\n                  justify-content: center;\n                  align-items: center;\n                  display: flex;">\n                    <img style="width:56px; height:56px; border-radius: 5px;" [src]="item.imgUrl" alt="">\n                    <img src="" alt="">\n                  </div>\n                  <div style="    width: 50%;\n                  height: calc(100% - 20px);\n                  display: flex;\n                  flex-direction: column;\n                  text-align: justify;\n                  margin: 9px 0px;\n                  overflow: hidden;\n                  ">\n                     <div style="font-size:1.5rem; color:#212C32">Nombre Plato</div>\n                     <div class="block-with-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo odit minima doloremque aliquam optio suscipit harum maxime fuga non eaque saepe ullam et fugit, iure aspernatur recusandae similique inventore nobis?</div>\n                  </div>\n                  <div style="width: 28%;\n                  height: 100%;\n                  display: flex;\n                  flex-direction: column;">\n                    <div style="  display: flex;  width: 100%; height: 50%;">\n                      <div style="height: 100%;\n                      display: flex;\n                      width: 30%;\n                      justify-content: flex-end;\n                      align-items: center;\n                      font-size: 1.5rem;">\n                        <ion-icon name=\'add\' (click)="addCant(item)"></ion-icon>\n                      </div>\n                      <div style="width: 40%;\n                      height: 100%;\n                      display: flex;\n                      justify-content: center;\n                      align-items: center;\n                      font-size: 1.5rem;">{{item.cant}}</div>\n                      <div style="width: 30%;\n                      height: 100%;\n                      display: flex;\n                      justify-content: flex-start;\n                      font-size: 1.5rem;\n                      align-items: center;">\n                        <ion-icon name=\'remove\' (click)="removeCant(item)"></ion-icon>\n                      </div>\n                  \n                  \n                  </div>\n                    <div style="     width: 100%;\n                    height: 50%;\n                    display: flex;\n                    justify-content: flex-end;\n                    align-items: baseline;\n                    padding: 0px 10px 10px 0px;\n                    font-size: 2rem;\n                    color:#212C32;">\n                      <span style="font-size:0.8rem; color: #00794E">lps.</span>\n                      <span>8888</span>\n                      <span style="font-size:0.8rem; align-self: self-start;">88</span>\n                    </div>\n                  </div>\n               </div>\n            </ion-item>\n            <ion-item-options side="left">\n              <button ion-button (click)="favorite(item)">Favorite</button>\n              <button ion-button color="danger" (click)="share(item)">Share</button>\n            </ion-item-options>\n        \n            <ion-item-options side="right">\n              <button ion-button (click)="unread(item)">Unread</button>\n            </ion-item-options>\n         \n        </ion-item-sliding>\n         </ion-scroll> \n        </ion-list>\n      </div>\n       <div style="    height: 10%;\n       width: 100%;\n       display: flex;\n       justify-content: space-between;\n       padding: 0px 15px;\n       align-items: flex-end;">\n       \n          <div style="color: #212C32;\n          text-align: end;\n          font-weight: bold;\n          font-size: 1.2rem;\n          ">\n            <span>TOTAL:</span>\n          </div>\n          <div style="    color: #212C32;\n          font-size: 3rem;\n          font-weight: bold;\n          text-align: end;">\n            <span style="font-size: 1rem;\n            color: #00794E;\n            font-weight: bold;\n        ">Lps.</span>\n            <span>8,888.88</span>\n          </div>\n       \n      </div>\n    </div>\n    <div class="footer">\n      <div class="f1">\n        Realizar Pedido\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
     ], BasketPage);
     return BasketPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=basket.js.map
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(226);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -568,7 +662,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -576,27 +670,29 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_restaurant_restaurant__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_search_search__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_basket_basket__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_parallax_parallax__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_dishe_dishe__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_special_dish_special_dish__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_account_account__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_restaurant_restaurant__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_search_search__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_basket_basket__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_parallax_parallax__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_dishe_dishe__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_special_dish_special_dish__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_native_page_transitions__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -657,6 +753,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_17__pages_special_dish_special_dish__["a" /* SpecialDishPage */]
             ],
             providers: [
+                __WEBPACK_IMPORTED_MODULE_18__ionic_native_native_page_transitions__["a" /* NativePageTransitions */],
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
@@ -670,16 +767,16 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 268:
+/***/ 269:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -717,7 +814,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 276:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -752,7 +849,7 @@ var AboutPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -787,7 +884,7 @@ var ContactPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -858,77 +955,7 @@ var ParallaxHeaderDirective = /** @class */ (function () {
 
 //# sourceMappingURL=parallax.js.map
 
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpecialDishPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var SpecialDishPage = /** @class */ (function () {
-    function SpecialDishPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.isFav = false;
-        this.step = 0;
-        this.options = [
-            { name: 'Opción 1 ', isChecked: true },
-            { name: 'Opción 2 ', isChecked: false },
-            { name: 'Opción 3 ', isChecked: false },
-        ];
-        this.selecciones = [
-            { name: 'Array 1', opciones: [
-                    { name: 'Opción 1 ', isChecked: true },
-                    { name: 'Opción 2 ', isChecked: false },
-                    { name: 'Opción 3 ', isChecked: false },
-                ] },
-            { name: 'Array 2', opciones: [
-                    { name: 'Opción 1 ', isChecked: true },
-                    { name: 'Opción 2 ', isChecked: false },
-                    { name: 'Opción 3 ', isChecked: false },
-                ] },
-            { name: 'Array 3', opciones: [
-                    { name: 'Opción 1 ', isChecked: true },
-                    { name: 'Opción 2 ', isChecked: false },
-                    { name: 'Opción 3 ', isChecked: false },
-                ] },
-        ];
-    }
-    SpecialDishPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SpecialDishPage');
-    };
-    SpecialDishPage.prototype.heartClick = function () {
-        this.isFav = !this.isFav;
-    };
-    SpecialDishPage.prototype.addToCart = function () {
-        console.log('addtocart clicked');
-        this.navCtrl.popAll();
-    };
-    SpecialDishPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-special-dish',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n      <div class="h h1">\n        <div>\n          <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="arrow-back"></ion-icon>\n          <span>Dish Name</span>\n        </div>\n        <div style="    display: flex;\n        justify-content: center;\n        align-items: center;\n        height: 100%;"> \n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n          <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>\n        </div>\n      </div>\n      \n    \n    </div>\n    <div class="body" >\n      <ion-scroll scrollY="true" style="height: 100%; width:100%;">\n        <div class="mainTitle">\n          Personalizar\n        </div>\n       \n        <div class="b1">\n            <div class="title">Extras 1</div> \n\n        <ion-grid>\n          <ion-row>\n            <ion-col col-6 col-md-4 col-xl-3 *ngFor=\'let option of options\' >\n          <ion-item  no-lines style=\'min-width: 100px;\'>\n            <ion-label>{{option.name}}</ion-label>\n            <ion-checkbox style="margin:0px;" item-right ></ion-checkbox>\n          </ion-item>\n        </ion-col>\n        </ion-row>\n        </ion-grid>\n        \n        \n       \n      </div>\n        <div class="b1">\n            <div class="title">Extras 2</div> \n\n            <ion-grid>\n                <ion-row radio-group [(ngModel)]="this.option">\n                    <ion-col style="flex-direction: row; display:flex;" col-6 col-md-4 col-xl-3 *ngFor=\'let option of options\'>\n                        <ion-label>{{option.name}}</ion-label>\n                        <ion-radio [value]="option.name"></ion-radio>\n                      </ion-col >\n                  </ion-row>\n                </ion-grid>\n        </div>\n        <div class="b1">\n            <div class="title">Extras 3</div> \n            <ion-grid>\n              <!-- <ion-row [(ngModel)]="this.option"> -->\n                <ion-row >\n                  <ion-col col-6 col-md-4 col-xl-3 *ngFor=\'let option of selecciones; let i = index;\' >\n                    <ion-item  no-lines>\n                      <!-- <ion-label>{{option.name}} </ion-label> -->\n                      <ion-select style="width:100%; max-width: 100%;" interface=\'popover\' placeholder=\'{{option.name}}\' [(ngModel)]="this.option.opciones[j]">\n                          <ion-option *ngFor=\'let select of option.opciones; let j = index;\'  [value]="select">{{select.name}}</ion-option>\n                          \n                        </ion-select>\n                      </ion-item>\n                    </ion-col>\n                  </ion-row>\n                </ion-grid>\n              </div>\n        <div class="b1">\n            <div class="title">Extras 4</div> \n            <ion-item style="height:100%; width:100%;">\n                <ion-range step=\'20\' snaps="true" min=\'0\' max=\'100\' [(ngModel)]="step" color="primary" pin="true">\n                    <ion-label range-left>0</ion-label>\n                    <ion-label range-right>100</ion-label>\n                </ion-range>\n            </ion-item>\n        </div>\n      </ion-scroll>\n    </div>\n    <div class="footer">\n      <div class="f1" (click)=\'addToCart()\'>\n        Añadir\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/special-dish/special-dish.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
-    ], SpecialDishPage);
-    return SpecialDishPage;
-}());
-
-//# sourceMappingURL=special-dish.js.map
-
 /***/ })
 
-},[202]);
+},[203]);
 //# sourceMappingURL=main.js.map

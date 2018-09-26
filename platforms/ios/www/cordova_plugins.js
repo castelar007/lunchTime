@@ -47,6 +47,14 @@ module.exports = [
     "clobbers": [
       "window.Keyboard"
     ]
+  },
+  {
+    "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+    "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+    "pluginId": "com.telerik.plugins.nativepagetransitions",
+    "clobbers": [
+      "window.plugins.nativepagetransitions"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -57,7 +65,8 @@ module.exports.metadata =
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-ionic-webview": "2.1.4",
-  "cordova-plugin-ionic-keyboard": "2.1.2"
+  "cordova-plugin-ionic-keyboard": "2.1.2",
+  "com.telerik.plugins.nativepagetransitions": "0.6.5"
 };
 // BOTTOM OF METADATA
 });

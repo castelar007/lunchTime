@@ -126,7 +126,39 @@ page-restaurant {
                         background-color: white;
                         
                         padding: 0px 15px 0px 15px;
-                        
+                        .h22{
+                            padding-right: 15px;
+                            margin: 0px 15px 0px 15px;
+                            font-size: 0.8rem;
+                            display: flex;
+                            width: calc(100% - 30px);
+                            
+                            align-items: center;
+                            line-height: 15px;
+                            flex-direction: row;
+                            position: absolute;
+                            height: 30px;
+                            bottom: 0;
+                            right: 0;
+                            justify-content: flex-end;
+                                .rh333{
+                                    height: 15px;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    
+                                    span{
+                                        margin-left: 5px;
+                                        // color: #007D69;
+                                        color: white;
+                                    }
+                                    img{
+                                        width: 15px;
+                                        margin-left: 5px;
+                                    }
+                                }
+                             
+                        }
                     }
                     &.h3{
                         position: relative;
@@ -169,41 +201,24 @@ page-restaurant {
                             }
                         }
                         .rh3{
+                          
                             display: flex;
                             width: 75%;
                             justify-content: space-between;
                             align-items: center;
                             line-height: 15px;
+                            flex-direction: column;
+                            position: relative;
+                            
                             .lh33{
                                 height: 100%;
-                                width: 55%;
+                                width: 100%;
                                 .lh333{
 
                                 }
 
                             }
-                            .rh33{
-                                position: relative;
-                                display: flex;
-                                height: 100%;
-                                flex-direction: column;
-                                width: 45%;
-                                align-items: flex-end;
-                                .rh333{
-                                    height: 15px;
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    align-items: center;
-                                    span{
-                                        margin-left: 5px;
-                                        color: #007D69;
-                                    }
-                                    img{
-                                        width: 15px;
-                                        margin-left: 5px;
-                                    }
-                                }
-                             }
+                            
                         }
                     }
                  
