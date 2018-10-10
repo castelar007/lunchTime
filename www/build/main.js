@@ -380,13 +380,11 @@ var RestaurantPage = /** @class */ (function () {
             categoria.active = true;
     };
     RestaurantPage.prototype.goDeep = function (item) {
-        var _this = this;
         // this.navCtrl.push(this.dish, {
         //   //parameters
         // });
         var loginPageModal = this.modalCtrl.create(this.dish);
         loginPageModal.onDidDismiss(function () {
-            _this.nativePageTransitions.cancelPendingTransition();
             console.log('dissmiss');
             //on dissmiss
         });
@@ -547,16 +545,46 @@ var SearchPage = /** @class */ (function () {
     function SearchPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.prices = [
+            { name: 'Menor a L.100 ', value: 0, selected: false },
+            { name: 'L.100 - L.200', value: 0, selected: false },
+            { name: 'L.200 - L.300', value: 0, selected: false },
+            { name: 'L.300 - L.400', value: 0, selected: false },
+            { name: 'L.400 - L.500', value: 0, selected: false },
+            { name: 'Mayor a L.500', value: 0, selected: false },
+        ];
+        this.options = [
+            { name: 'Postres' },
+            { name: 'Café' },
+            { name: 'Bebidas' },
+            { name: 'Comida China' },
+            { name: 'Pizza' },
+            { name: 'Hamburguesas' },
+            { name: 'Vegetariana' },
+            { name: 'Familiar' },
+            { name: 'Personal' },
+            { name: 'Golosinas' },
+            { name: 'Comida Rápida' },
+        ];
+        this.delays = [
+            { name: '15m', value: 0, selected: false },
+            { name: '30m', value: 0, selected: false },
+            { name: '45m', value: 0, selected: false },
+        ];
     }
     SearchPage.prototype.ionViewDidLoad = function () {
     };
+    SearchPage.prototype.selectPrice = function (price) {
+        price.selected = !price.selected;
+    };
     SearchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-search',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/search/search.html"*/,
+            selector: 'page-search',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/search/search.html"*/'<ion-content class="mainContainer">\n  <div class="headerContainer">\n    Filtros\n  </div>\n  <div class="bodyContainer">\n    <div class="insideBodyContainer izquierdo">\n      <div class="top">\n        <div class="header">Precio</div>\n        <div class="body">\n          <ion-scroll scrollY=\'true\' style="height:100%; width:100%; display: flex; align-items: center; ">\n              <div *ngFor=\'let price of prices\' class="priceRange" [class.active]=\'price.selected\' (click)=\'selectPrice(price)\'>\n                {{price.name}}\n              </div>\n          </ion-scroll>    \n        </div>\n      </div>\n      <div class="bottom">\n        <div class="header">Tiempo</div>\n        <div class="body">\n          <div class="delay">\n              <ion-scroll scrollX=\'true\' style="height:100%; width:100%; display: flex; align-items: center; ">\n                <div *ngFor=\'let delay of delays\' class="delayItem" [class.active]=\'delay.selected\' (click)=\'selectPrice(delay)\'> \n                  {{delay.name}}\n                </div>\n                </ion-scroll>\n          </div>\n          <div class="dayTime">\n\n          </div>  \n        </div>\n      </div>\n    </div>\n    <div class="insideBodyContainer derecho ">\n        <div class="categoria">\n        <div class="header">Categoría</div>\n        <div class="body">\n          <ion-scroll scrollY=\'true\' style="height:100%; width:100%; display: flex; align-items: center; ">\n            <ion-item  no-lines style=\'min-width: 100px;\' *ngFor=\'let option of options\'>\n                <ion-label>{{option.name}}</ion-label>\n                <ion-checkbox style="margin: 8px 8px 8px 2px;"  ></ion-checkbox>\n              </ion-item>\n            </ion-scroll>              \n        </div>\n      </div>\n    </div>\n  </div>\n  <div class="footerContainer">\n    Filtrar\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/search/search.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
     ], SearchPage);
     return SearchPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=search.js.map
@@ -638,10 +666,9 @@ var BasketPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-basket',template:/*ion-inline-start:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/'<ion-content class="mainContent">\n    <div class="header" >\n      <div style="height: 100%;\n      width: calc(80% - 15px);\n      margin-left: 15px;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: flex-start;">\n        <div style="color:#60665A;">\n          <span>RTN</span>\n        </div>\n        <div style=" font-size:1.7rem;">\n          <span>Nombre de Factura</span>\n        </div>\n      </div>\n      <div style="    width: calc(20% - 15px);\n      height: 100%;\n      display: flex;\n      margin-right: 15px;\n      justify-content: flex-end;\n      align-items: center;\n  ">\n        <img style="    height: 50px;\n        width: 50px;" src="assets/imgs/locationIcon.svg" alt="">\n      </div>\n    \n    </div>\n    <div class="body" >\n       <div style="height: 10%;\n       width: 100%;\n       color: #212C32;\n       font-size: 1.8rem;\n       font-weight: bold;\n       display: flex;\n       align-items: flex-end;\n       justify-content: flex-start;\n       padding: 0px 0px 5px 15px;">Tu Canasta</div>\n       <div style="height: 80%; width: 100%;">\n        <ion-list style="height:100%; width: 100%;">\n         <ion-scroll  scrollY="true" style="    height: 100%;\n         width: 100%;">\n          <ion-item-sliding *ngFor="let item of items">\n          <ion-item>\n              <div style="width:100%; height:76px; background-color:white; margin-bottom: 3px; display: flex;" >\n                  <!-- <div style="    height: 100%;\n                  width: 5%;\n                  display: flex;\n                  justify-content: center;\n                  padding-top: 5px;">\n                    <ion-icon style="font-size:1.5rem; font-weight:bold;" name="close"></ion-icon>\n                  </div> -->\n                  <div style="width: 22%;\n                  height: 100%;\n                  justify-content: center;\n                  align-items: center;\n                  display: flex;">\n                    <img style="width:56px; height:56px; border-radius: 5px;" [src]="item.imgUrl" alt="">\n                    <img src="" alt="">\n                  </div>\n                  <div style="    width: 50%;\n                  height: calc(100% - 20px);\n                  display: flex;\n                  flex-direction: column;\n                  text-align: justify;\n                  margin: 9px 0px;\n                  overflow: hidden;\n                  ">\n                     <div style="font-size:1.5rem; color:#212C32">Nombre Plato</div>\n                     <div class="block-with-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo odit minima doloremque aliquam optio suscipit harum maxime fuga non eaque saepe ullam et fugit, iure aspernatur recusandae similique inventore nobis?</div>\n                  </div>\n                  <div style="width: 28%;\n                  height: 100%;\n                  display: flex;\n                  flex-direction: column;">\n                    <div style="  display: flex;  width: 100%; height: 50%;">\n                      <div style="height: 100%;\n                      display: flex;\n                      width: 30%;\n                      justify-content: flex-end;\n                      align-items: center;\n                      font-size: 1.5rem;">\n                        <ion-icon name=\'add\' (click)="addCant(item)"></ion-icon>\n                      </div>\n                      <div style="width: 40%;\n                      height: 100%;\n                      display: flex;\n                      justify-content: center;\n                      align-items: center;\n                      font-size: 1.5rem;">{{item.cant}}</div>\n                      <div style="width: 30%;\n                      height: 100%;\n                      display: flex;\n                      justify-content: flex-start;\n                      font-size: 1.5rem;\n                      align-items: center;">\n                        <ion-icon name=\'remove\' (click)="removeCant(item)"></ion-icon>\n                      </div>\n                  \n                  \n                  </div>\n                    <div style="     width: 100%;\n                    height: 50%;\n                    display: flex;\n                    justify-content: flex-end;\n                    align-items: baseline;\n                    padding: 0px 10px 10px 0px;\n                    font-size: 2rem;\n                    color:#212C32;">\n                      <span style="font-size:0.8rem; color: #00794E">lps.</span>\n                      <span>8888</span>\n                      <span style="font-size:0.8rem; align-self: self-start;">88</span>\n                    </div>\n                  </div>\n               </div>\n            </ion-item>\n            <ion-item-options side="left">\n              <button ion-button (click)="favorite(item)">Favorite</button>\n              <button ion-button color="danger" (click)="share(item)">Share</button>\n            </ion-item-options>\n        \n            <ion-item-options side="right">\n              <button ion-button (click)="unread(item)">Unread</button>\n            </ion-item-options>\n         \n        </ion-item-sliding>\n         </ion-scroll> \n        </ion-list>\n      </div>\n       <div style="    height: 10%;\n       width: 100%;\n       display: flex;\n       justify-content: space-between;\n       padding: 0px 15px;\n       align-items: flex-end;">\n       \n          <div style="color: #212C32;\n          text-align: end;\n          font-weight: bold;\n          font-size: 1.2rem;\n          ">\n            <span>TOTAL:</span>\n          </div>\n          <div style="    color: #212C32;\n          font-size: 3rem;\n          font-weight: bold;\n          text-align: end;">\n            <span style="font-size: 1rem;\n            color: #00794E;\n            font-weight: bold;\n        ">Lps.</span>\n            <span>8,888.88</span>\n          </div>\n       \n      </div>\n    </div>\n    <div class="footer">\n      <div class="f1">\n        Realizar Pedido\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/beanario/Documents/Ionic_Projects/loncheando/lunchTime/src/pages/basket/basket.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], BasketPage);
     return BasketPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=basket.js.map

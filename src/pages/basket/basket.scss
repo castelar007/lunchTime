@@ -47,6 +47,16 @@ page-basket {
         /* bg color = bg color under block */
         background: white;
       }  
+      .item-ios,.item-md{
+          padding-left: 0px;
+          
+      }
+      .item-md.item-block .item-inner {
+          padding-right: 0px;
+      }           
+      .label-md,.label-ios{
+          margin: 0px;
+      }   
     .mainContent{
         
         background: repeating-linear-gradient(

@@ -1,18 +1,50 @@
-<!--
-  Generated template for the SearchPage page.
+<ion-content class="mainContainer">
+  <div class="headerContainer">
+    Filtros
+  </div>
+  <div class="bodyContainer">
+    <div class="insideBodyContainer izquierdo">
+      <div class="top">
+        <div class="header">Precio</div>
+        <div class="body">
+          <ion-scroll scrollY='true' style="height:100%; width:100%; display: flex; align-items: center; ">
+              <div *ngFor='let price of prices' class="priceRange" [class.active]='price.selected' (click)='selectPrice(price)'>
+                {{price.name}}
+              </div>
+          </ion-scroll>    
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="header">Tiempo</div>
+        <div class="body">
+          <div class="delay">
+              <ion-scroll scrollX='true' style="height:100%; width:100%; display: flex; align-items: center; ">
+                <div *ngFor='let delay of delays' class="delayItem" [class.active]='delay.selected' (click)='selectPrice(delay)'> 
+                  {{delay.name}}
+                </div>
+                </ion-scroll>
+          </div>
+          <div class="dayTime">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>search</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="insideBodyContainer derecho ">
+        <div class="categoria">
+        <div class="header">Categoría</div>
+        <div class="body">
+          <ion-scroll scrollY='true' style="height:100%; width:100%; display: flex; align-items: center; ">
+            <ion-item  no-lines style='min-width: 100px;' *ngFor='let option of options'>
+                <ion-label>{{option.name}}</ion-label>
+                <ion-checkbox style="margin: 8px 8px 8px 2px;"  ></ion-checkbox>
+              </ion-item>
+            </ion-scroll>              
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footerContainer">
+    Filtrar
+  </div>
 </ion-content>
