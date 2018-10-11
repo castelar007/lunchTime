@@ -19,6 +19,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax/parallax';
 import { DishePage } from '../pages/dishe/dishe';
 import {SpecialDishPage} from '../pages/special-dish/special-dish';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
+import { SortPageModule } from '../pages/sort/sort.module';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,6 +38,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   ],
   imports: [
     BrowserModule,
+    SortPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

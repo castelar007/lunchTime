@@ -25,7 +25,20 @@
                 </ion-scroll>
           </div>
           <div class="dayTime">
+            <div class="dayContainer">
+              <div *ngFor='let time of times' (click)='selectTime(time)' class="imgContainer">
+                <img [src]="time.selected? time.imgAlterUrl : time.imgUrl" alt="">
+              </div>
+            </div>
+            <div class="dayContainerLabel" *ngIf='this.selectedTime.length != 0'>
+              <div *ngFor='let ltime of selectedTime'>
+                {{ltime}}
 
+              </div> 
+              </div>
+            <div class="dayContainerLabel filter"  *ngIf='this.selectedTime.length == 0'>
+            Seleccione un filtro
+            </div>
           </div>  
         </div>
       </div>
@@ -44,7 +57,7 @@
       </div>
     </div>
   </div>
-  <div class="footerContainer">
+  <div class="footerContainer" (click)='goSort()'>
     Filtrar
   </div>
 </ion-content>

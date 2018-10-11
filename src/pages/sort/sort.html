@@ -1,0 +1,114 @@
+<ion-content class="mainContent" parallax>
+  <div class="menuCiudad " [class.active]="this.menuCityActive">
+    <div class="menuIcon" (click)='this.ciudadClick()'>
+      <ion-icon class=" downIcon" name="arrow-down"></ion-icon>
+
+    </div>
+  </div>
+
+  <div class="searchBar" (click)="clickSearch()" [class.active]="this.searchIsActive">
+    <ion-icon class="searchIcon" name="search"></ion-icon>
+    <ion-icon class="closeIcon" name="md-close"></ion-icon>
+
+  </div>
+  <ion-input *ngIf='this.searchIsActive' style="
+      height: 30px;
+     
+      width: calc(100% - 70px);
+      border-radius: 30px;
+      color: white;
+      margin:0px 40px 0px 30px;
+      position: fixed;
+      top: 5px;
+    
+      
+      z-index: 11111;
+      ">
+  </ion-input>
+  <div class="header">
+    <div class="h h1">
+      <div class="h11">
+        <div style="    
+        width: calc(100% - 30px);
+    display: flex;
+    align-items: center; padding-left: 25px;">
+
+
+          <span>Tegucigalpa, F.M.</span>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="h h2">
+      <ion-scroll scrollX="true">
+        <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)='categoryClick(categoria)'>
+          {{categoria.name}}
+        </div>
+      </ion-scroll>
+    </div>
+  </div>
+  <div class="body">
+    <div class="headerBody">
+      Cate
+    </div>
+    <ion-scroll scrollY='true'>
+      <div class="itemBody" *ngFor='let sort of sorts'> 
+          <div class="ibHeader">
+            <div>
+              Nombre del Plato de Comida
+            </div>
+            <div style="    display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;"> 
+            <ion-icon style="font-size:1rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1rem;  color:#CBCCCA;" name="star"></ion-icon>
+            <ion-icon style="font-size:1rem;  color:#CBCCCA;" name="star"></ion-icon>
+          </div>
+          </div>
+          <div class="ibBody">
+            <img src="assets/imgs/test.png" alt="">
+          </div>
+          <div class="ibImg">
+              <img src="assets/imgs/test.png" alt="">
+          </div>
+          <div class="ibFooter">
+            <div style="    height: 100%;
+            width: 90%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;">
+              <div style="
+                  height: 65%;
+                  width: 50%;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: flex-end;
+                  font-size: 1.6rem;">
+                <span style="color:#007D69; font-size: 0.5rem;">lps.</span>
+                <span>88,888</span>
+                <span style=" font-size: 0.5rem;     padding-bottom: 10px;">88</span>
+              </div>
+            <div style="       width: 25%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;">
+                <!-- <img style="width:25%; margin-left: 10px; height: 85%;" [src]="item.favorite? 'assets/imgs/fullGreenHeart.svg':'assets/imgs/heartBlackB.svg'" alt="" (click)='heartClick($event,item)'> -->
+                <div style="width:30%">
+                  <img src="assets/imgs/heartBlackB.svg" alt="" (click)='heartClick($event,item)'>
+                </div>
+                <div  style="width:30%">
+                    <img src="assets/imgs/basket.svg" alt="" (click)='especialClick($event,item)'>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </ion-scroll>
+  </div>
+</ion-content>
