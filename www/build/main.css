@@ -26579,20 +26579,20 @@ page-home .searchBar::before {
 }
 
 page-home .searchBar.active .searchIcon {
-  -webkit-transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
-  transition: opacity 200ms 100ms , -webkit-transform 300ms 0ms;
-  transition: transform 300ms 0ms , opacity 200ms 100ms;
-  transition: transform 300ms 0ms , opacity 200ms 100ms , -webkit-transform 300ms 0ms;
+  -webkit-transition: opacity 200ms 100ms, -webkit-transform 300ms 0ms;
+  transition: opacity 200ms 100ms, -webkit-transform 300ms 0ms;
+  transition: transform 300ms 0ms, opacity 200ms 100ms;
+  transition: transform 300ms 0ms, opacity 200ms 100ms, -webkit-transform 300ms 0ms;
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
   opacity: 0;
 }
 
 page-home .searchBar.active .closeIcon {
-  -webkit-transition: opacity 100ms 0ms , -webkit-transform 300ms 0ms;
-  transition: opacity 100ms 0ms , -webkit-transform 300ms 0ms;
-  transition: transform 300ms 0ms , opacity 100ms 0ms;
-  transition: transform 300ms 0ms , opacity 100ms 0ms , -webkit-transform 300ms 0ms;
+  -webkit-transition: opacity 100ms 0ms, -webkit-transform 300ms 0ms;
+  transition: opacity 100ms 0ms, -webkit-transform 300ms 0ms;
+  transition: transform 300ms 0ms, opacity 100ms 0ms;
+  transition: transform 300ms 0ms, opacity 100ms 0ms, -webkit-transform 300ms 0ms;
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
   opacity: 1;
@@ -26682,7 +26682,7 @@ page-home .mainContent .header .h.h1 .h11 {
 }
 
 page-home .mainContent .header .h.h2 {
-  padding: 0px 15px 0px 15px;
+  padding: 0px 20px;
   position: absolute;
   top: 36px;
   height: 40px;
@@ -26713,6 +26713,9 @@ page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper {
   -ms-flex-align: center;
   align-items: center;
   height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category {
@@ -26728,12 +26731,61 @@ page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category {
   font-weight: 500;
   margin-right: 5px;
   padding: 2px 8px 2px 8px;
+  white-space: nowrap;
 }
 
 page-home .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category.active {
   background-color: #007D69;
   border-radius: 25px;
   color: white;
+}
+
+page-home .mainContent .header .h.h2::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-top: 2px solid #007D69;
+  border-left: 2px solid #007D69;
+  opacity: 1;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
+
+page-home .mainContent .header .h.h2::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  border-top: 2px solid #007D69;
+  border-left: 2px solid #007D69;
+  opacity: 1;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
+
+page-home .mainContent .header .h.h2.activeLeft::before {
+  content: '';
+  opacity: 0;
+}
+
+page-home .mainContent .header .h.h2.activeRight::after {
+  content: '';
+  opacity: 0;
 }
 
 page-home .mainContent .scroll-zoom-wrapper {
@@ -26778,10 +26830,16 @@ page-home .mainContent .headerScroll .h.h3 {
 }
 
 page-home .mainContent .headerScroll .h.h3 .slideLayout {
+  overflow: hidden;
   border-radius: 25px 25px 0px 0px;
   background-color: wheat;
   width: calc(100% - 30px) !important;
   margin: 0px 15px 0px 15px;
+}
+
+page-home .mainContent .headerScroll .h.h3 .slideLayout img {
+  width: 100%;
+  height: 100%;
 }
 
 page-home .mainContent .headerScroll .h.h4 {
@@ -27098,6 +27156,7 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h4 ion-scroll .scroll-z
   font-weight: 500;
   margin-right: 5px;
   padding: 2px 8px 2px 8px;
+  white-space: nowrap;
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h4 ion-scroll .scroll-zoom-wrapper .category.active {
@@ -27113,6 +27172,27 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h2 {
   padding: 0px 15px 0px 15px;
 }
 
+page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 25px 25px 0px 0px;
+}
+
+page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 .footer {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), color-stop(20%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 20%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 img {
+  height: 100%;
+  width: 100%;
+}
+
 page-restaurant .mainContent .headerScrollRestaurante .h.h2 .h22 {
   padding-right: 15px;
   margin: 0px 15px 0px 15px;
@@ -27122,6 +27202,7 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h2 .h22 {
   display: -ms-flexbox;
   display: flex;
   width: calc(100% - 30px);
+  z-index: 111;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -27169,6 +27250,7 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h2 .h22 .rh333 img {
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h3 {
+  z-index: 111;
   position: relative;
   height: 30px;
   background-color: white;
@@ -28193,6 +28275,7 @@ page-sort .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category {
   font-weight: 500;
   margin-right: 5px;
   padding: 2px 8px 2px 8px;
+  white-space: nowrap;
 }
 
 page-sort .mainContent .header .h.h2 ion-scroll .scroll-zoom-wrapper .category.active {

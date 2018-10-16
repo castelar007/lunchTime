@@ -1,9 +1,10 @@
 page-home {
-    .scroll-content{
+    .scroll-content {
         overflow-y: hidden;
     }
+
     .text-input-ios,
-    .text-input-md{
+    .text-input-md {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -12,11 +13,18 @@ page-home {
         // padding: 0px 15px 0px 15px;
         margin: 0px;
     }
+
     @keyframes rotate {
-        0%{transform: rotate(180deg)}
-        100%{ transform: none}
+        0% {
+            transform: rotate(180deg)
+        }
+
+        100% {
+            transform: none
+        }
     }
-    .menuCiudad{
+
+    .menuCiudad {
         position: fixed;
         width: 40px;
         height: 40px;
@@ -24,35 +32,45 @@ page-home {
         z-index: 11111;
         border-radius: 50%;
         transition: 300ms ease-in-out;
-       
-       
-        .menuIcon{
-            height:40px; width:40px; display: flex; justify-content: center; align-items: center; position: absolute;
-            .downIcon{
-                color: #BF2708; position: absolute; opacity: 1;
+
+
+        .menuIcon {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+
+            .downIcon {
+                color: #BF2708;
+                position: absolute;
+                opacity: 1;
                 transform: rotate(0deg);
-                transition:  transform 300ms 0ms;
+                transition: transform 300ms 0ms;
             }
-            
+
         }
-        &.active{
+
+        &.active {
             background-color: white;
             width: 100vw;
             height: calc(60% - 50px);
             border-radius: 0px 0px 25px 25px;
-           
-            .menuIcon{
-                
-                .downIcon{
+
+            .menuIcon {
+
+                .downIcon {
                     transform: rotate(180deg);
-                    transition: transform 300ms 0ms ;
+                    transition: transform 300ms 0ms;
                 }
-               
+
             }
-        
+
         }
     }
-    .searchBar{
+
+    .searchBar {
         z-index: 11111;
         position: fixed;
         width: 40px;
@@ -65,28 +83,33 @@ page-home {
         color: white;
         align-self: center;
         right: 10px;
-        .searchIcon{
+
+        .searchIcon {
             opacity: 1;
-            z-index:99999;
-            position: absolute; 
+            z-index: 99999;
+            position: absolute;
             transition: opacity 300ms 0ms, transform 300ms 0ms;
             transform: rotate(0deg);
         }
-        .closeIcon{
+
+        .closeIcon {
             opacity: 0;
-            z-index:99999;
-            position: absolute; 
+            z-index: 99999;
+            position: absolute;
             transition: opacity 300ms 0ms, transform 300ms 0ms;
             transform: rotate(0deg);
         }
-        .noOpacity{
+
+        .noOpacity {
             transition: opacity 300ms 0ms;
             opacity: 0;
         }
-        &::after{
+
+        &::after {
             content: '';
         }
-        &::before{
+
+        &::before {
             z-index: 11111;
             content: '';
             width: 30px;
@@ -98,92 +121,102 @@ page-home {
             position: absolute;
             transition: width 300ms 0ms ease-in-out;
         }
-        &.active{
-            .searchIcon{
-                transition: transform 300ms 0ms , opacity 200ms 100ms ;
+
+        &.active {
+            .searchIcon {
+                transition: transform 300ms 0ms, opacity 200ms 100ms;
                 transform: rotate(360deg);
                 opacity: 0;
             }
-            .closeIcon{
-                transition: transform 300ms 0ms , opacity 100ms 0ms ;
+
+            .closeIcon {
+                transition: transform 300ms 0ms, opacity 100ms 0ms;
                 transform: rotate(360deg);
                 opacity: 1;
             }
-            &::before{
+
+            &::before {
                 z-index: 11111;
                 content: '';
-                width: calc(100vw - 30px);                                
-                
+                width: calc(100vw - 30px);
+
             }
         }
     }
-    .mainContent{
-        
-        background: repeating-linear-gradient(
-            90deg,
+
+    .mainContent {
+
+        background: repeating-linear-gradient(90deg,
             #F4F2F2,
             #F4F2F2 25px,
             #F7F7F7 25px,
-            #F7F7F7 50px
-            );
-            .header{
-                // margin-top: 76px;
+            #F7F7F7 50px);
+
+        .header {
+            // margin-top: 76px;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            background-color: white;
+            height: 76px;
+            width: 100%;
+
+            .h {
+                position: relative;
                 display: flex;
-                align-items: flex-end;
-                flex-direction: column;
-                background-color: white;
-                height: 76px;
                 width: 100%;
-                .h{
-                    position: relative;
-                    display: flex;
+
+                &.h1 {
+                    // transform: translate(50%);
+                    transition: transform 300ms 0ms ease-in-out;
                     width: 100%;
-                    &.h1{
-                        // transform: translate(50%);
-                        transition: transform 300ms 0ms ease-in-out;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0px 15px 0px 15px;
+                    font-size: 1.5rem;
+                    height: 40px;
+                    background-color: white;
+                    font-weight: 500;
+                    top: 0;
+                    z-index: 1111;
+
+                    .h11 {
+                        position: relative;
                         width: 100%;
-                        position: absolute;
                         display: flex;
+                        // padding-right: 15px;
+                        height: 100%;
+                        align-content: center;
                         justify-content: center;
-                        align-items: center;
-                        padding: 0px 15px 0px 15px;
-                        font-size: 1.5rem;
-                        height: 40px;
-                        background-color: white;
-                        font-weight: 500;
-                        top: 0;
-                        z-index: 1111;
-                        .h11{
-                            position: relative;
-                            width: 100%;
-                            display: flex;
-                            // padding-right: 15px;
-                            height: 100%;
-                            align-content: center;
-                            justify-content: center;
-                           
-                        }
-                        
+
                     }
-                    &.h2{
-                        padding: 0px 15px 0px 15px;
-                        position: absolute;
-                        top: 36px;
-                        height: 40px;
-                        background-color: white;
-                        z-index: 1111;
-                       
-                        display: flex;
-                        justify-content: space-around;
-                        ion-scroll{
-                            position: relative;
+
+                }
+
+                &.h2 {
+                    padding: 0px 20px;
+                    position: absolute;
+                    top: 36px;
+                    height: 40px;
+                    background-color: white;
+                    z-index: 1111;
+
+                    display: flex;
+                    justify-content: space-around;
+
+                    ion-scroll {
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+
+                        .scroll-zoom-wrapper {
+                            display: flex;
+                            align-items: center;
                             height: 100%;
-                            width: 100%;
-                            .scroll-zoom-wrapper{
-                                display: flex;
-                                align-items: center;
-                                height: 100%;
-                            .category{
+                            width: fit-content;
+                            .category {
                                 display: flex;
                                 justify-content: center;
                                 // align-items: center;
@@ -191,152 +224,217 @@ page-home {
                                 font-weight: 500;
                                 margin-right: 5px;
                                 padding: 2px 8px 2px 8px;
-                               &.active{
+                                white-space: nowrap;
+
+                                &.active {
                                     background-color: #007D69;
                                     border-radius: 25px;
-                                    color: white;                            
-                               }
+                                    color: white;
+                                }
                             }
                         }
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 10px;
+                        width: 5px;
+                        height: 5px;
+                        top: 50%;
+                        margin-top: -5px;
+                        transform-origin: 50% 50% 0;
+                        transform: rotate(-45deg);
+                        border-top: 2px solid #007D69;
+                        border-left: 2px solid #007D69;
+                        opacity: 1;
+                        transition: opacity 200ms;
+                    }
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        right: 10px;
+                        width: 5px;
+                        height: 5px;
+                        top: 50%;
+                        margin-top: -5px;
+                        transform-origin: 50% 50% 0;
+                        transform: rotate(135deg);
+                        border-top: 2px solid #007D69;
+                        border-left: 2px solid #007D69;
+                        opacity: 1;
+                        transition: opacity 200ms;
+                    }
+                    &.activeLeft{
+                        &::before{
+                            content: '';
+                            opacity: 0;
+                        }
+                    }
+                    &.activeRight{
+                        &::after{
+                            content: '';
+                            opacity: 0;
                         }
                     }
                 }
             }
+        }
+
+        .scroll-zoom-wrapper {
+            height: calc(100vh - 76px);
             
-            .scroll-zoom-wrapper{
-                height: calc(100vh - 76px);
-            }
-                    .headerScroll{
-                        display: flex;
-                        align-items: flex-end;
-                        flex-direction: column;
-                        background-color: white;
-                        height: calc(60% - 76px);
-                        width: 100%;
-                        .h{
-                            position: relative;
-                            display: flex;
-                            width: 100%;
-                    &.h3{
-                        position: relative;
-                        height: 87%;
-                        background-color: white;
-                        justify-content: space-around;
-                        .slideLayout{
-                            border-radius: 25px 25px 0px 0px;
-                            background-color: wheat;
-                            width: calc(100% - 30px)!important;
-                            margin: 0px 15px 0px 15px;
-                        }
-                    }
-                    &.h4{
-                        position: relative;
-                        height: 13%;
-                        background-color: white;
-                        display: flex;
-                        
-                        .lh4{
-                            padding-left: 15px;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            height: 100%; 
-                            width:40%;
-                            font-size: 1.8rem;
-                            font-weight: bold;
-                        }
-                        .rh4{
-                            padding-right: 15px;
-                            display: flex;
-                            justify-content: flex-end;
-                            align-items: center;
-                            height: 100%; 
-                            width:60%;
-                            font-size: 1rem;
-                            color: #007D69;
-                        }
-                    }
-                 
-                }
-            }
-            .body{
-                height: calc(100% - 76px);
+        }
+
+        .headerScroll {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            background-color: white;
+            height: calc(60% - 76px);
+            width: 100%;
+
+            .h {
+                position: relative;
+                display: flex;
                 width: 100%;
-                ion-scroll{
-                    height: 90%;
-                    width: 100%;
-                    
-                }
-                .headerBody{
-                    height: 10%;
-                    width: 100%;
-                    display: flex;
-                    align-items: flex-end;
-                    padding-left: 30px;
-                    font-size: 1.8rem;
-                    font-weight: bold;
-                    padding-bottom: 10px;
-                }
-                .itemBody{
-                    
+
+                &.h3 {
+                    position: relative;
+                    height: 87%;
                     background-color: white;
-                    height: 76px;
-                    margin-bottom: 5px;
-                    width: 100%;
+                    justify-content: space-around;
+
+                    .slideLayout {
+                        overflow: hidden;
+                        border-radius: 25px 25px 0px 0px;
+                        background-color: wheat;
+                        width: calc(100% - 30px) !important;
+                        margin: 0px 15px 0px 15px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                &.h4 {
+                    position: relative;
+                    height: 13%;
+                    background-color: white;
                     display: flex;
-                    .innerContainer{
-                        padding-left: 30px;
+
+                    .lh4 {
+                        padding-left: 15px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        height: 100%;
+                        width: 40%;
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                    }
+
+                    .rh4 {
                         padding-right: 15px;
                         display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
                         height: 100%;
-                        width: 100%;
-                        .block-with-text {
-                            /* for set '...' in absolute position */
-                            position: relative; 
-                            /* use this value to count block height */
-                            line-height: 1.2em;
-                            /* max-height = line-height (1.2) * lines max number (3) */
-                            max-height: 3.6em; 
-                            /* fix problem when last visible word doesn't adjoin right side  */
-                            text-align: justify;  
-                            /* place for '...' */
-                            margin-right: -1em;
-                            padding-right: 1em;
-                            margin: 5px 0px 10px 10px;
-                            height: 36px;
-                            font-size: 1rem;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            color:#60665A;
-                            text-align: justify
-                          }
-                          /* create the ... */
-                          .block-with-text:before {
-                            /* points in the end */
-                            content: '...';
-                            /* absolute position */
-                            position: absolute;
-                            /* set position to right bottom corner of block */
-                            right: 0;
-                            bottom: 0;
-                          }
-                          /* hide ... if we have text, which is less than or equal to max lines */
-                          .block-with-text:after {
-                            /* points in the end */
-                            content: '';
-                            /* absolute position */
-                            position: absolute;
-                            /* set position to right bottom corner of text */
-                            right: 0;
-                            /* set width and height */
-                            width: 1em;
-                            height: 1em;
-                            margin-top: 0.2em;
-                            /* bg color = bg color under block */
-                            background: white;
-                          }
+                        width: 60%;
+                        font-size: 1rem;
+                        color: #007D69;
+                    }
+                }
+
+            }
+        }
+
+        .body {
+            height: calc(100% - 76px);
+            width: 100%;
+
+            ion-scroll {
+                height: 90%;
+                width: 100%;
+
+            }
+
+            .headerBody {
+                height: 10%;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                padding-left: 30px;
+                font-size: 1.8rem;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+
+            .itemBody {
+
+                background-color: white;
+                height: 76px;
+                margin-bottom: 5px;
+                width: 100%;
+                display: flex;
+
+                .innerContainer {
+                    padding-left: 30px;
+                    padding-right: 15px;
+                    display: flex;
+                    height: 100%;
+                    width: 100%;
+
+                    .block-with-text {
+                        /* for set '...' in absolute position */
+                        position: relative;
+                        /* use this value to count block height */
+                        line-height: 1.2em;
+                        /* max-height = line-height (1.2) * lines max number (3) */
+                        max-height: 3.6em;
+                        /* fix problem when last visible word doesn't adjoin right side  */
+                        text-align: justify;
+                        /* place for '...' */
+                        margin-right: -1em;
+                        padding-right: 1em;
+                        margin: 5px 0px 10px 10px;
+                        height: 36px;
+                        font-size: 1rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: #60665A;
+                        text-align: justify
+                    }
+
+                    /* create the ... */
+                    .block-with-text:before {
+                        /* points in the end */
+                        content: '...';
+                        /* absolute position */
+                        position: absolute;
+                        /* set position to right bottom corner of block */
+                        right: 0;
+                        bottom: 0;
+                    }
+
+                    /* hide ... if we have text, which is less than or equal to max lines */
+                    .block-with-text:after {
+                        /* points in the end */
+                        content: '';
+                        /* absolute position */
+                        position: absolute;
+                        /* set position to right bottom corner of text */
+                        right: 0;
+                        /* set width and height */
+                        width: 1em;
+                        height: 1em;
+                        margin-top: 0.2em;
+                        /* bg color = bg color under block */
+                        background: white;
                     }
                 }
             }
+        }
     }
 }
