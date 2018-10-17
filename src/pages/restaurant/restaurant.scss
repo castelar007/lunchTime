@@ -84,39 +84,87 @@ page-restaurant {
                             display: flex;
                             width: 100%;
                     &.h4{
-                        padding: 0px 15px 0px 15px;
-                        // position: fixed;
+                        
+
+                        padding: 0px 20px;
+                        // position: absolute;
                         // top: 36px;
                         height: 40px;
                         background-color: white;
-                        // z-index: 1111;
-                       
+                        z-index: 1111;
+    
                         display: flex;
                         justify-content: space-around;
-                        ion-scroll{
+    
+                        ion-scroll {
                             position: relative;
                             height: 100%;
                             width: 100%;
-                            .scroll-zoom-wrapper{
+    
+                            .scroll-zoom-wrapper {
                                 display: flex;
                                 align-items: center;
                                 height: 100%;
-                            .category{
-                                display: flex;
-                                justify-content: center;
-                                // align-items: center;
-                                height: 60%;
-                                font-weight: 500;
-                                margin-right: 5px;
-                                padding: 2px 8px 2px 8px;
-                                white-space: nowrap;
-                               &.active{
-                                    background-color: #007D69;
-                                    border-radius: 25px;
-                                    color: white;                            
-                               }
+                                width: fit-content;
+                                .category {
+                                    display: flex;
+                                    justify-content: center;
+                                    // align-items: center;
+                                    height: 60%;
+                                    font-weight: 500;
+                                    margin-right: 5px;
+                                    padding: 2px 8px 2px 8px;
+                                    white-space: nowrap;
+    
+                                    &.active {
+                                        background-color: #007D69;
+                                        border-radius: 25px;
+                                        color: white;
+                                    }
+                                }
                             }
                         }
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            left: 10px;
+                            width: 5px;
+                            height: 5px;
+                            top: 50%;
+                            margin-top: -5px;
+                            transform-origin: 50% 50% 0;
+                            transform: rotate(-45deg);
+                            border-top: 2px solid #007D69;
+                            border-left: 2px solid #007D69;
+                            opacity: 1;
+                            transition: opacity 200ms;
+                        }
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            right: 10px;
+                            width: 5px;
+                            height: 5px;
+                            top: 50%;
+                            margin-top: -5px;
+                            transform-origin: 50% 50% 0;
+                            transform: rotate(135deg);
+                            border-top: 2px solid #007D69;
+                            border-left: 2px solid #007D69;
+                            opacity: 1;
+                            transition: opacity 200ms;
+                        }
+                        &.activeLeft{
+                            &::before{
+                                content: '';
+                                opacity: 0;
+                            }
+                        }
+                        &.activeRight{
+                            &::after{
+                                content: '';
+                                opacity: 0;
+                            }
                         }
                     }
             

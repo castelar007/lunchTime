@@ -47,8 +47,8 @@
           </div>
       </div>
     </div>
-    <div class="h h4">
-        <ion-scroll scrollX="true">
+    <div id='sideScrollRestaurant' class="h h4 activeLeft" >
+        <ion-scroll id='restaurantScroll' #sideScroll scrollX="true">
             <div [class.active]="categoria.active" class="category" *ngFor="let categoria of categorias" (click)='categoryClick(categoria)'>
               {{categoria.name}}
             </div>

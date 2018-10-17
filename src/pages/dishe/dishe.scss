@@ -78,6 +78,17 @@ page-dishe {
                         background-color: white;
                         
                         padding: 0px 15px 0px 15px;
+
+                        .imgHolder{
+                            height: 100%;
+                            width: 100%;
+                            overflow: hidden;
+                            border-radius: 25px 25px 0px 0px;
+                            img{
+                                height: 100%;
+                                width: 100%
+                            }
+                        }
                         
                     }
                     &.h3{

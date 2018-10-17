@@ -26171,6 +26171,18 @@ page-dishe .mainContent .header .h.h2 {
   padding: 0px 15px 0px 15px;
 }
 
+page-dishe .mainContent .header .h.h2 .imgHolder {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 25px 25px 0px 0px;
+}
+
+page-dishe .mainContent .header .h.h2 .imgHolder img {
+  height: 100%;
+  width: 100%;
+}
+
 page-dishe .mainContent .header .h.h3 {
   position: relative;
   height: 30px;
@@ -27113,9 +27125,10 @@ page-restaurant .mainContent .headerScrollRestaurante .h {
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h4 {
-  padding: 0px 15px 0px 15px;
+  padding: 0px 20px;
   height: 40px;
   background-color: white;
+  z-index: 1111;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27141,6 +27154,9 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h4 ion-scroll .scroll-z
   -ms-flex-align: center;
   align-items: center;
   height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h4 ion-scroll .scroll-zoom-wrapper .category {
@@ -27163,6 +27179,54 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h4 ion-scroll .scroll-z
   background-color: #007D69;
   border-radius: 25px;
   color: white;
+}
+
+page-restaurant .mainContent .headerScrollRestaurante .h.h4::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-top: 2px solid #007D69;
+  border-left: 2px solid #007D69;
+  opacity: 1;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
+
+page-restaurant .mainContent .headerScrollRestaurante .h.h4::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  margin-top: -5px;
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  border-top: 2px solid #007D69;
+  border-left: 2px solid #007D69;
+  opacity: 1;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
+
+page-restaurant .mainContent .headerScrollRestaurante .h.h4.activeLeft::before {
+  content: '';
+  opacity: 0;
+}
+
+page-restaurant .mainContent .headerScrollRestaurante .h.h4.activeRight::after {
+  content: '';
+  opacity: 0;
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h2 {

@@ -49,7 +49,7 @@ export class HomePage {
       // console.log(this.ionScroll);
       // console.log(document.getElementsByClassName('headerScroll')[0].clientHeight);
       document.getElementById('innerScroll').firstChild['style'].overflowY = 'hidden';
-      document.getElementById('sideScroll').classList.add('activeLeft');
+      
       let contentHeight =  document.getElementsByClassName('headerScroll')[0].clientHeight;
       this.ionScroll.addScrollEventListener((event:Event)=>{
         //  console.log(event);
@@ -67,11 +67,11 @@ export class HomePage {
               console.log(this.childScroll);
       });
 
-      let contentWidth = document.getElementsByClassName('scroll-zoom-wrapper')[0].clientWidth - document.getElementsByClassName('scroll-content')[0].clientWidth;
-      let deviceWidth = document.getElementsByClassName('scroll-content')[0].clientWidth;
-      console.log('ancho: '+contentWidth);
-      console.log( document.getElementsByClassName('scroll-zoom-wrapper')[0].clientWidth);
-      console.log(document.getElementsByClassName('scroll-content')[0].clientWidth);
+      let contentWidth = document.querySelector('#homeScroll .scroll-zoom-wrapper').clientWidth -  document.querySelector('#homeScroll .scroll-content').clientWidth;
+      
+      // console.log('ancho: '+contentWidth);
+      // console.log( document.getElementsByClassName('scroll-zoom-wrapper')[0].clientWidth);
+      // console.log(document.getElementsByClassName('scroll-content')[0].clientWidth);
       
       this.sideScroll.addScrollEventListener((event:Event)=>{
          console.log(event);
