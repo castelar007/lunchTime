@@ -45,6 +45,6 @@ export class SpecialDishPage {
   addToCart(){
     console.log('addtocart clicked');
     
-    this.navCtrl.popAll();
+    this.navCtrl.pop();
   }
 }

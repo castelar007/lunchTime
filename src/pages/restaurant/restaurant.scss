@@ -189,7 +189,7 @@ page-restaurant {
                               
                             }
                             img{
-                               
+                                object-fit: cover;
                                 height: 100%;
                                 width: 100%
                             }
@@ -245,6 +245,7 @@ page-restaurant {
                             width: 25%;
                             position: relative;
                             img{
+                                object-fit: cover;
                                 max-width: 100%;
                                 // position: absolute;
                                 border: 0;

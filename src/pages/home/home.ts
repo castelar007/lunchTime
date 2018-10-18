@@ -12,6 +12,7 @@ export class HomePage {
   @ViewChild('scroll') ionScroll: any;
   @ViewChild('sideScroll') sideScroll: any;
   categorias=[
+    {name:'Todos',active:true},
     {name:'Postres',active:false},
     {name:'Café',active:false},
     {name:'Bebidas',active:false},
@@ -124,10 +125,10 @@ export class HomePage {
     // });
   }
   categoryClick(categoria){
-    if(categoria.active == true)
-      categoria.active = false;
-    else if(categoria.active == false)
-      categoria.active = true;   
+    this.categorias.forEach(element => {
+       element.active = false;
+    });
+    categoria.active = true;
   }
   goDeep(item){
     this.navCtrl.push(this.restaurantPage, {

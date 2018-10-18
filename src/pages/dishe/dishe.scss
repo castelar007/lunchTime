@@ -85,6 +85,7 @@ page-dishe {
                             overflow: hidden;
                             border-radius: 25px 25px 0px 0px;
                             img{
+                                object-fit: cover;
                                 height: 100%;
                                 width: 100%
                             }
@@ -106,6 +107,7 @@ page-dishe {
                             width: 25%;
                             position: relative;
                             img{
+                                object-fit: cover;
                                 max-width: 100%;
                                 // position: absolute;
                                 border: 0;
