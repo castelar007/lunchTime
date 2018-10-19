@@ -25706,6 +25706,7 @@ page-basket .block-with-text {
   text-overflow: ellipsis;
   color: #60665A;
   text-align: justify;
+  white-space: normal;
 }
 
 page-basket .block-with-text:before {
@@ -25745,6 +25746,11 @@ page-basket .label-md, page-basket .label-ios {
   margin: 0px;
 }
 
+page-basket .text-input-md,
+page-basket .text-input-ios {
+  margin: 0px;
+}
+
 page-basket .mainContent {
   background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
 }
@@ -25754,10 +25760,11 @@ page-basket .mainContent .header {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   background-color: white;
   height: 76px;
   width: 100%;

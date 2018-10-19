@@ -20,7 +20,8 @@ page-basket {
         overflow: hidden;
         text-overflow: ellipsis;
         color:#60665A;
-        text-align: justify
+        text-align: justify;
+        white-space: normal;
       }
       /* create the ... */
       .block-with-text:before {
@@ -57,6 +58,10 @@ page-basket {
       .label-md,.label-ios{
           margin: 0px;
       }   
+      .text-input-md,
+      .text-input-ios{
+        margin: 0px;
+      }
     .mainContent{
         
         background: repeating-linear-gradient(
@@ -69,8 +74,8 @@ page-basket {
             .header{
                 // margin-top: 36px;
                 display: flex;
-                align-items: flex-end;
-                // flex-direction: column;
+                // align-items: flex-end;
+                flex-direction: column;
                 background-color: white;
                 height: 76px;
                 width: 100%;
