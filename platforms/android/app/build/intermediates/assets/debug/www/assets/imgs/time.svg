@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.63 48.63">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffffff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <title>time</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="clock">
+        <path class="cls-1" d="M24.31,0A24.32,24.32,0,1,0,48.63,24.31,24.32,24.32,0,0,0,24.31,0Zm0,45.59A21.28,21.28,0,1,1,45.59,24.31,21.27,21.27,0,0,1,24.31,45.59Zm9.12-22.8h-7.6V12.16a1.52,1.52,0,0,0-3,0V24.31a1.52,1.52,0,0,0,1.52,1.52h9.12a1.52,1.52,0,1,0,0-3Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -20,10 +20,11 @@
     
     </div>
     <div class="body" >
-      <ion-scroll scrollY="true" style="height: 100%; width:100%;">
         <div class="mainTitle">
-          Personalizar
-        </div>
+            Personalizar
+          </div>
+      <ion-scroll scrollY="true" style="height: 100%; width:100%;">
+       
        
         <div class="b1">
             <div class="title">Extras 1</div> 
@@ -83,8 +84,34 @@
       </ion-scroll>
     </div>
     <div class="footer">
+        <div style="    height: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 15px;
+        align-items: flex-end;">
+        
+           <div style="color: #212C32;
+           text-align: end;
+           font-weight: bold;
+           font-size: 1.2rem;
+           ">
+             <span>TOTAL:</span>
+           </div>
+           <div style="    color: #212C32;
+           font-size: 3rem;
+           font-weight: bold;
+           text-align: end;">
+             <span style="font-size: 1rem;
+             color: #00794E;
+             font-weight: bold;
+         ">Lps.</span>
+             <span>8,888.88</span>
+           </div>
+        
+       </div>
       <div class="f1" (click)='addToCart()'>
-        Añadir
+       <span>Añadir</span> 
       </div>
     </div>
 </ion-content>

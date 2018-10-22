@@ -1,3 +1,37 @@
 page-favorites {
-
+    .main-content{
+        background: repeating-linear-gradient(
+            90deg,
+            #F4F2F2,
+            #F4F2F2 25px,
+            #F7F7F7 25px,
+            #F7F7F7 50px
+            );
+        .header{
+            height: 76px;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .body{
+            height: calc(100% - 76px);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .bodyHeader{
+                height: 10%;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                padding-left: 30px;
+                font-size: 1.8rem;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+        }
+    }
 }

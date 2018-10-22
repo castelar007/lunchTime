@@ -145,7 +145,7 @@ page-home {
     }
 
     .mainContent {
-
+        
         background: repeating-linear-gradient(90deg,
             #F4F2F2,
             #F4F2F2 25px,
@@ -354,6 +354,7 @@ page-home {
 
         .body {
             height: calc(100% - 76px);
+           
             width: 100%;
 
             ion-scroll {

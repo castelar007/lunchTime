@@ -279,7 +279,7 @@ page-special-dish {
                 }
             }
             .body{
-                height: calc(100% - 116px);
+                height: calc(100% - 146px);
                 width: 100%;
                 display: flex;
                 justify-content: flex-start;
@@ -339,7 +339,7 @@ page-special-dish {
             }
             .footer{
                 position: relative;
-                height: 86px;
+                height: 116px;
                 width: 100%;
                 display: flex;
                 justify-content: flex-start;
@@ -355,6 +355,22 @@ page-special-dish {
                    
                     border-top: 0;
                     justify-content: space-around;
+                    
+                .f1{
+                    z-index: 11111;
+                    width: 95%;
+                    height: 60%;
+                    color:white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    position: relative;
+                    span{
+                        position: relative;
+                        z-index: 11111;
+                    }
                     &::after{
                         content: '';
                         position: absolute;
@@ -370,16 +386,6 @@ page-special-dish {
                         margin-left: -47.2%;
                         z-index: 1111;
                     }
-                .f1{
-                    z-index: 11111;
-                    width: 95%;
-                    height: 20px;
-                    color:white;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 1.8rem;
-                    font-weight: 500;
                 }
                 
             }
