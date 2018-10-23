@@ -1,10 +1,42 @@
 <ion-content class="main-content">
   <div class="header">
-
+    <ion-scroll scrollX='true'>
+      <div class="imgContainer" *ngFor='let favorito of resFavoritos'>
+        <img src="assets/imgs/test.png" alt="">
+      </div>
+    </ion-scroll>
   </div>
   <div class="body">
-      <div class="bodyHeader">
-        Favoritos
-      </div>  
+    <div class="bodyHeader">
+      Favoritos
+    </div>
+    <ion-grid class="bodyContainer">
+      <ion-scroll scrollY="true" >
+        <ion-row>
+          <ion-col style="background-color:white;" col-6 col-md-4 col-xl-3 *ngFor="let favorito of resFavoritos">
+            <div class="foodContainer">
+              <div class="header">
+                  <span>Titulo del Plato</span>
+                  <ion-icon name='close'></ion-icon>
+              </div>
+              <div class="body">
+                  <img src="assets/imgs/test.png" alt="">
+              </div>
+              <div class="footer">
+                <div class="price">
+                    <span style="    color: #007D69;  font-size: 1rem;">lps.</span>
+                <span style=" font-size: 2rem; letter-spacing: -1px;">88,888</span>
+                <span style=" font-size: 1rem;     padding-bottom: 12px; letter-spacing: -1px;">88</span>
+                </div>
+                <div>
+                    <img  src="assets/imgs/basket.svg" alt="" (click)='especialClick($event,item)'>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-scroll>
+    </ion-grid>
+
   </div>
 </ion-content>

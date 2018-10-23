@@ -7,7 +7,8 @@ import {NavController, NavParams } from 'ionic-angular';
   templateUrl: 'favorites.html',
 })
 export class FavoritesPage {
-
+  // resFavoritos = [7];
+  resFavoritos = [1,2,3,4,5,6,7];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

@@ -1,4 +1,7 @@
 page-favorites {
+    .scroll-content{
+        overflow-y: hidden;
+    }
     .main-content{
         background: repeating-linear-gradient(
             90deg,
@@ -14,6 +17,51 @@ page-favorites {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            ion-scroll{
+                height: 100%;
+                width: 100%;
+            }
+            .scroll-content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .scroll-zoom-wrapper{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .imgContainer{
+                height: 56px;
+                width: 56px;
+                margin: 0px 10px;
+                // overflow: hidden;
+                z-index: 1111;
+                position: relative;
+                img{
+                    position: relative;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                    z-index: 1111;
+                }
+                &::after{
+                   content: '';
+                   height: 66px;
+                   width: 66px;
+                   z-index: 111;
+                   border-radius: 50%;
+                   background-color: #F4F2F2;
+                   position: absolute;
+                   top: 50%;
+                   margin-top: -33px;
+                   left: 50%;
+                   margin-left: -33px;
+                }
+            }
         }
         .body{
             height: calc(100% - 76px);
@@ -31,6 +79,63 @@ page-favorites {
                 font-size: 1.8rem;
                 font-weight: bold;
                 padding-bottom: 10px;
+            }
+            .bodyContainer{
+                background-color: white;
+                height: 90%;
+                width: 100%;
+                ion-scroll{
+                    height: 100%;
+                    width: 100%;
+                }
+                .foodContainer{
+                    height: 30vh;
+                    width: 100%;
+                    background-color: white;
+                    .header{
+                        display: flex;
+                        font-size: 1.5rem;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-weight: bold;
+                        background-color: white;
+                        height: 18%;
+                        ion-icon{
+                            padding-right: 3px;
+                        }
+                    }
+                    .body{
+                        background-color: white;
+                        height: 62%;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            border-radius: 5px;
+                        }
+                    }
+                    .footer{
+                        background-color: white;
+                        height:20% ;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        .price{
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-end;
+                        }
+                        img{
+                            object-fit: cover;
+                            width: 20px;
+                            height: 20px;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                
             }
         }
     }

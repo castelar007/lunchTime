@@ -26182,7 +26182,7 @@ page-dishe .mainContent .header .h.h2 .imgHolder {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 page-dishe .mainContent .header .h.h2 .imgHolder img {
@@ -26426,6 +26426,10 @@ page-dishe .mainContent .footer .f2 .rf2 {
   font-size: 2.5rem;
 }
 
+page-favorites .scroll-content {
+  overflow-y: hidden;
+}
+
 page-favorites .main-content {
   background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
 }
@@ -26446,6 +26450,78 @@ page-favorites .main-content .header {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
+}
+
+page-favorites .main-content .header ion-scroll {
+  height: 100%;
+  width: 100%;
+}
+
+page-favorites .main-content .header .scroll-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+page-favorites .main-content .header .scroll-zoom-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-favorites .main-content .header .imgContainer {
+  height: 56px;
+  width: 56px;
+  margin: 0px 10px;
+  z-index: 1111;
+  position: relative;
+}
+
+page-favorites .main-content .header .imgContainer img {
+  position: relative;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: 1111;
+}
+
+page-favorites .main-content .header .imgContainer::after {
+  content: '';
+  height: 66px;
+  width: 66px;
+  z-index: 111;
+  border-radius: 50%;
+  background-color: #F4F2F2;
+  position: absolute;
+  top: 50%;
+  margin-top: -33px;
+  left: 50%;
+  margin-left: -33px;
 }
 
 page-favorites .main-content .body {
@@ -26485,6 +26561,101 @@ page-favorites .main-content .body .bodyHeader {
   font-size: 1.8rem;
   font-weight: bold;
   padding-bottom: 10px;
+}
+
+page-favorites .main-content .body .bodyContainer {
+  background-color: white;
+  height: 90%;
+  width: 100%;
+}
+
+page-favorites .main-content .body .bodyContainer ion-scroll {
+  height: 100%;
+  width: 100%;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer {
+  height: 30vh;
+  width: 100%;
+  background-color: white;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: white;
+  height: 18%;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .header ion-icon {
+  padding-right: 3px;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .body {
+  background-color: white;
+  height: 62%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .body img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .footer {
+  background-color: white;
+  height: 20%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .footer .price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+page-favorites .main-content .body .bodyContainer .foodContainer .footer img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
 }
 
 page-home .scroll-content {
@@ -26915,7 +27086,7 @@ page-home .mainContent .headerScroll .h.h3 {
 
 page-home .mainContent .headerScroll .h.h3 .slideLayout {
   overflow: hidden;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
   background-color: wheat;
   width: calc(100% - 30px) !important;
   margin: 0px 15px 0px 15px;
@@ -27316,7 +27487,7 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 {
   height: 100%;
   width: 100%;
   position: relative;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 .footer {
@@ -28618,7 +28789,7 @@ page-sort .mainContent .body .itemBody .ibBody {
 page-sort .mainContent .body .itemBody .ibBody img {
   width: 90%;
   height: 100%;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 page-sort .mainContent .body .itemBody .ibImg {
