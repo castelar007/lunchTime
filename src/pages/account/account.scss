@@ -1,3 +1,100 @@
 page-account {
+    .mainContent {
+        
+        background: repeating-linear-gradient(90deg,
+            #F4F2F2,
+            #F4F2F2 25px,
+            #F7F7F7 25px,
+            #F7F7F7 50px);
+        .header{
+            background-color: white;
+            height: 76px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 0px 15px;
+            letter-spacing: -1px;
+            .points{
+                color: #60665A;
+                font-size: 1.6rem;
+                span{
+                    font-size: 1rem;
+                }
+            }
+        }   
+        .body{
+            background-color: white;
+            height: calc(100% - 76px);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .dona{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                background-color: rgba(33,44,50,0.1);
+                height: 250px;
+                width: 250px;
+                // opacity: 0.1;
+                border-radius: 50%;
+                &::after{
+                    content: '';
+                    height: 14vh;
+                    width: 14vh;
+                    position: absolute;
+                    background-color: white;
+                    border-radius: 50%;
+                    left: 50%;
+                    margin-left: -7vh;
+                    top: 50%;
+                    margin-top: -7vh;
+                }
+                
+            }
+            .track {
+                stroke: magenta;
 
+              }
+              
+              
+              .a{
+                  position: absolute;
+                  height: 50px;
+                  width: 50px;
+                  offset-path:path('M 125 125 m -87.5, 0 a 75,75 0 1,0 175,0 a 75,75 0 1,0 -175,0');
+                  animation: move 400ms ease-in reverse;
+                  offset-rotate: 0deg;
+                // border: 2px rgb(33,44,50) solid;
+                border-radius: 50%;
+                overflow: hidden;
+                  &.a1{ 
+                    offset-distance: 20%; /* New */
+                  }
+                  &.a2{ 
+                    offset-distance: 40%; /* New */
+                  }
+                  &.a3{ 
+                    offset-distance: 60%; /* New */
+                  }
+                  &.a4{ 
+                    offset-distance: 80%; /* New */
+                  }
+                  &.a5{ 
+                    offset-distance: 100%; /* New */
+                  }
+                 
+              }
+              @keyframes move {
+                100% { 
+                //   motion-offset: 100%;   /* Old */
+                  offset-distance: 100%; /* New */
+                }
+              }
+        } 
+    }
 }

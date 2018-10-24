@@ -25678,6 +25678,146 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-account .mainContent {
+  background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
+}
+
+page-account .mainContent .header {
+  background-color: white;
+  height: 76px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0px 15px;
+  letter-spacing: -1px;
+}
+
+page-account .mainContent .header .points {
+  color: #60665A;
+  font-size: 1.6rem;
+}
+
+page-account .mainContent .header .points span {
+  font-size: 1rem;
+}
+
+page-account .mainContent .body {
+  background-color: white;
+  height: calc(100% - 76px);
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-account .mainContent .body .dona {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  position: relative;
+  background-color: rgba(33, 44, 50, 0.1);
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+page-account .mainContent .body .dona::after {
+  content: '';
+  height: 14vh;
+  width: 14vh;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -7vh;
+  top: 50%;
+  margin-top: -7vh;
+}
+
+page-account .mainContent .body .track {
+  stroke: magenta;
+}
+
+page-account .mainContent .body .a {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  offset-path: path("M 125 125 m -87.5, 0 a 75,75 0 1,0 175,0 a 75,75 0 1,0 -175,0");
+  animation: move 400ms ease-in reverse;
+  offset-rotate: 0deg;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+page-account .mainContent .body .a.a1 {
+  offset-distance: 20%;
+  /* New */
+}
+
+page-account .mainContent .body .a.a2 {
+  offset-distance: 40%;
+  /* New */
+}
+
+page-account .mainContent .body .a.a3 {
+  offset-distance: 60%;
+  /* New */
+}
+
+page-account .mainContent .body .a.a4 {
+  offset-distance: 80%;
+  /* New */
+}
+
+page-account .mainContent .body .a.a5 {
+  offset-distance: 100%;
+  /* New */
+}
+
+@-webkit-keyframes move {
+  100% {
+    offset-distance: 100%;
+    /* New */
+  }
+}
+
+@keyframes move {
+  100% {
+    offset-distance: 100%;
+    /* New */
+  }
+}
+
 page-basket {
   /* create the ... */
   /* hide ... if we have text, which is less than or equal to max lines */
