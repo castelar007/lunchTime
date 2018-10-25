@@ -17,6 +17,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.overlaysWebView(false);
       statusBar.styleDefault();
+      
       splashScreen.hide();
     });
   }

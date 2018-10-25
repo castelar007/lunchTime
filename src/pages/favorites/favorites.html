@@ -1,19 +1,19 @@
 <ion-content class="main-content">
-  <div class="header">
-    <ion-scroll scrollX='true'>
-      <div class="imgContainer" *ngFor='let favorito of resFavoritos'>
-        <img src="assets/imgs/test.png" alt="">
-      </div>
-    </ion-scroll>
+  <div class="headerTop">
+      Favoritos
   </div>
   <div class="body">
     <div class="bodyHeader">
-      Favoritos
+        <ion-scroll scrollX='true'>
+            <div class="imgContainer" *ngFor='let favorito of resFavoritos'>
+              <img src="assets/imgs/test.png" alt="">
+            </div>
+          </ion-scroll>
     </div>
     <ion-grid class="bodyContainer">
       <ion-scroll scrollY="true" >
         <ion-row>
-          <ion-col style="background-color:white;" col-6 col-md-4 col-xl-3 *ngFor="let favorito of resFavoritos">
+          <ion-col style="background-color:white; padding: 0px;"  col-6 col-md-4 col-xl-3 *ngFor="let favorito of resFavoritos">
             <div class="foodContainer">
               <div class="header">
                   <span>Titulo del Plato</span>
