@@ -2,6 +2,10 @@ page-basket {
     .scroll-content{
         overflow-y: hidden;
     }
+    .item .item-block .item-md,
+    .item .item-block .item-ios{
+        padding-right: 15px;
+    }
     .block-with-text {
         /* for set '...' in absolute position */
         position: relative; 
@@ -49,7 +53,8 @@ page-basket {
         background: white;
       }  
       .item-ios,.item-md{
-          padding-left: 0px;
+          padding-left: 5px;
+          padding-right: 15px;
           
       }
       .item-md.item-block .item-inner {

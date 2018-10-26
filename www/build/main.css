@@ -25876,6 +25876,11 @@ page-basket .scroll-content {
   overflow-y: hidden;
 }
 
+page-basket .item .item-block .item-md,
+page-basket .item .item-block .item-ios {
+  padding-right: 15px;
+}
+
 page-basket .block-with-text {
   /* for set '...' in absolute position */
   position: relative;
@@ -25924,7 +25929,8 @@ page-basket .block-with-text:after {
 }
 
 page-basket .item-ios, page-basket .item-md {
-  padding-left: 0px;
+  padding-left: 5px;
+  padding-right: 15px;
 }
 
 page-basket .item-md.item-block .item-inner {
