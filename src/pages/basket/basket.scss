@@ -77,6 +77,8 @@ page-basket {
             #F7F7F7 50px
             );
             .header{
+                z-index: 111111;
+                position: relative;
                 // margin-top: 36px;
                 display: flex;
                 // align-items: flex-end;
@@ -84,121 +86,68 @@ page-basket {
                 background-color: white;
                 height: 76px;
                 width: 100%;
-                .h{
-                    position: relative;
+               .h1{
+                width: 100%;
+                height: 65%;
+                display: flex;
+                .h11{
+                    height: 100%;
+                    width: calc(80% - 15px);
+                    margin-left: 15px;
                     display: flex;
-                    width: 100%;
-                    &.h1{
-                        position: fixed;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 0px 15px 0px 15px;
-                        font-size: 1.5rem;
-                        height: 36px;
-                        background-color: white;
-                        font-weight: 500;
-                        top: 0;
-                        z-index: 1111;
-                    }
-                    &.h4{
-                        padding: 0px 15px 0px 15px;
-                        // position: fixed;
-                        // top: 36px;
-                        height: 40px;
-                        background-color: white;
-                        // z-index: 1111;
-                       
-                        display: flex;
-                        justify-content: space-around;
-                        ion-scroll{
-                            position: relative;
-                            height: 100%;
-                            width: 100%;
-                            .scroll-zoom-wrapper{
-                                display: flex;
-                                align-items: center;
-                                height: 100%;
-                            .category{
-                                display: flex;
-                                justify-content: center;
-                                // align-items: center;
-                                height: 60%;
-                                font-weight: 500;
-                                margin-right: 5px;
-                                padding: 2px 8px 2px 8px;
-                               &.active{
-                                    background-color: #007D69;
-                                    border-radius: 25px;
-                                    color: white;                            
-                               }
-                            }
-                        }
-                        }
-                    }
-                    &.h2{
-                        
-                        position: relative;
-                        height: calc(100% - 30px);
-                        background-color: white;
-                        
-                        padding: 0px 15px 0px 15px;
-                        
-                    }
-                    &.h3{
-                        position: relative;
-                        height: 30px;
-                        background-color: white;
-                        display: flex;
-                        padding: 0px 15px 0px 15px;
-                        font-size: 0.8rem;
-                        .lh3{
-                            display: flex;
-                            justify-content: center;
-                            position: relative;
-                            align-items: flex-end;
-                            width: 25%;
-                            position: relative;
-                            img{
-                                max-width: 100%;
-                                // position: absolute;
-                                border: 0;
-                                z-index: 111;
-                                bottom: 0;
-                                right: 0;
-                                width: 65px;
-                                border-radius: 50%;
-                                height: 65px;
-                                padding: 5px;
-                            }
-                            &::after{
-                                content: '';
-                                position: absolute;
-                                border: 0;
-                                z-index: 11;
-                                bottom: 0;
-                                right: 50%;
-                                margin-right: -32.5px;
-                                width: 65px;
-                                border-radius: 50%;
-                                height: 65px;
-                                background-color: white;
-                            }
-                        }
-                        .rh3{
-                            display: flex;
-                            width: 75%;
-                            justify-content: flex-end;
-                            align-items: center;
-                            img{
-                                height: 50%;
-                                margin-left: 15px;
-                                margin-right: 5px;
-                            }
-                        }
-                    }
-                 
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
                 }
+                .h12{
+                    width: calc(20% - 15px);
+                    height: 100%;
+                    display: flex;
+                    margin-right: 15px;
+                    justify-content: flex-end;
+                    align-items: center;
+                    img{
+                        height: 35px;
+                        width: 35px;
+                    }
+
+                }
+               }
+               .h2{
+                height: 35%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 0px 15px;
+                font-size: 1.2rem;
+                font-weight: bold; 
+                justify-content: space-between;
+                
+                .h21{
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 35%;
+                    color: #212C32;
+                }
+                .h22{
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 65%;
+                    color: #212C32;
+                }
+                .pagos{
+                    padding: 2px 8px;
+                    &.active{
+                        background-color: #212C32;
+                        color: white;
+                        border-radius: 15px;
+                    }
+                }
+               }
             }
             .body{
                 height: calc(100% - 156px);
@@ -210,7 +159,35 @@ page-basket {
                 color: #60665A;
                 font-weight: 500;
                 flex-direction: column;  
-                
+                position: relative;
+                .pagoList{
+                    
+                    top: 0;
+                    z-index: 11111;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.2);
+                    position: absolute;
+                   
+                    .whiteHeader{
+                        height: 50%;
+                        width: 100%;
+                        background-color: white;
+                        border-radius: 0px 0px 25px 25px;
+                        position: relative;
+                        button{
+                            position: absolute;
+                            bottom: 10px;
+                            width: 50%;
+                            left: 50%;
+                            margin-left: -25%;
+                            height: 15%;
+                            border-radius: 25px;
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
                 .b1{
                     width: 100%;
                     background-color: white;

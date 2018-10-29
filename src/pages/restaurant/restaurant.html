@@ -2,7 +2,10 @@
   
   <div class="header" >
     <div class="h h1">
-      <div>
+      <div style="width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;">
         <ion-icon navPop style="padding-right:15px; color: #BF2708;" name="ios-arrow-back"></ion-icon>
         <span>Ristorante Name</span>
       </div>
@@ -108,7 +111,9 @@
                 align-items: flex-start;
                 height: 15px;
                 margin: 10px 0px 5px 0px;">
-                  <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>
+                  <div style="font-size:1.3rem; font-weight:500;     white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;">{{item.name}}</div>
                  
                 </div>
                 <div class="block-with-text" >{{item.description}}</div>

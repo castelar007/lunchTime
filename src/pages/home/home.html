@@ -30,7 +30,7 @@
         <div style="    
         width: calc(100% - 30px);
     display: flex;
-    align-items: center; padding-left: 25px;">
+    align-items: center; padding-left: 10px;">
         
         
         <span>Tegucigalpa, F.M.</span>
@@ -94,7 +94,9 @@
         align-items: flex-start;
         height: 15px;
         margin: 10px 10px 5px 10px;">
-          <div style="font-size:1.3rem; font-weight:500; ">{{item.name}}</div>
+          <div style="font-size:1.3rem; font-weight:500;     white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;">{{item.name}}</div>
           <div style="    display: flex;
           justify-content: center;
           align-items: flex-end;

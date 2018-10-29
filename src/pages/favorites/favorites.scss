@@ -103,6 +103,13 @@ page-favorites {
                         font-weight: bold;
                         background-color: white;
                         height: 18%;
+                        width: 100%;
+                        span{
+                            width: 90%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
                         ion-icon{
                             padding-right: 3px;
                         }

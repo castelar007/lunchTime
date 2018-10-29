@@ -55,7 +55,8 @@ page-home {
         &.active {
             background-color: white;
             width: 100vw;
-            height: calc(60% - 50px);
+            // height: calc(60% - 50px);
+            height: 100vh;
             border-radius: 0px 0px 25px 25px;
 
             .menuIcon {
