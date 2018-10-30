@@ -29,9 +29,19 @@
     </div>
   </div>
   <div class="body">
-    <div class="pagoList">
+    <div class="pagoList" [class.active]='togglePago'>
       <div class="whiteHeader">
-       <button ion-button> Añadir</button>
+          <ion-list mode='ios' no-lines radio-group [(ngModel)]="this.card" >
+              <ion-item>
+                  <button class="buttonAdd" color="light"  mode='ios' ion-button> <ion-icon name='add'></ion-icon> Añadir Tarjeta</button>
+                </ion-item>
+              <ion-item *ngFor='let card of tarjetas' >
+                <ion-label>{{card.number}}</ion-label>
+                <ion-radio  [value]="card.number"  item-left (click)='enableAceptar()'></ion-radio>
+              </ion-item>
+             
+          </ion-list>
+       <button class="buttonAceptar" ion-button mode='ios' [disabled]='aceptar' (click)='acceptClick()'> Aceptar</button>
       </div>
     </div>
     <div style="height: 10%;

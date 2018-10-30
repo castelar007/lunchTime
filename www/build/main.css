@@ -25946,6 +25946,51 @@ page-basket .text-input-ios {
   margin: 0px;
 }
 
+page-basket .radio-md .radio-icon {
+  left: 0;
+  top: 0;
+  margin: 0;
+  border-radius: 0%;
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-width: 0px;
+  border-style: unset;
+  background-color: #F2F2F2;
+}
+
+page-basket .radio-md .radio-inner {
+  background-color: unset;
+  border-radius: 0%;
+  left: 6px;
+  top: 0px;
+}
+
+page-basket .radio-ios .radio-icon {
+  background-color: #F2F2F2;
+  width: 15px;
+  height: 15px;
+}
+
+page-basket .radio-md .radio-checked .radio-inner {
+  position: absolute;
+  width: 5px;
+  height: 12px;
+  border-width: 2px;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #007D69;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+page-basket .radio-ios .radio-checked .radio-inner {
+  left: 6px;
+  top: 0px;
+}
+
 page-basket .mainContent {
   background: repeating-linear-gradient(90deg, #F4F2F2, #F4F2F2 25px, #F7F7F7 25px, #F7F7F7 50px);
 }
@@ -26052,10 +26097,10 @@ page-basket .mainContent .header .h2 .h21 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   width: 35%;
   color: #212C32;
 }
@@ -26069,10 +26114,10 @@ page-basket .mainContent .header .h2 .h22 {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   width: 65%;
   color: #212C32;
 }
@@ -26117,29 +26162,100 @@ page-basket .mainContent .body .pagoList {
   top: 0;
   z-index: 11111;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  height: calc(100% + 86px);
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
+  opacity: 1;
+  pointer-events: none;
+  -webkit-transition: background-color 200ms 200ms ease-in;
+  transition: background-color 200ms 200ms ease-in;
 }
 
 page-basket .mainContent .body .pagoList .whiteHeader {
-  height: 50%;
+  min-height: 20%;
   width: 100%;
   background-color: white;
   border-radius: 0px 0px 25px 25px;
   position: relative;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-page-basket .mainContent .body .pagoList .whiteHeader button {
+page-basket .mainContent .body .pagoList .whiteHeader ion-list {
+  padding-bottom: 20px;
+}
+
+page-basket .mainContent .body .pagoList .whiteHeader ion-list ion-item {
+  min-height: 36px;
+  width: 100%;
+  padding: 0px;
+}
+
+page-basket .mainContent .body .pagoList .whiteHeader ion-list ion-item .item-inner {
+  padding: 0px;
+}
+
+page-basket .mainContent .body .pagoList .whiteHeader .buttonAdd {
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  height: 25px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  color: #60665A;
+}
+
+page-basket .mainContent .body .pagoList .whiteHeader .buttonAdd ion-icon {
+  padding-right: 5px;
+}
+
+page-basket .mainContent .body .pagoList .whiteHeader .buttonAceptar {
   position: absolute;
   bottom: 10px;
   width: 50%;
   left: 50%;
   margin-left: -25%;
-  height: 15%;
+  height: 25px;
   border-radius: 25px;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+page-basket .mainContent .body .pagoList.active {
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: all;
+  -webkit-transition: background-color 200ms 200ms ease-in;
+  transition: background-color 200ms 200ms ease-in;
+}
+
+page-basket .mainContent .body .pagoList.active .whiteHeader {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
 }
 
 page-basket .mainContent .body .b1 {
