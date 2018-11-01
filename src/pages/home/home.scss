@@ -26,13 +26,13 @@ page-home {
 
     .menuCiudad {
         position: fixed;
-        width: 40px;
-        height: 40px;
-        background-color: white;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0);
         z-index: 11111;
-        border-radius: 50%;
+        // border-radius: 50%;
         transition: 300ms ease-in-out;
-
+        pointer-events: none;
 
         .menuIcon {
             height: 40px;
@@ -41,7 +41,8 @@ page-home {
             justify-content: center;
             align-items: center;
             position: absolute;
-
+            pointer-events: all;
+            z-index: 11111;
             .downIcon {
                 color: #BF2708;
                 position: absolute;
@@ -51,13 +52,17 @@ page-home {
             }
 
         }
-
-        &.active {
+        .whiteContainer{
             background-color: white;
+            height: 50vh;
             width: 100vw;
-            // height: calc(60% - 50px);
-            height: 100vh;
             border-radius: 0px 0px 25px 25px;
+            transform: translateY(-100%);
+            transition: transform 400ms 0ms;
+        }
+        &.active {
+            background-color: rgba(0,0,0,0.2);
+            pointer-events: all;
 
             .menuIcon {
 
@@ -67,7 +72,14 @@ page-home {
                 }
 
             }
-
+            .whiteContainer{
+                background-color: white;
+                height: 50vh;
+                width: 100vw;
+                border-radius: 0px 0px 25px 25px;
+                transform: none;
+                transition: transform 400ms 0ms;
+            }
         }
     }
 
@@ -291,7 +303,7 @@ page-home {
             align-items: flex-end;
             flex-direction: column;
             background-color: white;
-            height: calc(60% - 76px);
+            height: calc(45% - 76px);
             width: 100%;
 
             .h {
@@ -301,7 +313,7 @@ page-home {
 
                 &.h3 {
                     position: relative;
-                    height: 87%;
+                    height: 80%;
                     background-color: white;
                     justify-content: space-around;
 
@@ -323,7 +335,7 @@ page-home {
 
                 &.h4 {
                     position: relative;
-                    height: 13%;
+                    height: 20%;
                     background-color: white;
                     display: flex;
 

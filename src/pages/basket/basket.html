@@ -22,7 +22,7 @@
     <div class="h2">
       <div class="h21">Forma de pago:</div>
       <div class="h22">
-        <div *ngFor='let pago of pagos' class="pagos" [class.active]='pago.active' (click)='pagoClick(pago)' >
+        <div *ngFor='let pago of pagos' class="pagos" [class.active]='pago.active' (click)='pagoClick(pago)'>
           {{pago.name}}
         </div>
       </div>
@@ -31,17 +31,31 @@
   <div class="body">
     <div class="pagoList" [class.active]='togglePago'>
       <div class="whiteHeader">
-          <ion-list mode='ios' no-lines radio-group [(ngModel)]="this.card" >
+       
+        <div class='sliderContainer' [class.selected]='isOtherSelected' >
+          <div class="innerContainer">
+            <ion-list mode='ios' no-lines radio-group [(ngModel)]="this.card">
               <ion-item>
-                  <button class="buttonAdd" color="light"  mode='ios' ion-button> <ion-icon name='add'></ion-icon> Añadir Tarjeta</button>
-                </ion-item>
-              <ion-item *ngFor='let card of tarjetas' >
-                <ion-label>{{card.number}}</ion-label>
-                <ion-radio  [value]="card.number"  item-left (click)='enableAceptar()'></ion-radio>
+                <button class="buttonAdd" color="light" mode='ios' ion-button>
+                  <ion-icon name='add'></ion-icon> Añadir Tarjeta
+                </button>
               </ion-item>
-             
-          </ion-list>
-       <button class="buttonAceptar" ion-button mode='ios' [disabled]='aceptar' (click)='acceptClick()'> Aceptar</button>
+              <ion-item *ngFor='let card of tarjetas'>
+                <ion-label>{{card.number}}</ion-label>
+                <ion-radio [value]="card.number" item-left (click)='enableAceptar()'></ion-radio>
+              </ion-item>
+            </ion-list>
+          </div>
+          <div class="innerContainer">
+            <ion-list mode='ios' no-lines radio-group [(ngModel)]="this.card">
+              <ion-item *ngFor='let card of tarjetas'>
+                <ion-label>{{card.number}}</ion-label>
+                <ion-radio [value]="card.number" item-left (click)='enableAceptar()'></ion-radio>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+        <button class="buttonAceptar" ion-button mode='ios' [disabled]='aceptar' (click)='acceptClick()'> Aceptar</button>
       </div>
     </div>
     <div style="height: 10%;

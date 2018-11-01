@@ -4,6 +4,9 @@
         <ion-icon class=" downIcon" name="ios-arrow-down" ></ion-icon>
         
       </div>
+      <div class="whiteContainer">
+        
+      </div>
     </div>
 
     <div class="searchBar" (click)="clickSearch()"  [class.active]="this.searchIsActive">
@@ -75,7 +78,7 @@
  </div>
  <div class="body" >
   <div class='headerBody'>
-    Random Name
+    Restaurantes
   </div>
   <ion-scroll id='innerScroll' >
     <div class="itemBody" *ngFor="let item of items" (click)=goDeep(item)>

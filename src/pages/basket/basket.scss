@@ -224,19 +224,43 @@ page-basket {
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
-                        align-items: center;
-                        ion-list{
-                            padding-bottom: 20px;
-                            // width: 100%;
-                            ion-item{
-                                min-height: 36px;
-                                width: 100%;
-                                padding: 0px;
-                                .item-inner{
-                                    padding: 0px;
-                                }
+                        align-items: flex-start;
+                        .sliderContainer{
+                            width: 200%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            &.selected{
+                                transform: translateX(-50%);
                             }
+                            &.slow{
+                                transition: 400ms ease-in;
+                             }
+                        }
+                        .innerContainer{
+                            width: 50%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            ion-list{
+                                padding-bottom: 20px;
+                            
+                                // width: 100%;
+                                ion-item{
                                     
+                                    min-height: 36px;
+                                    width: 100%;
+                                    padding: 0px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    .item-inner{
+                                        padding: 0px;
+                                    }
+                                }
+                                        
+                            }
                         }
                         .buttonAdd{
                             // position: absolute;
@@ -274,6 +298,7 @@ page-basket {
                         .whiteHeader{
                             transform: translateY(0%);
                             transition: transform 400ms ;
+                            
                         }
                     }
                 }
