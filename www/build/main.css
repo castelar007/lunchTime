@@ -25950,7 +25950,7 @@ page-basket .radio-md .radio-icon {
   left: 0;
   top: 0;
   margin: 0;
-  border-radius: 0%;
+  border-radius: 3px;
   position: relative;
   display: block;
   width: 15px;
@@ -25971,6 +25971,7 @@ page-basket .radio-ios .radio-icon {
   background-color: #F2F2F2;
   width: 15px;
   height: 15px;
+  border-radius: 3px;
 }
 
 page-basket .radio-md .radio-checked .radio-inner {
@@ -27469,7 +27470,7 @@ page-home .mainContent .headerScroll .h.h3 {
 
 page-home .mainContent .headerScroll .h.h3 .slideLayout {
   overflow: hidden;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px 15px 15px 15px;
   background-color: wheat;
   width: calc(100% - 30px) !important;
   margin: 0px 15px 0px 15px;
@@ -27862,7 +27863,6 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h2 {
   position: relative;
   height: calc(100% - 70px);
   background-color: white;
-  padding: 0px 15px 0px 15px;
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 {
@@ -27870,7 +27870,6 @@ page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 {
   height: 100%;
   width: 100%;
   position: relative;
-  border-radius: 15px 15px 0px 0px;
 }
 
 page-restaurant .mainContent .headerScrollRestaurante .h.h2 .innerH2 .footer {
@@ -28267,7 +28266,7 @@ page-search .checkbox-ios .checkbox-icon {
   border-style: none;
   border-color: unset;
   background-color: #F2F2F2;
-  border-radius: unset;
+  border-radius: 3px;
 }
 
 page-search .checkbox-md .checkbox-checked,
@@ -29384,7 +29383,6 @@ page-special-dish .mainContent .header {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: white;
   height: 36px;
   width: 100%;
 }
@@ -29415,10 +29413,20 @@ page-special-dish .mainContent .header .h.h1 {
   padding: 0px 15px 0px 15px;
   font-size: 1.5rem;
   height: 36px;
-  background-color: white;
   font-weight: 500;
   top: 0;
   z-index: 1111;
+}
+
+page-special-dish .mainContent .header .h.h1::after {
+  content: '';
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 25px;
+  width: 25px;
+  left: 6px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 111;
 }
 
 page-special-dish .mainContent .header .h.h4 {
@@ -29558,41 +29566,213 @@ page-special-dish .mainContent .header .h.h3 .rh3 img {
   margin-right: 5px;
 }
 
-page-special-dish .mainContent .body {
-  height: calc(100% - 146px);
+page-special-dish .mainContent .headerImg {
+  position: fixed;
+  top: 0;
+  height: 30%;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  font-size: 1rem;
-  color: #60665A;
-  font-weight: 500;
+}
+
+page-special-dish .mainContent .headerImg img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+page-special-dish .mainContent .bodyScroll {
+  height: calc(100% - 116px);
+  width: 100%;
+  position: relative;
+  top: -36px;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .bodyHeader {
+  height: 30%;
+  width: 100%;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
 }
 
-page-special-dish .mainContent .body .mainTitle {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #212C32;
-  padding-left: 30px;
-  height: 56px;
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemHeader {
+  position: absolute;
+  height: 20%;
+  width: 90%;
+  background-color: white;
+  top: -10%;
+  border-radius: 25px 25px 0px 0px;
+  z-index: 11111;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemHeader .header {
+  height: 36px;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212C32;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemHeader .body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  padding: 0px 15px;
+  text-align: justify;
+  color: #60665A;
+  height: calc(100% - 36px);
+  -webkit-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .header {
+  height: 20%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  z-index: 11111;
+  position: relative;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .header .labelContainer {
+  height: 36px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .header .iconsContainer {
+  height: 36px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .header .iconsContainer img {
+  height: 40%;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .body {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .body .scroll-content .scroll-zoom-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
@@ -29603,59 +29783,22 @@ page-special-dish .mainContent .body .mainTitle {
   align-items: center;
 }
 
-page-special-dish .mainContent .body .b1 {
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .body .scroll-content .scroll-zoom-wrapper .b1 {
+  width: 90%;
+  margin-bottom: 5px;
+}
+
+page-special-dish .mainContent .bodyScroll .scroll-content .scroll-zoom-wrapper .body .itemBody .footer {
+  height: 10%;
   width: 100%;
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 3px;
-  padding: 15px 30px 15px 30px;
-}
-
-page-special-dish .mainContent .body .b1 .title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #212C32;
-  margin-bottom: 10px;
-}
-
-page-special-dish .mainContent .body .b1 .b11 {
-  height: 16px;
-  width: 100%;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 3px;
-}
-
-page-special-dish .mainContent .body .b1 .b11 span {
-  color: #60665A;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-page-special-dish .mainContent .body .b1 .b11 .b11r {
-  height: 15px;
-  width: 15px;
-}
-
-page-special-dish .mainContent .body .b1 .b11 .b11r img {
-  padding: 2px;
+  background-color: #212C32;
 }
 
 page-special-dish .mainContent .footer {
   position: relative;
   height: 116px;
   width: 100%;
+  top: -36px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29760,7 +29903,7 @@ tabs-page .tabs-md .tabbar::after, tabs-page .tabs-ios .tabbar::after {
   position: absolute;
   height: 46px;
   width: 95%;
-  border-radius: 0 0 25px 25px;
+  border-radius: 25px 25px 25px 25px;
   background: rgba(255, 255, 255, 0.5);
   top: 50%;
   -webkit-box-shadow: 0px 0px 10px -5px;

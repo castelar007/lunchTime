@@ -1,4 +1,140 @@
 <ion-content class="mainContent">
+  <div class="header">
+    <div class="h h1">
+      <div style="white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;">
+        <ion-icon navPop style="padding-right:15px; color: #BF2708; z-index: 1111;
+            position: relative;"
+          name="ios-arrow-back"></ion-icon>
+        <!-- <span>Dish Name</span> -->
+      </div>
+      <!-- <div style="    display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;"> 
+            <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+          </div> -->
+    </div>
+  </div>
+  <div class="headerImg">
+    <img src="assets/imgs/test.png" alt="">
+  </div>
+  <ion-scroll #scroll2 class="bodyScroll" scrollY='true'>
+    <div class="bodyHeader"></div>
+    <div class="body">
+      <div class="itemHeader">
+        <div class="header">
+          <span>Dish Name</span>
+          <div style="    display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100%;">
+            <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#EA8A04;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+            <ion-icon style="font-size:1.5rem;  color:#CBCCCA;" name="star"></ion-icon>
+          </div>
+        </div>
+        <div class="body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore non, voluptatem reiciendis modi placeat sed
+          eligendi quis est neque? Qui id vero adipisci voluptates laboriosam tenetur voluptatum exercitationem sint
+          natus.
+        </div>
+      </div>
+      <div class="itemBody">
+        <div class="header">
+          <div class="labelContainer">Personalizar</div>
+          <div class="iconsContainer">
+            <img src="assets/imgs/timeGreen.svg" alt="">
+            <span style="color:#007D69;">888m </span>
+            <img src="assets/imgs/calorias.svg" alt="">
+            <span style="color:#007D69;">8888cal </span>
+          </div>
+        </div>
+        <div class="body">
+          <ion-scroll scrollY="true" style="height: 100%; width:100%;">
+
+
+            <div class="b1">
+              <div class="title">Extras 1</div>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col style="border-right: 1px solid #f4f4f4;" col-6 col-md-4 col-xl-3 *ngFor='let option of options'>
+                    <ion-item no-lines style='min-width: 100px;'>
+                      <ion-label style="display:flex; display: flex;
+                      justify-content: space-between;
+                      align-items: center;">{{option.name}}
+                        <span style="color: #212C32; font-weight: bold; padding-right: 5px; font-size: 0.8rem;">Lps.888</span>
+                      </ion-label>
+                      <ion-checkbox style="margin:0px;" item-right></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+
+
+            </div>
+            <div class="b1">
+              <div class="title">Extras 2</div>
+
+              <ion-grid>
+                <ion-row radio-group [(ngModel)]="this.option">
+                  <ion-col style="flex-direction: row; display:flex; border-right: 1px solid #f4f4f4;" col-6 col-md-4
+                    col-xl-3 *ngFor='let option of options'>
+                    <ion-label style="display:flex; display: flex;
+                                  justify-content: space-between;
+                                  align-items: center;">{{option.name}}
+                      <span style="color: #212C32; font-weight: bold; padding-right: 5px; font-size: 0.8rem;">Lps.888</span></ion-label>
+                    <ion-radio [value]="option.name"></ion-radio>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <div class="b1">
+              <div class="title">Extras 3</div>
+              <ion-grid>
+
+                <ion-row>
+                  <ion-col col-6 col-md-4 col-xl-3 *ngFor='let option of selecciones; let i = index;'>
+                    <ion-item no-lines>
+
+                      <ion-select style="width:100%; max-width: 100%;" interface='popover' placeholder='{{option.name}}'
+                        [(ngModel)]="this.option.opciones[j]">
+                        <ion-option *ngFor='let select of option.opciones; let j = index;' [value]="select">{{select.name}}</ion-option>
+
+                      </ion-select>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <div class="b1">
+              <div class="title">Extras 4</div>
+              <ion-item style="height:100%; width:100%;">
+                <ion-range step='20' snaps="true" min='0' max='100' [(ngModel)]="step" color="primary" pin="true">
+                  <ion-label range-left>0</ion-label>
+                  <ion-label range-right>100</ion-label>
+                </ion-range>
+              </ion-item>
+            </div>
+          </ion-scroll>
+          
+        </div>
+       
+      </div>
+    </div>
+  </ion-scroll>
+  <div class="footer"></div>
+</ion-content>
+<!-- <ion-content class="mainContent">
     <div class="header" >
       <div class="h h1">
         <div style="white-space: nowrap;
@@ -22,6 +158,7 @@
     
     </div>
     <div class="body" >
+      <ion-scroll>
         <div class="mainTitle">
             Personalizar
           </div>
@@ -60,11 +197,11 @@
         <div class="b1">
             <div class="title">Extras 3</div> 
             <ion-grid>
-              <!-- <ion-row [(ngModel)]="this.option"> -->
+              
                 <ion-row >
                   <ion-col col-6 col-md-4 col-xl-3 *ngFor='let option of selecciones; let i = index;' >
                     <ion-item  no-lines>
-                      <!-- <ion-label>{{option.name}} </ion-label> -->
+              
                       <ion-select style="width:100%; max-width: 100%;" interface='popover' placeholder='{{option.name}}' [(ngModel)]="this.option.opciones[j]">
                           <ion-option *ngFor='let select of option.opciones; let j = index;'  [value]="select">{{select.name}}</ion-option>
                           
@@ -83,6 +220,7 @@
                 </ion-range>
             </ion-item>
         </div>
+      </ion-scroll>
       </ion-scroll>
     </div>
     <div class="footer">
@@ -116,4 +254,4 @@
        <span>Añadir</span> 
       </div>
     </div>
-</ion-content>
+</ion-content> -->
